@@ -88,15 +88,15 @@ const verbing = function(str){
   if(str.length >= 3){
     for(let i = str.length - 1; i >= str.length - 3; i --){
         testIng = testIng + str[i];
-      };
-      if(testIng == "gni"){
-        return str + "ly";
-      }else{
-        return str + "ing";
-      }
+    };
+    if(testIng == "gni"){
+      return str + "ly";
+    }else{
+      return str + "ing";
+    }
     };
     return str;
-};
+  }; //verbing()
 
 
 console.log(verbing("Testing"));
