@@ -22,6 +22,7 @@ const secretLetter = [
 
 // Write a function called guessLetter that will:
 // Take one argument, the guessed letter.
+
 // Iterate through the word letters and see if the guessed letter is in there.
 // If the guessed letter matches a word letter, changed the guessed letters array
 // to reflect that.
