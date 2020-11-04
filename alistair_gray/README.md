@@ -19,7 +19,7 @@ You only need to do this once, not every time you're submitting homework!
   - _Adding an upstream repository links the local repository on your computer to the original repository on Github (i.e. mine, the one from which you created the fork)_
   - `cd sei34-homework`
   - `git remote add upstream https://github.com/ispzz/sei40-homework`
-  - `git pull upstream main`
+  - `git pull upstream master`
 ### Do your Homework
 You should put each night's homework in a new folder within the appropriate directory of your homework repo. So, for day two, where you have two tasks ("Calculator" and "Strings"), you might do something like this:
 1. Open Terminal/iTerm2;
@@ -35,8 +35,8 @@ You need to do this every time you're submitting homework.
   - `git add .`
   - `git commit -m "YOUR_COMMIT_MESSAGE_GOES_HERE"`(where `YOUR_COMMIT_MESSAGE_GOES_HERE` is your description of the work you are committing)
 - **Push your changes to your forked repository**
-  - `git pull upstream main` - merge changes that have been made to this repository into your own local repository.
-  - `git push origin main`
+  - `git pull upstream master` - merge changes that have been made to this repository into your own local repository.
+  - `git push origin master`
 - **Once you're finished, submit a pull request for me to accept your homework**
   - Navigate to your forked version of this repository on Github (eg [https://github.com/{YOUR_USERNAME_HERE}/sei40](https://github.com/{YOUR_USERNAME_HERE}/sei40)).
   - Hit the **Pull request** button.
@@ -48,5 +48,5 @@ You need to do this every time you're submitting homework.
     4. Roughly how long did it take?
 **If you don't mention anything in the Pull Request comments, we will assume you had no problems at all with it, and you will receive no feedback about your homework.**
 If you want to follow up on any issues you had with the homework, the ideal time for that will be during the more unstructured lab time after lunch - come and see Joel or myself then and we can go over any outstanding questions.
-**Note:** if I haven't yet merged your Pull Request into my main homework repo before it's time to submit the next day's homework, you won't be able to create a new Pull Request. That's okay - for the new homework just add a new comment to the open (existing) Pull Request, featuring the same four points given above to describe your response to it.
+**Note:** if I haven't yet merged your Pull Request into my master homework repo before it's time to submit the next day's homework, you won't be able to create a new Pull Request. That's okay - for the new homework just add a new comment to the open (existing) Pull Request, featuring the same four points given above to describe your response to it.
             
