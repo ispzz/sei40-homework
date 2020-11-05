@@ -3,11 +3,15 @@ console.log('The javascript has loaded!');
 // Do your exercises here:
 
 // The Word Guesser
-let wordToGuess = 'bandage';
 let totalReward = 0;
 let hangman = 0;
-const wordArr = wordToGuess.toLowerCase().split('');
-const guessArr = [];
+let wordToGuess = 'bandage';
+let wordArr = wordToGuess.toLowerCase().split('');
+let guessArr = [];
+
+for(let i = 0; i < wordArr.length; i++){
+  guessArr.push('_');
+}
 
 const guessLetter = function(guess){
   let currReward = Math.floor(Math.random() * 100);
@@ -42,28 +46,29 @@ const guessLetter = function(guess){
 
   if(wordArr.includes(guess)){
     hangman -= 1;
-    let currGuess = '';
     let idx = wordArr.indexOf(guess);
 
     guessArr[idx] = guess;
     wordArr.splice(idx, 1, '*');
 
-    for(let i = 0; i < guessArr.length; i++){
-      if(guessArr[i] === undefined){
-        currGuess += '_,';
-      } else {
-        currGuess += guessArr[i] + ',';
-      }
-    } //for
-
-    if(guessArr.length < wordArr.length){
-      let diff = wordArr.length - guessArr.length;
-      for(let i = 1; i <= diff; i++){
-        currGuess += '_,'
-      }
-    } //if
-
-    currGuess = currGuess.slice(0, currGuess.length - 1);
+    //===========Code below solved/replaced with line 12-14===============//
+    // for(let i = 0; i < guessArr.length; i++){
+    //   if(guessArr[i] === undefined){
+    //     currGuess += '_,';
+    //   } else {
+    //     currGuess += guessArr[i] + ',';
+    //   }
+    // } //for
+    //
+    // if(guessArr.length < wordArr.length){
+    //   let diff = wordArr.length - guessArr.length;
+    //   for(let i = 1; i <= diff; i++){
+    //     currGuess += '_,'
+    //   }
+    // } //if
+    //
+    // currGuess = currGuess.slice(0, currGuess.length - 1);
+    //============================================================//
 
     if(totalReward === 0){
       totalReward = currReward;
@@ -71,10 +76,8 @@ const guessLetter = function(guess){
       totalReward = totalReward * currReward;
     } //if
 
-
-
     console.log('Congrats! After your guess, this is the board:');
-    console.log(currGuess, 'Reward: $' + totalReward);
+    console.log(guessArr.join(), 'Reward: $' + totalReward);
     wonGame(wordArr);
 
   } else if(guessArr.includes(guess)){
