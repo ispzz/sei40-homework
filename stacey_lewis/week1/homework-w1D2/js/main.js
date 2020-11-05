@@ -144,7 +144,9 @@ console.log(`--------FixStart Function---------`);
 const fixStart = function (string1) {
   const findStartValue = string1.charAt();
   console.log(findStartValue);
+
   const findMatchedValue = string1.replace(/findStartValue/g,"*");
+  console.log(`findMatchValue`,findMatchedValue);
   return concatMatchedValue = `${findStartValue}${findMatchedValue.slice(1)}`;
 
 }
@@ -163,16 +165,16 @@ console.log(`--------Verbing Function---------`);
 
 const verbing = function(verb) {
   if (verb.length > 2 && (verb.slice(-3) == "ing")) {
-    return verbText = `${verb}ly`;
-    } else if (verb.length > 2) {
-      return verbText = `${verb}ing`;
-    } else {
-      return verb;
-    }
-}
+    return `${verb}ly`;
+  } else if (verb.length > 2) {
+    return `${verb}ing`;
+  } else {
+    return verb;
+  }
+}; // verbing ()
 
 const verbInput1 = 'hi';
-console.log(`${verbing(verbInput1)}`);
+console.log(verbing(verbInput1));
 
 const verbInput2 = 'sit';
 console.log(`${verbing(verbInput2)}`);
