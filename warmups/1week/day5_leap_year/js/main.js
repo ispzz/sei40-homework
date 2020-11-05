@@ -1,18 +1,3 @@
-
-
-// Write a function that will take any given year and return whether it is a leap year or not. Remember that a leap year is:
-
-// Every year that is evenly divisible by 4
-// Except if it is evenly divisible by 100...
-// Unless it is also divisible by 400
-
-// Test Data... Make sure it is working!
-
-// - 1997 is not a leap year, it should return false
-// - 1996 is a leap year, it should return true
-// - 1900 is not a leap year, it should return false
-// - 2000 is a leap year, it should return true
-
 // Version 1
 const isLeapYear = function( year ) {
     
@@ -75,7 +60,7 @@ const isLeapYear3 = function( year ) {
 const isLeapYear4 = function( year ) {
 
     // return true if the year is divisible by 4 AND (&&) is not divisible 100 OR (||) is divisible by 400
-    return (year % 4 === 0) && ( (year % 100 !== 0) || (year % 400 === 0)  );
+    return (year % 4 === 0) && ( (year % 100 !== 0) || (year % 400 === 0) );
 
 };
 
