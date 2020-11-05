@@ -18,34 +18,41 @@ let counter = 0;
 // Write a function called guessLetter that will:
 
 const guessLetter = function(str){
+    console.log(`Letter guessed: ${str}`);
   for(let i = 0;i < wordLetters.length; i++){
     const currLetter = wordLetters[i];
     const currGuessLetter = guessLetters[i];
-    console.log(`Letter guessed: ${str}`);
 
     if(str === wordLetters[i])
     {
       guessLetters[i] = str;
+      console.log("Well Done");
     }
   } // End For
 
   for(let i = 0;i < wordLetters.length; i++){
     if(guessLetters[i] === "_"){
-      console.log("Carry on")
+    //  console.log("Carry on");
+      counter++;
     }else{
-      console.log("Well Done")
+      //console.log("Well Done")
     }
+  }
+  if(counter > 0){
+    console.log("Carry on");
   }
   return guessLetters;
 };
 
-console.log(guessLetters);
-guessLetter("S");
-console.log(guessLetters);
-guessLetter("E");
-console.log(guessLetters);
-guessLetter("T");
-console.log(guessLetters);
+// console.log(guessLetters);
+// guessLetter("S");
+// console.log(guessLetters);
+// guessLetter("Z");
+// console.log(guessLetters);
+// guessLetter("E");
+// console.log(guessLetters);
+// guessLetter("T");
+// console.log(guessLetters);
 
 
 // Take one argument, the guessed letter.
