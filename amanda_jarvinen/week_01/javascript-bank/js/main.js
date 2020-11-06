@@ -42,17 +42,18 @@ const bank = {
   },
   addAccount: function(name, initialDeposit){
     const currentBalance = initialDeposit;
-    this.accounts.push({name, currentBalance});
+    this.accounts.push({name: name, currentBalance: currentBalance});
     console.log(`Your account has been added. Thanks ${name}`);
   },
-  deposit: function(accountName, amount){
-    let account;
-
+  findAccount: function(name){
     for (let i = 0; i < this.accounts.length; i++){
-      if (this.accounts[i].name === accountName){
-        account = this.accounts[i];
+      if (this.accounts[i].name === name){
+        return this.accounts[i];
       }
-    }// for
+    } // for
+  },
+  deposit: function(accountName, amount){
+    const account = this.findAccount(accountName);
 
     account.currentBalance += amount;
 
@@ -60,26 +61,37 @@ const bank = {
     return account.currentBalance;
   },
   withdraw: function(accountName, amount){
-    let account;
+    const account = this.findAccount(accountName);
 
-    for (let i = 0; i < this.accounts.length; i++){
-      if (this.accounts[i].name === accountName){
-        account = this.accounts[i];
-      }
+    if (amount > account.currentBalance){
+      console.log(`Insufficient funds. You only have $${account.currentBalance.toFixed(2)}.`);
+    } else {
+      account.currentBalance -= amount;
+
+      console.log(`You withdrew $${amount.toFixed(2)} from ${account.name}'s account. New balance: $${account.currentBalance.toFixed(2)}`);
     }
 
-    account.currentBalance -= amount;
-
-    console.log(`You withdrew $${amount.toFixed(2)} from ${account.name}'s account. New balance: $${account.currentBalance.toFixed(2)}`);
     return account.currentBalance;
+  },
+  transfer: function(nameWithdrawAccount, nameDepositAccount, amount){
+    this.withdraw(nameWithdrawAccount, amount);
+    this.deposit(nameDepositAccount, amount);
+    console.log(`$${amount} was transferred from ${nameWithdrawAccount} to ${nameDepositAccount}.`);
   }
 }; // bank
 
 bank.balance();
+
 bank.addAccount(`Peggy Hill`, 100);
 bank.addAccount(`Bill Dauterive`, 2.50);
-console.log(bank.deposit(`Bart Simpson`,20));
-console.log(bank.deposit(`Peggy Hill`,50));
-console.log(bank.withdraw(`Bart Simpson`,20));
-console.log(bank.withdraw(`Peggy Hill`,50));
+
+bank.deposit(`Bart Simpson`,20);
+bank.deposit(`Peggy Hill`,50);
+
+bank.withdraw(`Bart Simpson`,20);
+bank.withdraw(`Peggy Hill`,50);
+bank.withdraw(`Bill Dauterive`, 5)
+
+bank.transfer(`Bart Simpson`, `Peggy Hill`, 1);
+
 bank.balance();
