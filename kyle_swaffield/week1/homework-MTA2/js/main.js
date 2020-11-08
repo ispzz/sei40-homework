@@ -35,130 +35,133 @@
 // Depending on what kind of data structures you use to represent the lines and stations, you might have to make sure the stops that are the same for different lines have different names (i.e. 23rd on the N and on the 6 need to be differentiated)
 
 const mta = {
-  arrays: [
-    ["8th", "union square", "23rd", "28th", "34th", "times square"],                 //The three arrays used as the data for the object
-    ["1st", "3rd", "union square", "6th", "8th"],
-    ["astor place", "union square", "23rd", "28th", "33rd", "grand central"],
-  ],
-  timeArrays: [
-    [10,20,15,5,7],
-    [5,6,9,13],
-    [7,3,8,3,7],
-  ],
-
+  en:["8th", "union square", "23rd", "28th", "34th", "times square"],                 //The three arrays used as the data for the object
+  el:["1st", "3rd", "union square", "6th", "8th"],
+  six:["astor place", "union square", "23rd", "28th", "33rd", "grand central"],
   tripArray:[], //an empty array to store the trip details
-  tripTime: 0,
 //  methods
   planTrip: function(str,arr,str2,arr2){                            //The first function will sort through three cases
-    this.tripArray = [];                                            //Case1: A single line trip - No change at union
-    this.tripTime = 0;
-    let message = "";
-
-    const givenIdxInbound = this.arrays[arr].indexOf(str);               //I collected all the indexes from the arrays using indexOf()
-    const givenIdxOutbound = this.arrays[arr2].indexOf(str2);
-    const unionIdxOut = this.arrays[arr2].indexOf("union square");
-    const unionIdxIn = this.arrays[arr].indexOf("union square");
-
+    this.tripArray = [];                                           //Case1: A single line trip - No change at union
     if(arr === arr2){
-
-      this.singleLineTrip(givenIdxInbound,givenIdxOutbound,arr);
-      let message = `
-You must travel through the following stops on the ${arr} line:\n`;
-      let counter = 0;
-      for(let i = 0; i <= this.tripArray.length-1;i++){
-        message = message + `Station: ${this.tripArray[i]}\n`;
-        counter ++;
-      }
-      message = message + `Your trip will take you ${this.timeConvert(this.tripTime)} and pass through ${counter} stations.`;
-      console.log(message);
-      return message;
+      this.singleLineTrip(str,arr,str2,arr2);
     }
     if(arr === arr2 && str === str2){                              //case2: A trip that has the same start and end destination
       return false;
     }
-
-    this.converge(givenIdxInbound,unionIdxIn,arr,arr2,givenIdxOutbound,unionIdxOut);
-
-    message = `
-You must travel through the following stops on the ${arr} line:\n`;
-    let counter = 0;
-    for(let i = 0; i <= this.tripArray.length-1;i++){
-      if(this.tripArray[i] !== "union square"){
-        message = message + `Station: ${this.tripArray[i]}\n`;
-        counter ++;
+    if(arr === "N"){                                              //case3: The meat and potatos
+      const givenIdxInbound = this.en.indexOf(str);               //I collected all the indexes from the arrays using indexOf()
+      let givenIdxOutbound = "";
+      let unionIdxOut = 0;
+    //  console.log("give:" + givenIdx);
+      const unionIdxIn = 1;
+    //  console.log("union:" + unionIdx);
+      if(arr2 === "N"){
+        givenIdxOutbound = this.en.indexOf(str2);
+        unionIdxOut = 1;
+      }else if(arr2 === "L"){
+        //console.log("print me" + this.el.indexOf(str2));
+        givenIdxOutbound = this.el.indexOf(str2);
+        unionIdxOut = 2;
       }else{
-        message = message +`Change at Union Station\nYour Journey continues through:\n`;
-        counter ++;
+        givenIdxOutbound = this.six.indexOf(str2);
+        unionIdxOut = 1;
       }
-    }
-    message = message + `Your trip will take you ${this.timeConvert(this.tripTime)} and pass through ${counter} stations.`;
-    console.log(message);
-    return message;
-  },
+      this.converge(givenIdxInbound,unionIdxIn,arr,arr2,givenIdxOutbound,unionIdxOut); //I then passed them to a function called converge
+    }else if(arr === "L"){
+      const givenIdxInbound = this.el.indexOf(str);                     //the idea is that all trips will converge on union station
+      const unionIdxIn = 2;                                             //and then all trips will the diverge from union station
+      if(arr2 === "N"){
+        givenIdxOutbound = this.en.indexOf(str2);
+        unionIdxOut = 1;
+      }else if(arr2 === "L"){
+        //console.log("print me" + this.el.indexOf(str2));
+        givenIdxOutbound = this.el.indexOf(str2);
+        unionIdxOut = 2;
+      }else{
+        givenIdxOutbound = this.six.indexOf(str2);
+        unionIdxOut = 1;
+      }
+      this.converge(givenIdxInbound,unionIdxIn,arr,arr2,givenIdxOutbound,unionIdxOut);
+    }else{
+      const givenIdxInbound = this.six.indexOf(str);
+      const unionIdxIn = 1;
+      if(arr2 === "N"){
+        givenIdxOutbound = this.en.indexOf(str2);
+        unionIdxOut = 1;
+      }else if(arr2 === "L"){
+        //console.log("print me" + this.el.indexOf(str2));
+        givenIdxOutbound = this.el.indexOf(str2);
+        unionIdxOut = 2;
+      }else{
+        givenIdxOutbound = this.six.indexOf(str2);
+        unionIdxOut = 1;
+      }
+      this.converge(givenIdxInbound,unionIdxIn,arr,arr2,givenIdxOutbound,unionIdxOut);
 
+      return mta.tripArray;                                     //The return statement returns the array to the console
+
+    }
+//  console.log(this.en[1]);
+},
   converge: function(givenIdxIn,unionIdxIn,arr,arr2,givenIdxOut,unionIdxOut){   //In converge I collected all the indexes I sorted in
-    //let travelTime = 0;
     if(givenIdxIn < unionIdxIn){                                                //planning the trip planTrip()
       for(let i = givenIdxIn; i <= unionIdxIn; i++){                            //I tested if the indexes were smaller or greater than
-        if(i === unionIdxIn){
-          this.tripTime = this.tripTime + 5;
-          //this.tripArray.push(this.arrays[arr][i]);
-          //console.log(`Array Time: ${this.timeArrays[arr][i]} Trip Time: ${this.tripTime}`);                                                 //unions index. I then looped through them to converge on
-          this.diverge(givenIdxOut,unionIdxOut,arr2);                          //union station. Each iteration of the loop tested to see
+        if(i === unionIdxIn){                                                   //unions index. I then looped through them to converge on
+          this.diverge(givenIdxOut,unionIdxOut,arr2);                           //union station. Each iteration of the loop tested to see
         }                                                                       //if we were at union station. If not I called a function
         else{                                                                   //that would print the station to the tripArray[];
-          this.tripArray.push(this.arrays[arr][i]);
-          //console.log(`Array Time: ${this.timeArrays[arr][i]} Trip Time: ${this.tripTime}`);                                       //Once we arrived at union station I called the diverge
-          this.tripTime = this.tripTime + this.timeArrays[arr][i];
+          this.arrayPrint(arr,i);                                               //Once we arrived at union station I called the diverge
         }                                                                       //function.
       }                                                                         //The function tested both an assending case and a desending
     }                                                                           //case to converge on union station.
     else if(givenIdxIn > unionIdxIn){
       for(let i = givenIdxIn; i >= unionIdxIn; i--){
         if(i === unionIdxIn){
-          this.tripTime = this.tripTime + 5;
           this.diverge(givenIdxOut,unionIdxOut,arr2);
         }
         else{
-          this.tripArray.push(this.arrays[arr][i]);
-          this.tripTime = this.tripTime + this.timeArrays[arr][i-1];
+          this.arrayPrint(arr,i);
         }
       }
+    }else{
+      this.diverge(givenIdxOut,unionIdxOut,arr2);
     }
   },
   diverge:function(givenIdxOut,unionIdxOut,arr2){                       //Once converged on the union station it is time to diverge to
       if(givenIdxOut > unionIdxOut){                                    //the destination. The diverge was similar to the converge
         for(let i = unionIdxOut; i <= givenIdxOut; i++){                //it tested the direction to go and then looped through the
-          this.tripArray.push(this.arrays[arr2][i]);
-          if(givenIdxOut !== i){
-            this.tripTime = this.tripTime + this.timeArrays[arr2][i];
+          if(i === givenIdxOut){                                        //stations to get to the destination. All the while printing to
+            this.arrayPrint(arr2,i);                                    //the tripArray.
+          }
+          else{
+            this.arrayPrint(arr2,i);
           }
         }
       }else if(givenIdxOut < unionIdxOut){
         for(let i = unionIdxOut; i >= givenIdxOut; i--){
-          this.tripArray.push(this.arrays[arr2][i]);
-          if(givenIdxOut !== i){
-            this.tripTime = this.tripTime + this.timeArrays[arr2][i];
+          if(i === unionIdxOut){
+            this.tripArray.push("union square");
+          }
+          else{
+            this.arrayPrint(arr2,i);
           }
         }
       }
   },
-  singleLineTrip:function(str,str2,arr){                                           //The single trip                                                                  // tested to check the line the trip will be on
-    if(str < str2){
-      //this.indexStart(str,str2,arr)
-      for(let i = str; i <= str2; i++){    //sorted the indexes of the arrays so that it could
-        if((str2) !== (i)){
-          this.tripTime = this.tripTime + this.timeArrays[arr][i];
-        }
-      };
+  singleLineTrip:function(str,arr,str2,arr2){                                           //The single trip
+    if(arr === "N"){                                                                    // tested to check the line the trip will be on
+      for(let i = this.indexStart(str,str2) -1 ; i <= this.indexEnd(str,str2); i++){    //sorted the indexes of the arrays so that it could
+        this.tripArray.push(this.en[i]);                                                //always capture lower to highest. Used indexStart
+      }                                                                                 //and indexEnd to test sort the values.
+    }else if(arr = "L"){                                                                //looped through the array to print the stations in
+      for(let i = this.indexStart(str,str2)-1; i <= this.indexStart(str,str2); i++){    //tripArray.
+        this.tripArray.push(this.el[i]);
+      }
     }else{
-      for(let i = this.indexEnd(str,str2); i >= this.indexStart(str,str2); i--){    //sorted the indexes of the arrays so that it could
-        this.tripArray.push(this.arrays[arr][i]);
-        if((this.indexEnd(str,str2)) !== i){
-          this.tripTime = this.tripTime + this.timeArrays[arr][i];
-        }
-      };
-    };                                          //always capture lower to highest. Used indexStart
+      for(let i = this.indexStart(str,str2)-1; i <= this.indexStart(str,str2); i++){
+        this.tripArray.push(this.six[i]);
+      }
+    }
   },
   indexStart: function(idx1,idx2){
     if(idx1 > idx2){
@@ -174,32 +177,32 @@ You must travel through the following stops on the ${arr} line:\n`;
       return idx2;
     }
   },
-  timeConvert: function(min){
-    if(min > 60){
-      const time = `${Math.floor(min / 60)}h ${(min % 60)}min`;
-      return time;
+  arrayPrint: function(str,idx){                                                //the print array using subway line array and the index of
+    if(str === "N"){                                                            //the station to be printed. Tested the array
+      this.tripArray.push(this.en[idx]);                                         //and printed the right index value to the tripArray.
+    }else if(str === "L"){
+      this.tripArray.push(this.el[idx]);
     }else{
-      const time = `${min}min`;
-      return time;
+      this.tripArray.push(this.six[idx]);
     }
   },
- };
+};
 
 console.log(`
 <<<<<New York subway lines - MTA>>>>>
 
-The N (0) Line Stations:
+The N Line Stations:
 8th, union square, 23rd, 28th, 34th, times square
 
-The L (1) Line Stations:
+The L Line Stations:
 1st, 3rd, union square, 6th, 8th
 
-The SIX (2) Line Stations:
+The SIX Line Stations:
 astor place, union square, 23rd, 28th, 33rd, grand central
 
 To plan a trip use the console to and call:
 planTrip(Departure Station,Subway Line,Arrival Station, Subway Line);
   `);
 
- mta.planTrip("34th",0,"8th",0);
+mta.planTrip("8th","N","times square","N");
 //end of file ---
