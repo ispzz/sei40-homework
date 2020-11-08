@@ -1,41 +1,98 @@
-console.log("The local result is:" + localResult);
+# Geometry Function Lab
+
+### Part 1, Rectangle
+
+const isSquare = { name: "rectangle" };
+const notSquare = rectangle;  // Assigns rectangle object reference to notSquare
+​
+​// Here isSquare and notSquare are pointing to same object
+isSquare == notSquare;
+// => true
+isSquare === notSquare;
+// => true
+
+const areaofrectangle = function ( length, width ) {
+const localResult = length * width;
+console.log( "The local result is: " * localResult );
 }
 
-squareNumber(3);
-console.log(localResult); //9
+​multiplyNumbers( 4, 4 );
+// => "The local result is 16"
+// Great. This worked, but...
+​​console.log( localResult );
 
-const squareNumber(num1) = function(num1) {
-return num1**2;
+// => undefined
+// This returned 'undefined' because localResult is defined inside the multiplyNumbers()
+//function - we can't see/use localResult "outside" of the multiplyNumbers function.
+
+const perimeterofrectangle = function (length, width ) {
+const localResult = 2*(length+width);
+console.log( "The local result is:" * 2 localResult);
 }
 
+ (4,4);
+ // => "The result is 16"
+//Great. This worked, but...
+console.log(...Result );
 
-halfNumber(5);
-console.log(localResult); //2.5
-}
-const halfNumber(num1) = function(num1/2) {
-  return num1/2;
+// => undefined
+// This returned
+//function -
+
+```javascript
+const rectangle = {
+  length: 4,
+  width: 4
+};
+```
+
+In other words, these functions should take as their only argument a single object with the same keys (length, width) as the rectangle object above, and use that object to make the calculations.
+
+
+### Part 2, Triangle
+
+Triangle.isEquilateral(tri); // Returns an array of all the keys in the specified object.
+Triangle.notEquilateral(tri); // So does this
+​
+​const triangle = {
+  sideA: 3,
+  sideB: 4,
+  sideC: 4
+};​
+​
+//we use bracket notation to get value
+triangle.isEquilateral = function() {
+  if(this.sideA == this.sideB && this.sideB == this.sideC){
+    return "This is equilateral!";
+  } else {
+    return "This is not equilateral.";
+  }
 }
 
-function percentOf(num2)
-let localResult = num1/100 * num2;
-
-percentOf(4)
-console.log("The local result is:" + localResult);
-//2}
-const percentOf(num1) = function(num1) {
-return num1/100*2;
+triangle.isIsosceles = function() {
+  if(this.sideA == this.sideB && this.sideB == this.sideC) {
+    return "This is equilateral, not isosceles.";
+  } else if (this.sideA == this.sideB || this.sideA == this.sideC || this.sideB == this.sideC){
+    return "This is isosceles!";
+  } else {
+    return "This is scalene.";
+  }
 }
 
-function areaOfCircle(the radius) = function (the radius)
-let localResult = Pi*radius**2;
-
-console.log("The local result is:" + localResult);
-}
-const areaOfCircle(the radius) = function (the radius) {return Pi*radius**2;}
-areaOfCircle(2);
-console.log(localResult); //12.566370614359172
+triangle.area = function() {
+  s = (this.sideA + this.sideB + this.sideC)/2;
+  return Math.sqrt(s * (s - this.sideA) * (s - this.sideB) * (s - this.sideC));
 }
 
-const areaOfCircle(the radius) = function(the radius) {
-  return Pi*radius**2;
+triangle.isObtuse = function() {
+  a = this.sideA ^ 2;
+  b = this.sideB ^ 2;
+  c = this.sideC ^ 2;
+  if (a + b < c || a + c < b || b + c < a) {
+    return "This is obtuse.";
+  } else {
+    return "This is not obtuse.";
+  }
 }
+
+console.log(triangle.isObtuse());
