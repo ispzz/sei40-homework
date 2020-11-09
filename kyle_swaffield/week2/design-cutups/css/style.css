@@ -1,6 +1,3 @@
-*{
-  border: 1px solid red;
-}
 
 .main{
   position:absolute;
@@ -25,9 +22,6 @@
   text-align: center;
 }
 
-img{
-  border: 1px dashed red;
-}
 
 .socialImg {
   margin: 10px;
