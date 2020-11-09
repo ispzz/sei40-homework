@@ -107,8 +107,7 @@ You must travel through the following stops on the ${arr} line:\n`;
           this.diverge(givenIdxOut,unionIdxOut,arr2);                          //union station. Each iteration of the loop tested to see
         }                                                                       //if we were at union station. If not I called a function
         else{                                                                   //that would print the station to the tripArray[];
-          this.tripArray.push(this.arrays[arr][i]);
-          //console.log(`Array Time: ${this.timeArrays[arr][i]} Trip Time: ${this.tripTime}`);                                       //Once we arrived at union station I called the diverge
+          this.tripArray.push(this.arrays[arr][i]);                     //Once we arrived at union station I called the diverge
           this.tripTime = this.tripTime + this.timeArrays[arr][i];
         }                                                                       //function.
       }                                                                         //The function tested both an assending case and a desending
@@ -143,7 +142,7 @@ You must travel through the following stops on the ${arr} line:\n`;
         }
       }
   },
-  singleLineTrip:function(str,str2,arr){                                           //The single trip                                                                  // tested to check the line the trip will be on
+  singleLineTrip:function(str,str2,arr){    //The singletrip     // tested to check the line the trip will be on
     if(str < str2){
       //this.indexStart(str,str2,arr)
       for(let i = str; i <= str2; i++){    //sorted the indexes of the arrays so that it could
