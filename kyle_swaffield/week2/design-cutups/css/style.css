@@ -1,0 +1,34 @@
+*{
+  border: 1px solid red;
+}
+
+.main{
+  position:absolute;
+  top:40px;
+  left:72px;
+  right:190px;
+}
+.middle{
+  position: relative;
+  top:17px;
+  bottom:auto;
+}
+
+.space{
+  position: relative;
+  top:5px;
+}
+
+#social{
+  position: relative;
+  top:5px;
+  text-align: center;
+}
+
+img{
+  border: 1px dashed red;
+}
+
+.socialImg {
+  margin: 10px;
+}
