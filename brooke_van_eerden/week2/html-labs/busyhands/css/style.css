@@ -1,0 +1,64 @@
+h4 {
+  text-align: center;
+  width: auto;
+  margin-top: 100px;
+  background-color: black;
+  color: white;
+  display: inline;
+  padding: 100px;
+
+}
+img{
+  display: inline;
+
+}
+
+body{
+  text-align: center;
+  display: inline;
+}
+
+#socials{
+margin-left: 225px
+display:inline;
+padding-top: 100px;
+background-position: 800px;
+
+}
+
+#socials:hover{
+
+}
+
+#logo{
+  margin-right: 205px;
+  padding-top: 100px;
+}
+
+p{
+  background-color: #808080d9
+  border: 2px solid black;
+  font-size: 14pt;
+
+}
+
+.cols{
+  box-shadow:  10px;
+}
+table{
+  align-content: center;
+  text-align: justify;
+  border: 5px solid black;
+  box-shadow:  10px;
+  margin: 0, 10px;
+
+}
+td{
+  border: 5px solid blue;
+  text-align: justify;
+  font-size: 14pt;
+}
+td img{
+  width: fill;
+  box-shadow:  10px;
+}
