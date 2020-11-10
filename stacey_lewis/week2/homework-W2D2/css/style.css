@@ -1,0 +1,46 @@
+* {
+  border: 1pt solid orange;
+}
+
+body {
+  font-family: Helvetica, sans-sans-serif;
+  background-color: black;
+  position: relative;
+  color: #AAAAAA;
+  margin: 20px auto;
+  max-width: 800px;
+  height: 600px;
+}
+
+div.sideNav {
+  background-color: lightgrey;
+  display: inline-block;
+  position: relative;
+  top: 0px;
+  left: 20px;
+  width: 40px;
+  height: 600px;
+  margin: 0;
+}
+
+div.sideImage {
+  background-color: grey;
+  position: relative;
+  display: inline-block;
+  top: 0px;
+  left: 40px;
+  width: 300px;
+  height:700px;
+  margin: 0;
+}
+
+article.content {
+  background-color: lightgrey;
+  display: inline-block;
+  position: relative;
+  top: 25px;
+  left: 10px;
+  width: 400px;
+  height:650px;
+  margin: 0;
+}
