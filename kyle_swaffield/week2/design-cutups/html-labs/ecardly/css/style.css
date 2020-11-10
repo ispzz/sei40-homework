@@ -29,6 +29,7 @@ Developer @GA in NYC
 
 body {
   background-color: grey;
+  margin: auto;
 }
 
 .banner {
@@ -40,8 +41,9 @@ body {
   margin-right: auto;
 }
 
-.logo{
-  position: absolute;
+#logo{
+  position: relative;
+  top: 50px;
   border: 1px red dashed;
 }
 
@@ -51,6 +53,13 @@ body {
 
 .centerBlock{
   background-color: white;
-  margin:auto;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 50px;
   vertical-align: middle;
+  max-width: 1000px;
+}
+td{
+  padding: 5px;
 }
