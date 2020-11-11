@@ -71,6 +71,14 @@
   padding-right: 50px;
   vertical-align: top;
 }
+.contentN{
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 50px;
+  padding-right: 50px;
+  vertical-align: top;
+}
 .content p{
   text-align: justify;
 }
@@ -84,7 +92,9 @@
   padding-left: 30px;
   vertical-align: text-top;
 }
-
+.sideArticle h3{
+  padding: 10px;
+}
 .smallArticle{
   /* border: 1px yellow solid; */
 }
@@ -102,6 +112,10 @@
 }
 .main{
   background-color: lightgrey;
+}
+.mainN{
+  background-color: lightgrey;
+  height: 100vh;
 }
 a{
   text-decoration: none;
