@@ -127,65 +127,11 @@ const catWalk = function(){
       walk = true;
     }, 4500);
   }
-}
+}; // catWalk()
 
 
 const scene = function(){
   const catPositionID = setInterval(catWalk, 12);
-
-
 };
 
 scene();
-
-// const sceneID = setInterval(scene, 50000);
-// const catPositionID = setInterval(function(){
-
-
-
-//
-//
-//   // middle
-//   if (catPosition === ((viewportWidth - catWidth)/2)){
-//     const flicker = setInterval(function() {
-//       clearInterval(catPositionID);
-//       // container.style.background ='rgba(0,0,0,'+Math.abs(Math.sin(offset))+')';
-//       // offset += 0.01;
-//       // container.style.backgroundColor = 'black';
-//       // cat.style.opacity = '0';
-//
-//       // setTimeout(function() {
-//       //   clearInterval(flicker);
-//       // }, 3000)
-//     }, 1)
-//
-//     container.style.background = 'blue';
-//
-//
-//     // cat.style.opacity = '0';
-//     // eyes.style.opacity = '1';
-//     // console.log('Center found');
-//   }
-//
-//
-//
-//
-//
-//   // Cat reached the middle
-//   // if ((catPosition === (viewportWidth-catWidth)/2) && (laps > 2)){
-//   //   const flicker = setInterval(function() {
-//   //     container.style.backgroundColor = 'black';
-//   //     cat.style.opacity = '0';
-//   //     eyes.style.opacity = '1';
-//   //     console.log('Center found');
-//   //
-//   //     // Go back to showing cat
-//   //     setTimeout(function() {
-//   //       cat.style.opacity = '1';
-//   //       eyes.style.opacity = '0';
-//   //       container.style.backgroundColor = 'white';
-//   //       clearInterval(flicker);
-//   //     }, 3000)
-//   //   }, 10)
-//   // }
-// }, 12); // setInterval
