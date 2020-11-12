@@ -1,5 +1,5 @@
 body{
-  border: 2px solid blue;
+  border: 2px solid rgb(30, 173, 193);
   height: 940px;
 }
 #t1{
@@ -12,3 +12,10 @@ body{
   left:45%;
   width: 100px;
 }
+
+/* #middle{
+  position:relative;
+  top:35%;
+  left:45%;
+  width: 100px;
+} */
