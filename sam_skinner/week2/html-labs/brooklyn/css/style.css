@@ -59,15 +59,17 @@ img {
 }
 
 #pressRibbon {
-  display: inline-block;
+  /* display: inline-block; */
   text-align: center;
   max-width: 960px;
   margin: 0 auto;
+  border: 1px solid red;
 }
 
 #pressRibbon img {
   border: 5px solid rgba(128, 128, 128, 0.41);
   max-width: 220px;
+  margin: 0 3px;
 }
 
 #para1{
