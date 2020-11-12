@@ -1,0 +1,71 @@
+body{
+  background-color: lavender;
+  font-family: Helvetica, sans-serif;
+}
+
+div.inlineExample {
+  border: 1px solid red;
+  display: inline;
+}
+
+div.blockExample {
+  border: 1px solid violet;
+  width: 70%;
+}
+
+div.inlineBlockExample {
+  display: inline-block;
+  border: 1px solid blue;
+  width: 70%;
+}
+
+div.displayNoneExample {
+  display: none;
+}
+
+div.visibilityHiddenExample {
+  visibility: hidden;
+}
+
+.box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.staticExample {
+  position: static;
+}
+
+.relativeExample {
+  position: relative;
+  left: 50px;
+}
+
+.absoluteExample {
+  position: absolute;
+}
+
+.parentOfAbsolute {
+  position: relative;
+}
+
+.fixedExample {
+  position: fixed;
+  top: 200px;
+  right: 0;
+}
+
+/* A rule for browsers with a max width up to 400px */
+@media screen and (max-width: 400px){
+
+  .inlineExample {
+    display: block !important;
+    font-weight: bold;
+  }
+
+}

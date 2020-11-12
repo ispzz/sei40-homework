@@ -1,0 +1,73 @@
+body {
+
+}
+
+#catWalker {
+  margin-top: 22%;
+}
+
+#catDancer {
+  margin-top: 15%;
+  margin-left: 30%;
+  max-width: 15%;
+}
+
+#dogWalker {
+  transform: scale(-1,1);
+  margin-top: 20%;
+  max-width: 15%;
+}
+
+#dogDancer {
+  transform: scale(-1,1);
+  margin-top: 20%;
+  margin-left: 45%;
+  max-width: 25%;
+}
+
+#catWalker:hover {
+  transform: scale(-1,1);
+}
+
+#dogGroupie {
+  top: 10px;
+  right: 20px;
+  max-width: 10%;
+}
+
+#catGroupie {
+  top: 10px;
+  left: 20px;
+  max-width: 10%;
+}
+
+#catGuitarist {
+  top: 10px;
+  left: 800px;
+  margin: 0 auto;
+  max-width: 20%;
+}
+
+#dogGuitarist {
+  top: 10px;
+  right: 600px;
+  max-width: 20%;
+  max-height: 30%;
+  transform: scale(-1,1);
+}
+
+#catYogi {
+  top: 10px;
+  right: 1000px;
+  max-width: 20%;
+  max-height: 30%;
+}
+
+#lukopsy {
+  visibility: hidden;
+  margin: 0 auto;
+}
+
+body {
+  background-color: ;
+}
