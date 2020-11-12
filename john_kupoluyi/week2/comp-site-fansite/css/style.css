@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  margin-top: 30px;
+}
+
+header .logo {
+  flex: auto;
+  padding: 10px;
+}
+
+header p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 0.8em;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  padding: 20px;
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  border-bottom: 5px solid #000;
+  padding-bottom: 15px;
+}
+
+.container.hero {
+  position: relative;
+}
+
+.container.hero img {
+  width: 100%;
+}
+
+.hero .headline {
+  position: absolute;
+  color: #fff;
+  top: 35%;
+  left: 50px;
+}
+
+.headline h1, .headline h3 {
+  margin: 0;
+}
+
+.headline h1 {
+  font-size: 3.5em;
+  text-shadow: 2px 2px #000;
+  color: #fff;
+}
+
+.headline h3 {
+  font-size: 1.48em;
+  margin-top: -10px;
+  background:#000;
+  color: grey;
+  display: inline-block;
+}
+
+.content{
+  margin-top: 45px;
+  text-align:justify;
+  line-height: 24px;
+  font-weight: 300;
+}
+
+.content li {
+  padding: 0 20px;
+}
+
+.content div {
+  margin-bottom: 50px;
+}
+
+.content .last {
+  margin-bottom: 0;
+}
+
+.content h3 {
+  font-weight: 400;
+}
+
+.content blockquote {
+  border-left: 10px solid grey;
+  padding: 5px 20px;
+  background-color: lightgrey;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.content img {
+  box-shadow: 5px 5px lightgrey;
+}
+
+.content .left {
+  float: left;
+  margin: 20px 20px 5px 0;
+}
+
+.content .right {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+.quick-facts {
+  flex-shrink: 0;
+  flex-basis: 25%;
+}
+
+.sidebar div {
+  background-color: lightgrey;
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-weight: 300;
+}
+
+.sidebar p {
+  margin: 0;
+}
+
+.sidebar p:nth-of-type(1) {
+  color: grey;
+  font-weight: 400;
+}
+
+.video-wrapper {
+  background-color: lightgrey;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 15px 15px #000;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.nanosecond p {
+  margin: 0;
+  padding: 3px;
+  color: grey;
+}
+
+.trivia {
+  margin-top: 35px;
+  padding-top: 35px;
+  border-top: 1px solid lightgrey;
+}
+
+.trivia li {
+  padding: 0 20px;
+}
+
+.gh-wrapper{
+  max-width:940px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gh-screen {
+  position: absolute;
+  padding: 60px 30px 0;
+  color: #fff;
+  height: 205px;
+  background-color: rgba(23, 23, 23, 0.9);
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.gh-screen h1 {
+  margin: 0;
+}
+
+.gh-screen p {
+  margin: 0;
+}
+
+.gh-picture {
+  width: 1200px;
+  max-height:100px;
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+
+.gh-picture img {
+  height: 100px;
+}
+
+.biography {
+  margin-top: 30px;
+  padding: 0 20px;
+  border-top: 1px solid lightgrey;
+}
+
+.footer {
+  margin-top: 50px;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+}
+
+@media screen and (max-width: 769px){
+  header p {
+    font-size: 1.4em;
+  }
+
+  .hero .headline {
+    left: 20px;
+    top: 63%;
+  }
+
+  .headline h1 {
+    font-size: 2.5em;
+  }
+
+  .headline h3 {
+    font-size: 1.05em
+  }
+
+  .quick-facts {
+    display: none;
+  }
+
+  .gh-screen {
+    padding: 60px 20px 0;
+  }
+
+  ul.trivia {
+    display: block;
+  }
+
+  .trivia img {
+    width: 100%;
+  }
+}
