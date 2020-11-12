@@ -1,0 +1,28 @@
+
+.main{
+  position:absolute;
+  top:40px;
+  left:72px;
+  right:190px;
+}
+.middle{
+  position: relative;
+  top:17px;
+  bottom:auto;
+}
+
+.space{
+  position: relative;
+  top:5px;
+}
+
+#social{
+  position: relative;
+  top:5px;
+  text-align: center;
+}
+
+
+.socialImg {
+  margin: 10px;
+}

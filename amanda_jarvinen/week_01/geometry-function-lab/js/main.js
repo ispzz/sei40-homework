@@ -68,7 +68,7 @@ const triangle = {
 };
 
 const triangleTwo = {
-  sideA: 5,
+  sideA: 10,
   sideB: 6,
   sideC: 7
 };
@@ -122,3 +122,18 @@ const areaOfTriangle = function(tri){
 console.log(`Area is ${areaOfTriangle(triangle)}`); // Area is 5.562
 console.log(`Area is ${areaOfTriangle(triangleTwo)}`); // Area is 14.6969
 console.log(`Area is ${areaOfTriangle(triangleThree)}`); // Area is 1.73
+
+const isObtuse = function(tri){
+  const sqrtA = Math.pow(tri.sideA, 2);
+  const sqrtB = Math.pow(tri.sideB, 2);
+  const sqrtC = Math.pow(tri.sideC, 2);
+
+  if ((sqrtC > (sqrtA + sqrtB)) || (sqrtB > (sqrtA + sqrtC)) || (sqrtA) > (sqrtC + sqrtB)){
+    return true;
+  }
+  return false;
+}; // isObtuse();
+
+console.log(isObtuse(triangle)); // false
+console.log(isObtuse(triangleTwo)); // true
+console.log(isObtuse(triangleThree)); // false

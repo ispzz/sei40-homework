@@ -1,0 +1,132 @@
+/* * {
+  border: 1pt solid orange;
+} */
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: lavender;
+  margin: 0px auto;
+}
+
+header {
+  background-color: rgba(186, 186, 186, 0.3);
+  height: 60px;
+  top: 0;
+}
+
+div#content {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-20%,-50%);
+  text-align: center;
+  background-color: rgba(235, 233, 233, 0.66)
+}
+
+div.Hero {
+  background-color: lightgrey;
+  position: relative;
+  top: 20px;
+  width: 100%;
+  height: 60%;
+  margin: 0;
+}
+
+#heroImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+ul {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+li {
+  display: inline-block;
+   color: white;
+   padding: 0 20px;
+   text-align: centre;
+}
+
+li:hover {
+  text-decoration: underline;
+  color: purple;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.Hero {
+  font-style: italic;
+}
+
+footer {
+  background-color: rgba(186, 186, 186, 0.3);
+  height: 30px;
+  width: 100%;
+  margin-top: 100px;
+  bottom: 0px;
+}
+
+#copyright {
+  color: darkgrey;
+  position: relative;
+  top: 50%;
+  left: 47%;
+  text-align: centre;
+  font-size: 8pt;
+  padding: -30px 0 20px 0;
+}
+
+#defaultCanvas0 {
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+  margin: 0 auto;
+  border: 4px solid grey;
+  border-style: double;
+  padding: 20px;
+}
+
+#sketchHeading {
+  font-size: 16pt;
+  text-align: center;
+  padding: 10px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+p > a, #thesystemis {
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+#eyewriter, #quote, #artist{
+  text-align: center;
+  padding: 10px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+#artist, #thesystemis {
+  font-family: 'Architects Daughter', cursive;
+}
+
+@media (max-width:1200px){
+   #video{
+     width: 100%;
+   }
+}
+
+h4 {
+  position: relative;
+  top: 30px;
+  padding: 20px;
+  background-color: lightgrey;
+  margin: 0 auto;
+}
