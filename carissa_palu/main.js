@@ -1,71 +1,114 @@
-# JavaScript Bank
+console.log(NewYorkTripPlanner);
 
-In this homework, you'll create a basic `bank` in Javascript. The bank has many `accounts` and the following capabilities that you need to write.
+const $input = ('#N Line');
+function (N Line) = ('nameofStation')
+Let N Line = planTrip['N', 'Times Square', '34th', '28th', '23rd', 'Union Square', '8th']
+const startLine = allLines['N', 'Times Square', '34th', '28th', '23rd', 'Union Square', '8th']
+const nameofStations = [
+"N"
+"Times Square"
+"34th"
+"28th"
+"23rd"
+"Union Square"
+"8th"
+]
+for (let i=0; i<= stations.names; i++) {
+ const startingstation = station [ i ];
+ // console.log(`My #${i+1} choice is ${startingstation}`
+const suffixes = ['N','re', 'th', 'rd'];
 
-#### Bank
+ let acronyms;
+ if( i === 0){
+ let acronym = 'N';
+ console.log('Here', suffix);
+ } else if( i===1){
+ acronym = 're';
+ } else if( i ==2 ){
+ suffix = 'th';
+ else {
+ suffix = 'rd';
+ }
 
-There is only one bank. This bank is an object, which contains an array of accounts. The bank needs a method that will return the total sum of money in the accounts. It also needs an `addAccount` method that will enroll a new account at the bank and add it to the array of accounts. There is no need to create additional functions of the bank to delete accounts, etc.
 
-The bank has many accounts. Accounts should be objects that all share a set of common functionality.
 
-#### Accounts
 
-Accounts have a current balance and owner's name. You should be able to deposit or withdraw from an account to change the balance.
+) {
+ console.log(`${i}` +  " is even");
+}
+ else if (x % 2 === 0) {
+ console.log(`${x}` + " is even");
+ }
+ else {
+ console.log(`${x}` + " is odd");
+}
+}
 
-There is no need to write a user interface. Make sure functions return values -- you may also have your functions `console.log()` values to help you see your code working.
+const stops = allLines['N', 'Times Square', '34th', '28th', '23rd', 'Union Square', '8th']
+console.log("N line"):"You must travel through the following stops on the N line: Times Square,34th, 28th, 23rd, Union Square, 8th."
+ ,"Change at Union Square.", "Your journey continues through the following stops: 23rd, 28th, 33rd."
+ "6 stops in total."
+;
+const planTrip= ('N', 'Times Square', '34th', '28th, '23rd', 'Union Square' '8th')` (starting at Times Square)
+const.indexOf()=
+const.slice()=
+const singleLineTrip ()=('N', 'Times Square', '34th', '28th, '23rd', 'Union Square' '8th')
+const .reverse trip `planTrip = ('8th', 'Union Square', '23rd', '28th', '34th' 'Times Square', 'N')`
 
-You should write a basic story through a series of JavaScript commands that shows that the methods do indeed work as expected: add some accounts, show the total balance, make some deposits and withdrawals, show the new total balance.
+const input = ('#L Line');
+Let L Line = planTrip('L', '8th' , '6th' , 'Union Square', '3rd' , 1st );
+const startLine = ['L', '8th' , '6th' , 'Union Square', '3rd' , 1st ];
+const stops = ['L', '8th' , '6th' , 'Union Square', '3rd' , 1st ];
+console.log(L line):[("You must travel through the following stops on the L line: 8th, 6th, Union Square, 3rd, and 1st."
+  , "Change at Union Square.", "Your journey continues through the following stops: 23rd, 28th, 33rd."
+  ,"5 stops in total.")]
+  ```
+const `planTrip = ('L', '8th' , '6th' , 'Union Square', '3rd' , and 1st  )'` (starting at Times Square)
+const.indexOf()=
+const.slice()=
+const. singleLineTrip()=
+const .reverse trip `planTrip = ('1st', '3rd', 'Union Square', '6th', '8th', 'L')`
 
-### Tips
 
-Don't overthink this. Shorter code is probably the answer.
+const input = ('#6 Line');
+Let 6 Line planTrip('Grand Central', '33rd', '28th', '23rd', 'Union Square', and 'Astor Place');
+  console.log( 6 line): [("You must travel through the following stops on the 6 line:  'Grand Central','33rd', '28th', '23rd', 'Union Square', and 'Astor Place'."
+  , "Change at Union Square.", "Your journey continues through the following stops: 23rd, 28th, 33rd."
+  "6 stops in total." )]
+  ```
+const startLine = 'Grand Central', '33rd', '28th', '23rd', 'Union Square', and 'Astor Place')
+const stops ='Grand Central', '33rd', '28th', '23rd', 'Union Square', and 'Astor Place')
+const  `planTrip` = (`Grand Central', '33rd', '28th', '23rd', 'Union Square', and 'Astor Place')
+const.indexOf()=
+const.slice()=
+const. singleLineTrip()=
+const .reverse trip `planTrip` = ('Astor Place', 'Union Square', '23rd', '28th', '33rd', `Grand Central`)``
 
-## Bonus
 
-- Ensure that the accounts cannot have negative values.
-- Write a 'transfer' on the bank that allows you to transfer amounts between two accounts.
+const input = ('#city');
 
-## Additional
+const submit = ('#button');
 
-Begin exploring the [JavaScript Koans](https://github.com/liammclennan/JavaScript-Koans). Fork, clone and start trying them.
+const destination = ('#destination');
 
----
+const $container = ('.container');
 
-# Credit Card Validation
+const $venueDivs = [("#venue1"), ("#venue2"), ("#venue3"), ("#venue4"), ("#venue5")];
 
-You're starting your own credit card business. You've come up with a new way to validate credit cards with a simple function called validateCreditCard that returns true or false.
+var planner = NewYorkTripPlanner();
 
-Here are the rules for a valid number:
+var from = [{
+  name:
+}]
 
-- Number must be 16 digits, all of them must be numbers
-- You must have at least two different digits represented (all of the digits cannot be the same)
-- The final digit must be even
-- The sum of all the digits must be greater than 16
+var stops = [{
+  name: 'Time Square',
 
-The following credit card numbers are valid:
+  }
+}, {
+  name: 'Metropolitan Museum',
 
-- `9999-9999-8888-0000`
-- `6666-6666-6666-1666`
+  }
+}];
 
-The following credit card numbers are invalid:
-
-- `a923-3211-9c01-1112` invalid characters
-- `4444-4444-4444-4444` only one type of number
-- `1111-1111-1111-1110` sum less than 16
-- `6666-6666-6666-6661` odd final number
-
-## Example
-```
-validateCreditCard('9999-9999-8888-0000'); // Returns: true
-```
-
-*Hint*: Remove the dashed from the input string before checking if the input credit card number is valid.
-
-*Bonus*: Return an object indicating whether the credit card is valid, and if not, what the error is
-
-```
-{ valid: true, number: 'a923-3211-9c01-1112' }
-{ valid: false, number: 'a923-3211-9c01-1112', error: ‘wrong_length’ }
-```
-
-*Double Bonus*: Make your credit card scheme even more advanced! What are the rules, and what are some numbers that pass or fail? Ideas: check expiration date! Check out the Luhn Algorithm for inspiration.
+planner.plan(stops);
