@@ -1,39 +1,98 @@
-# The Cash Register
+# Geometry Function Lab
 
-Write a function called cashRegister that takes a shopping cart object.
-The object contains item names and prices (itemName: itemPrice).
-The function should return the total price of the shopping cart.
+### Part 1, Rectangle
 
-const cartForParty = {
-  mousse cake: "10.00",
-  watermelon:"5.00"
-  honeydew:"3.00"
-  rockmelon:"4.00"
-  strawberries: "4.00"
-  pawpaw: "8.00",
-  lemonade: "1.00",
-  mint: "3.00"
-  cranberry juice: "2.85",
-  passion fruit cheese cake slices: ""
+const isSquare = { name: "rectangle" };
+const notSquare = rectangle;  // Assigns rectangle object reference to notSquare
+​
+​// Here isSquare and notSquare are pointing to same object
+isSquare == notSquare;
+// => true
+isSquare === notSquare;
+// => true
+
+const areaofrectangle = function ( length, width ) {
+const localResult = length * width;
+console.log( "The local result is: " * localResult );
+}
+
+​multiplyNumbers( 4, 4 );
+// => "The local result is 16"
+// Great. This worked, but...
+​​console.log( localResult );
+
+// => undefined
+// This returned 'undefined' because localResult is defined inside the multiplyNumbers()
+//function - we can't see/use localResult "outside" of the multiplyNumbers function.
+
+const perimeterofrectangle = function (length, width ) {
+const localResult = 2*(length+width);
+console.log( "The local result is:" * 2 localResult);
+}
+
+ (4,4);
+ // => "The result is 16"
+//Great. This worked, but...
+console.log(...Result );
+
+// => undefined
+// This returned
+//function -
+
+```javascript
+const rectangle = {
+  length: 4,
+  width: 4
+};
+```
+
+In other words, these functions should take as their only argument a single object with the same keys (length, width) as the rectangle object above, and use that object to make the calculations.
+
+
+### Part 2, Triangle
+
+Triangle.isEquilateral(tri); // Returns an array of all the keys in the specified object.
+Triangle.notEquilateral(tri); // So does this
+​
+​const triangle = {
+  sideA: 3,
+  sideB: 4,
+  sideC: 4
+};​
+​
+//we use bracket notation to get value
+triangle.isEquilateral = function() {
+  if(this.sideA == this.sideB && this.sideB == this.sideC){
+    return "This is equilateral!";
+  } else {
+    return "This is not equilateral.";
   }
 }
-Output
 
+triangle.isIsosceles = function() {
+  if(this.sideA == this.sideB && this.sideB == this.sideC) {
+    return "This is equilateral, not isosceles.";
+  } else if (this.sideA == this.sideB || this.sideA == this.sideC || this.sideB == this.sideC){
+    return "This is isosceles!";
+  } else {
+    return "This is scalene.";
+  }
+}
 
+triangle.area = function() {
+  s = (this.sideA + this.sideB + this.sideC)/2;
+  return Math.sqrt(s * (s - this.sideA) * (s - this.sideB) * (s - this.sideC));
+}
 
-Example
+triangle.isObtuse = function() {
+  a = this.sideA ^ 2;
+  b = this.sideB ^ 2;
+  c = this.sideC ^ 2;
+  if (a + b < c || a + c < b || b + c < a) {
+    return "This is obtuse.";
+  } else {
+    return "This is not obtuse.";
+  }
+}
 
-```
-// Input
-const cartForParty = {
-  banana: "1.25",
-  handkerchief: ".99",
-  Tshirt: "25.01",
-  apple: "0.60",
-  nalgene: "10.34",
-  proteinShake: "22.36"
-};
-
-// Output
-cashRegister(cartForParty); // 60.55
-```
+console.log(triangle.isObtuse());
