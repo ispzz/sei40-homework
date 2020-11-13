@@ -1,0 +1,68 @@
+/*
+
+## Style Hints:
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+
+* {
+border: 2px solid red;
+padding: 0px 0px 0px 80px
+
+
+.header {
+  padding: 3px;
+  text-align: center;
+  background: black;
+  color: white;
+  font-size: 7px;
+}
+
+#busyhands {
+    float:left;
+    width:30%;
+}
+
+#social {
+    float:right;
+    width:60%;
+}
+
+#mainImage {
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+}
+
+#shadow {
+  padding: 0px 0px 0px 80px
+}
+
+#container {
+  -moz-box-shadow:    inset 0 0 4px #000000;
+    -webkit-box-shadow: inset 0 0 4px #000000;
+    box-shadow:         inset 0 0 4px #000000;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  position: center
+}
