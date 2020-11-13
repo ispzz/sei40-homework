@@ -20,15 +20,23 @@ console.log('Homework 6 Js Loaded!');
 // You should write a basic story through a series of JavaScript commands that shows
 // that the methods do indeed work as expected:
 
-const javaBank =[
-    { accName: 'Andy',  accBalance: 300, },
-    { accName: 'Alice', accBalance: 600, },
-    { accName: 'Allen', accBalance: 400, }
-  ];
+const javaBank = {
 
-for(let i = 0; i < javaBank.length;i++){
-    console.log (javaBank[i]);
-}
+    accounts: [
+    { accName: 'Andy',  accBalance: 310.56, },
+    { accName: 'Alice', accBalance: 625.71, },
+    { accName: 'Allen', accBalance: 40.27   }
+
+  ],
+
+  getBankGrandTotal: function (){
+
+    // console.log(`in getBankGrandTotal()`);
+
+for(let i = 0; i < this.accounts.length; i++){
+    console.log (this.accounts[i]);
+  }
+},
 
 // add some accounts, show the total balance,
 
