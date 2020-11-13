@@ -62,12 +62,12 @@ const mta = {
 
   //methods
   sliceStations: function(startLine, startStation, endLine, endStation) {
-    const startPosition = this[startLine].indexOf(startStation) + 1;
-    const endPosition = this[endLine].indexOf(endStation) + 1;
+    const startPosition = this[startLine].indexOf(startStation);
+    const endPosition = this[endLine].indexOf(endStation);
     if(endPosition > startPosition) {
-    return this[startLine].slice(startPosition, endPosition);
+    return this[startLine].slice(startPosition + 1, endPosition + 1);
     } else {
-    return this[startLine].slice(startPosition, endPosition).reverse();
+    return this[startLine].slice(startPosition - 1, endPosition - 1).reverse();
     }
   }, //sliceStations()
 

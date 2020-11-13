@@ -1,36 +1,38 @@
-console.log('Get your cat groove on!');
+console.log('Get your kitty groove on!');
 
-const catImg = document.querySelector('img#catWalk');
-const catRave = document.querySelector('img#catRave');
-catImg.style.left = '0px';
-catImg.style.top = '500px';
-catImg.style.transform = '0';
-catImg.style.display = 'inline';
-catRave.style.display = 'none';
-catRave.style.top = '500px';
+const $catImg = $('img#catWalk');
+const $catRave = $('img#catRave');
+
+$catImg.css('left', '0px');
+$catImg.css('top', '500px');
+$catImg.css('transform', '0');
+$catImg.css('display', 'inline');
+$catRave.css('display', 'none');
+$catRave.css('top', '500px');
 
 
 let lapCount = 0;
-let pos = parseInt(catImg.style.left);
+let pos = parseInt($catImg.css('left'));
 let secondCount = 0;
+let middleActive = 0;
 
 
 const runCatRun = function() {
   setInterval(function() {
     //cat runs to the right edge
-    if((innerWidth - 250 > parseInt(catImg.style.left)) && (lapCount % 2 === 0)) {
+    if((innerWidth - 250 > parseInt($catImg.css('left'))) && (lapCount % 2 === 0)) {
     pos += 10;
-    catImg.style.left = pos + 'px';
-  } else if (parseInt(catImg.style.left) > 700 && secondCount === 0) {
+    $catImg.css('left', pos + 'px');
+  } else if (parseInt($catImg.css('left')) > 700 && secondCount === 0) {
       // debugger;
       //cat turns to run up the right side
-      catImg.style.transform = 'rotate(270deg)';
+      $catImg.css('transform', 'rotate(270deg)');
       secondCount++;
     } else {
       //cat runs to the top edge
-      let catTop = parseInt(catImg.style.top);
+      let catTop = parseInt($catImg.css('top'));
       catTop -= 10;
-      catImg.style.top = catTop + 'px';
+      $catImg.css('top', catTop + 'px');
     }
   }, 20);
 }
@@ -40,50 +42,57 @@ const runCatRun = function() {
 const catMiddle = function() {
   //cat parties
   if(lapCount % 2 !== 0) {
-    catImg.style.display = 'none';
-    catRave.style.display = 'block';
-    catRave.style.left = pos - 250 + 'px';
+    clearInterval(catInterval);
+    $catImg.css('display', 'none');
+    $catRave.css('display', 'block');
+    $catRave.css('left', pos - 250 + 'px');
+    // debugger;
     setTimeout(function() {
-      catRave.style.display = 'none';
-      catImg.style.display = 'inline';
-    }, 1500);
-    pos -= 10;
-    catImg.style.left = pos + 'px';
-    return;
+      pos -= 10;
+      $catRave.css('display', 'none');
+      $catImg.css('display', 'inline');
+      $catImg.css('left', pos + 'px');
+      catAnimation();
+    }, 1000);
+
+    // pos -= 10;
+    // $catImg.css('left', pos + 'px');
+    // return;
     //cat runs
     } else {
-    catImg.style.left = pos + 10 + 'px';
+    $catImg.css('left', pos + 10 + 'px');
     runCatRun();
   }
 }
 
 
 
-
 const catWalk = function() {
   //check if cat in middle
-  if(Math.abs(((innerWidth - 250) / 2) - parseInt(catImg.style.left)) <= 10 && lapCount !== 0) {
+  if(Math.abs(((innerWidth - 250) / 2) - parseInt($catImg.css('left'))) <= 10 && lapCount !== 0) {
     catMiddle();
-    //move cat left
-  } else if((innerWidth - 250 > parseInt(catImg.style.left)) && (lapCount % 2 === 0)) {
-  pos += 10;
-  catImg.style.left = pos + 'px';
     //move cat right
-  } else if((innerWidth - 250 > parseInt(catImg.style.left)) && (lapCount % 2 !== 0) && parseInt(catImg.style.left) > 10) {
+  } else if((innerWidth - 250 > parseInt($catImg.css('left'))) && (lapCount % 2 === 0)) {
+    pos += 10;
+    $catImg.css('left', pos + 'px');
+    //move cat left
+  } else if(parseInt($catImg.css('left')) > 10 && (lapCount % 2 !== 0)) {
     pos -= 10;
-    catImg.style.left = pos + 'px';
+    $catImg.css('left', pos + 'px');
     //flip cat
-  } else if(parseInt(catImg.style.left) > 700) {
-    // console.log('am i here');
-    catImg.style.transform = 'scaleX(-1)';
+  } else if(parseInt($catImg.css('left')) > 700) {
+    $catImg.css('transform', 'scaleX(-1)');
     lapCount++;
     pos -= 1
-    catImg.style.left = pos + 'px';
-  } else if(parseInt(catImg.style.left) < 10) {
-    catImg.style.transform = 'scaleX(1)';
+    $catImg.css('left', pos + 'px');
+  } else if(parseInt($catImg.css('left')) < 10) {
+    $catImg.css('transform', 'scale(1)');
     lapCount++;
-    catImg.style.left = '0px';
+    $catImg.css('left', '0px');
   }
 }
-
-setInterval(catWalk, 50);
+const catInterval = setInterval(catWalk, 50);
+const catAnimation = function() {
+  catInterval;
+}
+catAnimation();
