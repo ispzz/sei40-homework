@@ -1,0 +1,80 @@
+h4 {
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+  background-color: black;
+  color: white;
+  display: inline;
+  padding-top: 100px;
+  vertical-align: bottom;
+border: 5px solid blue;
+
+}
+img{
+  display: inline;
+  width: 80%;
+  text-align: center;
+  margin-left: 100px;
+  padding-left: 50px;
+}
+
+body{
+  text-align: center;
+  display: inline;
+}
+
+#socials{
+padding-top: 100px;
+display:inline;
+margin-right: 100px;
+background-position: 800px;
+width:auto;
+
+}
+
+#socials:hover{
+
+}
+
+#logo{
+  margin-left: 0;
+  padding-right: 700px;
+  width:auto;
+}
+
+p{
+  background-color: #808080d9
+  border: 2px solid black;
+  font-size: 14pt;
+  width:80%;
+  text-align: justify;
+  margin-left: 150px;
+
+}
+#button{
+  float:right;
+}
+
+.cols{
+  box-shadow:  10px;
+}
+table{
+  /* align-content: center; */
+  /* text-align: justify; */
+  border: 5px solid black;
+  box-shadow:  10px;
+  margin: 0, 10px;
+
+}
+thead td{
+  font-size: 30px;
+}
+td{
+  border: 5px solid blue;
+  text-align: justify;
+  font-size: 14pt;
+}
+td img{
+  width: fill;
+  box-shadow:  10px;
+}
