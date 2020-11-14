@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ATM</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/atm.css">
+  </head>
+  <body>
+    <div id="content">
+      <div id="nav">
+        <div id="logo"><img src="img/ga.png" alt="Bank of GA"/></div>
+        <div id="title">Bank of GA</div>
+      </div>
+      <div class="notice"></div>
+      <div class="account-name extras">
+        <p style="display: inline;">Create a new Bank Account:</p>
+        <input id="name" type="text" placeholder="Account Name" />
+        <button id="createAccount">Create New Account</button>
+      </div>
+      <div class="account">
+        <p style="display: inline;">Choose a Bank Account:</p>
+        <select name="account" id="account-list">
+          <option value="null">Select an Account</option>
+        </select>
+      </div>
+      <div class="account" id="checkingAccount">
+        <h1>Checking</h1>
+        <div class="balance" id="checkingBalance">$0.00</div>
+        <input id="checkingAmount" type="text" placeholder="enter an amount" />
+        <input id="checkingDeposit" type="button" value="Deposit" />
+        <input id="checkingWithdraw" type="button" value="Withdraw" />
+      </div>
+      <div class="account" id="savingsAccount">
+        <h1>Savings</h1>
+        <div class="balance" id="savingsBalance">$0.00</div>
+        <input id="savingsAmount" type="text" placeholder="enter an amount" />
+        <input id="savingsDeposit" type="button" value="Deposit" />
+        <input id="savingsWithdraw" type="button" value="Withdraw" />
+      </div>
+      <div class="clear"></div>
+    </div>
+  </body>
+  <script src="js/jquery.js"></script>
+  <script src="js/atm.js"></script>
+  <<script src="js/client.js"></script>
+</html>
