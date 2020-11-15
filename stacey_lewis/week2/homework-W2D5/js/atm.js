@@ -94,7 +94,6 @@ const bank = {
     document.querySelector('#savingsAmount').value ="";
     // if (errorMsg === true) {
       //append note about no balance
-    }
   }, //updateHTML
 
 }; //end bank
