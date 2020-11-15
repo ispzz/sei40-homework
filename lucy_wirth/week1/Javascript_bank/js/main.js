@@ -28,22 +28,22 @@
 // ## Additional
 //
 // Begin exploring the [JavaScript Koans](https://github.com/liammclennan/JavaScript-Koans). Fork, clone and start trying them.
-Const bank = {
+const bank = {
 
-  accounts: [
-    { name: 'Bonnie': balance: 20 },
-    { name: 'Steve': balance: 100000 },
+accounts: [
+    { name: 'Bonnie', balance: 20 },
+    { name: 'Steve', balance: 100000 },
   ],
+  getBankGrandTotal: functions(){
 
-  addAcount: function( name ){
+    for( let 1 = 0; i < this.accounts.length ; i++){
+      console.log(this.accounts[i]);
+    }
+  },
+};
+  for (var i = 0; i < array.length; i++) {
+    array[i]
+  }
+const bank =  function functionName() {
 
-  }, // addAcount()
-​
-  deposit: function( name, amount ){
-
-  }, // deposit()
-​
-  // etc...
-
-}; // bank
-Collapse
+}
