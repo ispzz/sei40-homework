@@ -3,7 +3,7 @@ const name = 'Emily';
 let checkingAmount = 0;
 let savingsAmount = 0;
 
-$(document).ready(function(){
+
 
   // Update display colour to red if balance is $0 otherwise grey
   const updateBackground = function(accountType){
@@ -22,7 +22,7 @@ $(document).ready(function(){
     }
   }; // updateBackground()
 
-  const updateDisplay = function(accountType){
+  const updateAccountDisplay = function(accountType){
     const balance = bank.checkAccountBalance(name, accountType);
 
     if (accountType === 'savings'){
@@ -34,16 +34,19 @@ $(document).ready(function(){
     $(`${accountID}`).text(`$${balance}`);
     updateBackground(accountType);
 
-  }; // updateDisplay()
+  }; // updateAccountDisplay()
+
+  const updateATMDisplay = function(){
+    updateAccountDisplay('savings');
+    updateAccountDisplay('checking');
+  }; // updateAccountDisplays()
 
   const createAccount = function(){
     bank.addAccount(name, savingsAmount, 'savings');
     bank.addAccount(name, checkingAmount, 'checking');
 
     // Display initial balance
-    updateDisplay('checking');
-    updateDisplay('savings');
-
+    updateATMDisplay();
   }; // createAccount()
 
   // Get value from input
@@ -53,8 +56,8 @@ $(document).ready(function(){
 
 
 
-
-  // DISPLAY LOGIC
+$(document).ready(function(){
+  // DISPLAY
   createAccount();
 
   // Get input value
@@ -68,26 +71,22 @@ $(document).ready(function(){
 
   // Deposit money
   $('#checkingDeposit').on('click', function(){
-    const updatedBalance = bank.deposit(name, parseInt(checkingAmount), 'checking');
-    updateDisplay('checking');
-    updateDisplay('savings');
+    bank.deposit(name, parseInt(checkingAmount), 'checking');
+    updateATMDisplay();
   });
   $('#savingsDeposit').on('click', function(){
-    const updatedBalance = bank.deposit(name, parseInt(savingsAmount), 'savings');
-    updateDisplay('checking');
-    updateDisplay('savings');
+    bank.deposit(name, parseInt(savingsAmount), 'savings');
+    updateATMDisplay();
   });
 
   // Withdraw money
   $('#checkingWithdraw').on('click', function(){
-    const updatedBalance = bank.withdraw(name, parseInt(checkingAmount), 'checking');
-    updateDisplay('checking');
-    updateDisplay('savings');
+    bank.withdraw(name, parseInt(checkingAmount), 'checking');
+    updateATMDisplay();
   });
   $('#savingsWithdraw').on('click', function(){
-    const updatedBalance = bank.withdraw(name, parseInt(savingsAmount), 'savings');
-    updateDisplay('checking');
-    updateDisplay('savings');
+    bank.withdraw(name, parseInt(savingsAmount), 'savings');
+    updateATMDisplay();
   });
 
 });
