@@ -1,0 +1,7 @@
+{
+    "editor.renderLineHighlight": "none",
+    "editor.occurrencesHighlight": false,
+    "editor.quickSuggestionsDelay": 20,
+    "editor.quickSuggestions": false,
+    "editor.suggestOnTriggerCharacters": false
+}
