@@ -1,0 +1,29 @@
+
+header {
+      text-align: center;
+      background: url("http://i.imgur.com/ccYiJyZ.jpg");
+      background-size: cover;
+      color: white;
+    }
+    a {
+  color: white;
+}
+h1 {
+  font-size: 70px;
+}
+img {
+  margin: 40px 0px 0px 0px;
+  border: 7px solid white;
+  border-radius: 20px;
+}
+ul {
+   padding-left: 10px;
+   background: black;
+}
+li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+body{
+    font-family: Lobster;
+    }
