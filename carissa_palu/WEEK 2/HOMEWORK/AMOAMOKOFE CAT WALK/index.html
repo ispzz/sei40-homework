@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+   <head>
+    <meta charset="utf-8" />
+    <title>Amoamokofe Cat Walk</title>
+   </head>
+   <body>
+  <img style= "position:absolute; right: 0px;left: 0px; transform: scaleX(1);"src="http://www.anniemation.com/clip_art/images/cat-walk.gif">
+<img id ="AmoamokofeCat"/>
+<canvas id="myCanvas" width="10020" height="775"></canvas>
+<p>
+<button onclick="myMove()">Make me move</button>
+</p>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("AmoamokofeCat").animate({
+      left: '0,
+      opacity: '0.5',
+      height: '150px',
+      width: '150px'
+    });
+  });
+});
+</script>
+
+    <script>
+
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var x = 188;
+      var y = 30;
+      var width = 10020;
+      var height =  775;
+      var imageObj = new Image();
+
+      imageObj.onload = function() {
+        context.drawImage(imageObj, x, y, width, height);
+      };
+      imageObj.src = 'https://i.imgur.com/Qk6EKuw.jpg';
+
+
+
+    </script>
+
+   </body>
+  </html>

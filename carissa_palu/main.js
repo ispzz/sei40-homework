@@ -1,114 +1,98 @@
-console.log(NewYorkTripPlanner);
+# Geometry Function Lab
 
-const $input = ('#N Line');
-function (N Line) = ('nameofStation')
-Let N Line = planTrip['N', 'Times Square', '34th', '28th', '23rd', 'Union Square', '8th']
-const startLine = allLines['N', 'Times Square', '34th', '28th', '23rd', 'Union Square', '8th']
-const nameofStations = [
-"N"
-"Times Square"
-"34th"
-"28th"
-"23rd"
-"Union Square"
-"8th"
-]
-for (let i=0; i<= stations.names; i++) {
- const startingstation = station [ i ];
- // console.log(`My #${i+1} choice is ${startingstation}`
-const suffixes = ['N','re', 'th', 'rd'];
+### Part 1, Rectangle
 
- let acronyms;
- if( i === 0){
- let acronym = 'N';
- console.log('Here', suffix);
- } else if( i===1){
- acronym = 're';
- } else if( i ==2 ){
- suffix = 'th';
- else {
- suffix = 'rd';
- }
+const isSquare = { name: "rectangle" };
+const notSquare = rectangle;  // Assigns rectangle object reference to notSquare
+​
+​// Here isSquare and notSquare are pointing to same object
+isSquare == notSquare;
+// => true
+isSquare === notSquare;
+// => true
 
-
-
-
-) {
- console.log(`${i}` +  " is even");
-}
- else if (x % 2 === 0) {
- console.log(`${x}` + " is even");
- }
- else {
- console.log(`${x}` + " is odd");
-}
+const areaofrectangle = function ( length, width ) {
+const localResult = length * width;
+console.log( "The local result is: " * localResult );
 }
 
-const stops = allLines['N', 'Times Square', '34th', '28th', '23rd', 'Union Square', '8th']
-console.log("N line"):"You must travel through the following stops on the N line: Times Square,34th, 28th, 23rd, Union Square, 8th."
- ,"Change at Union Square.", "Your journey continues through the following stops: 23rd, 28th, 33rd."
- "6 stops in total."
-;
-const planTrip= ('N', 'Times Square', '34th', '28th, '23rd', 'Union Square' '8th')` (starting at Times Square)
-const.indexOf()=
-const.slice()=
-const singleLineTrip ()=('N', 'Times Square', '34th', '28th, '23rd', 'Union Square' '8th')
-const .reverse trip `planTrip = ('8th', 'Union Square', '23rd', '28th', '34th' 'Times Square', 'N')`
+​multiplyNumbers( 4, 4 );
+// => "The local result is 16"
+// Great. This worked, but...
+​​console.log( localResult );
 
-const input = ('#L Line');
-Let L Line = planTrip('L', '8th' , '6th' , 'Union Square', '3rd' , 1st );
-const startLine = ['L', '8th' , '6th' , 'Union Square', '3rd' , 1st ];
-const stops = ['L', '8th' , '6th' , 'Union Square', '3rd' , 1st ];
-console.log(L line):[("You must travel through the following stops on the L line: 8th, 6th, Union Square, 3rd, and 1st."
-  , "Change at Union Square.", "Your journey continues through the following stops: 23rd, 28th, 33rd."
-  ,"5 stops in total.")]
-  ```
-const `planTrip = ('L', '8th' , '6th' , 'Union Square', '3rd' , and 1st  )'` (starting at Times Square)
-const.indexOf()=
-const.slice()=
-const. singleLineTrip()=
-const .reverse trip `planTrip = ('1st', '3rd', 'Union Square', '6th', '8th', 'L')`
+// => undefined
+// This returned 'undefined' because localResult is defined inside the multiplyNumbers()
+//function - we can't see/use localResult "outside" of the multiplyNumbers function.
 
+const perimeterofrectangle = function (length, width ) {
+const localResult = 2*(length+width);
+console.log( "The local result is:" * 2 localResult);
+}
 
-const input = ('#6 Line');
-Let 6 Line planTrip('Grand Central', '33rd', '28th', '23rd', 'Union Square', and 'Astor Place');
-  console.log( 6 line): [("You must travel through the following stops on the 6 line:  'Grand Central','33rd', '28th', '23rd', 'Union Square', and 'Astor Place'."
-  , "Change at Union Square.", "Your journey continues through the following stops: 23rd, 28th, 33rd."
-  "6 stops in total." )]
-  ```
-const startLine = 'Grand Central', '33rd', '28th', '23rd', 'Union Square', and 'Astor Place')
-const stops ='Grand Central', '33rd', '28th', '23rd', 'Union Square', and 'Astor Place')
-const  `planTrip` = (`Grand Central', '33rd', '28th', '23rd', 'Union Square', and 'Astor Place')
-const.indexOf()=
-const.slice()=
-const. singleLineTrip()=
-const .reverse trip `planTrip` = ('Astor Place', 'Union Square', '23rd', '28th', '33rd', `Grand Central`)``
+ (4,4);
+ // => "The result is 16"
+//Great. This worked, but...
+console.log(...Result );
+
+// => undefined
+// This returned
+//function -
+
+```javascript
+const rectangle = {
+  length: 4,
+  width: 4
+};
+```
+
+In other words, these functions should take as their only argument a single object with the same keys (length, width) as the rectangle object above, and use that object to make the calculations.
 
 
-const input = ('#city');
+### Part 2, Triangle
 
-const submit = ('#button');
-
-const destination = ('#destination');
-
-const $container = ('.container');
-
-const $venueDivs = [("#venue1"), ("#venue2"), ("#venue3"), ("#venue4"), ("#venue5")];
-
-var planner = NewYorkTripPlanner();
-
-var from = [{
-  name:
-}]
-
-var stops = [{
-  name: 'Time Square',
-
+Triangle.isEquilateral(tri); // Returns an array of all the keys in the specified object.
+Triangle.notEquilateral(tri); // So does this
+​
+​const triangle = {
+  sideA: 3,
+  sideB: 4,
+  sideC: 4
+};​
+​
+//we use bracket notation to get value
+triangle.isEquilateral = function() {
+  if(this.sideA == this.sideB && this.sideB == this.sideC){
+    return "This is equilateral!";
+  } else {
+    return "This is not equilateral.";
   }
-}, {
-  name: 'Metropolitan Museum',
+}
 
+triangle.isIsosceles = function() {
+  if(this.sideA == this.sideB && this.sideB == this.sideC) {
+    return "This is equilateral, not isosceles.";
+  } else if (this.sideA == this.sideB || this.sideA == this.sideC || this.sideB == this.sideC){
+    return "This is isosceles!";
+  } else {
+    return "This is scalene.";
   }
-}];
+}
 
-planner.plan(stops);
+triangle.area = function() {
+  s = (this.sideA + this.sideB + this.sideC)/2;
+  return Math.sqrt(s * (s - this.sideA) * (s - this.sideB) * (s - this.sideC));
+}
+
+triangle.isObtuse = function() {
+  a = this.sideA ^ 2;
+  b = this.sideB ^ 2;
+  c = this.sideC ^ 2;
+  if (a + b < c || a + c < b || b + c < a) {
+    return "This is obtuse.";
+  } else {
+    return "This is not obtuse.";
+  }
+}
+
+console.log(triangle.isObtuse());
