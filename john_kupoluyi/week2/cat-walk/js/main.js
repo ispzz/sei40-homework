@@ -33,6 +33,7 @@ const confirmCatPosition = function(steps, direction){
       (direction === 'backward' && steps <= windowSize/2)){
     dancingCat();
   }
+  return;
 }
 
 const dancingCat = function(){
@@ -40,6 +41,7 @@ const dancingCat = function(){
   const newCat = setInterval(showDancingCat, 50);
   setTimeout(clearInterval(newCat), 10000);
   cat.src = originalCat;
+  return;
 }
 
 const showDancingCat = function(){
