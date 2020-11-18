@@ -7,4 +7,4 @@
 // ## Suggestions
 
 // - Start out by getting this working with discrete functions.
-// - If you feel comfortable with that, try to put all your functions, collections, etc, into an object.
+// - If you feel comfortable with that, try to put all your functions, collections, etc, into an object..
