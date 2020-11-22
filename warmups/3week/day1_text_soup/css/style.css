@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+  }
+  
+  #words {
+    display: none;
+  }
+  
+  .word {
+    font-size: 10pt;
+    color: white;
+    position: absolute;
+    /* display: none; */
+  }
