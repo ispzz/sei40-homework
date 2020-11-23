@@ -32,6 +32,7 @@ def display_main_menu
   puts "1: Calculator"
   puts "2: Mortgage Calculator"
   puts "3: BMI Calculator"
+  puts "4: Trip Calculator"
   puts "q: Quit"
   print "\nWhat would you like to use?  "
   gets.chomp
@@ -54,6 +55,7 @@ def main_menu
   when '1' then calculator
   when '2' then mortgage_calculator
   when '3' then bmi_calculator
+  when '4' then trip_calculator
   when 'q' then return
   else          puts "Pick a valid option"
   end # case
@@ -73,7 +75,7 @@ def display_calculator
   gets.chomp
 end # display_calculator
 
-# Calculator
+# CALCULATOR
 def calculator
   loop do
     operation = display_calculator
@@ -188,13 +190,42 @@ def calculate_bmi(height, weight)
   bmi = bmi.to_i
 end # calculate_bmi
 
-# Trip Calculator
-# Calculate a trip time and cost given inputs for
-#
-# distance
-# miles per gallon
-# price per gallon
-# speed in miles per hour
+# TRIP CALCULATOR
+def trip_calculator
+  puts "\nTrip Calculator: ".magenta
+
+  print "How far are you going (km)?  "
+  distance = gets.to_f
+
+  print "How fast do you travel (km/hr)?  "
+  speed_hour = gets.to_i
+
+  print "How many liters do you use per km?  "
+  km_liter = gets.to_f
+
+  print "How much do you pay per liter?  "
+  price_liter = gets.to_f
+
+  time = calculate_trip_time(distance, speed_hour)
+
+  cost = calculate_trip_cost(distance, km_liter, price_liter)
+
+  puts "\n----------------"
+  puts "Trip cost: $#{cost}.".blue
+  puts "Trip time: #{time} minutes.".blue
+  puts "----------------\n\n"
+
+  end_message
+end # trip_calculator
+
+def calculate_trip_time(distance, speed_hour)
+  (distance / speed_hour * 3600 / 60).round(0)
+end # calculate_trip_time
+
+def calculate_trip_cost(distance, km_liter, price_liter)
+  fuel = distance / km_liter
+  cost = (fuel * price_liter).round(2)
+end # calculate_trip_cost
 
 # WAKE UP CAL
 start_calculator
