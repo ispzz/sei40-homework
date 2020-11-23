@@ -11,3 +11,7 @@ def display_menu
   print "Which operation would you like to perform?  "
   gets.chomp
 end
+def getOperator
+  print "Enter a number: "
+  gets.to_f
+end
