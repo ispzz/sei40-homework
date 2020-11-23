@@ -15,36 +15,49 @@
 # Calculator should be able to do basic arithmetic (exponents, square roots)
 require 'colorize'
 
-
-# Display menu and retrieve inputs
+# Menus
 def display_title
-  puts "***********************"
+  puts "\n***********************"
   puts "  CALC the CALCULATOR   ".magenta
   puts "***********************\n\n"
+end
+
+def start_calculator
+  display_title
+  main_menu
 end
 
 def display_main_menu
   puts "Main Menu: ".magenta
   puts "1: Calculator"
   puts "2: Mortgage Calculator"
+  puts "3: BMI Calculator"
   puts "q: Quit"
-  print "\nWhat would you like to do?  "
+  print "\nWhat would you like to use?  "
   gets.chomp
-end
+end # display
+
+def end_message
+  puts "\nWould you like to return to the main menu (press 'm') or quit ('q')?"
+  selection = gets.chomp
+  if selection == 'q'
+    return
+  else
+      main_menu
+  end
+end # end_message
 
 def main_menu
-  display_title
-
   option = display_main_menu
 
   case option
   when '1' then calculator
-  # when '2' then mortgage_calculator
-when 'q' then return
+  when '2' then mortgage_calculator
+  when '3' then bmi_calculator
+  when 'q' then return
   else          puts "Pick a valid option"
-  end
-
-end
+  end # case
+end # main_menu
 
 def display_calculator
   puts "\nCalculator Menu: ".magenta
@@ -58,39 +71,9 @@ def display_calculator
   puts " "
   print "Which operation would you like to perform?  "
   gets.chomp
-end
+end # display_calculator
 
-
-def getOperator
-  print "Enter a number: "
-  gets.to_f
-end
-
-# Calculations
-def add(first_number, second_number)
-  first_number + second_number
-end
-
-def subtract(first_number, second_number)
-  first_number - second_number
-end
-
-def multiply(first_number, second_number)
-  first_number * second_number
-end
-
-def divide(first_number, second_number)
-  first_number / second_number
-end
-
-def exponent(first_number)
-  Math.exp(first_number)
-end
-
-def square_root(number)
-  Math.sqrt(number)
-end
-
+# Calculator
 def calculator
   loop do
     operation = display_calculator
@@ -121,15 +104,59 @@ def calculator
   end # loop
 end # calculator
 
-puts main_menu
+def getOperator
+  print "Enter a number: "
+  gets.to_f
+end # getOperator
 
-# Bonus
+def add(first_number, second_number)
+  first_number + second_number
+end # add
+
+def subtract(first_number, second_number)
+  first_number - second_number
+end # subtract
+
+def multiply(first_number, second_number)
+  first_number * second_number
+end # multiply
+
+def divide(first_number, second_number)
+  first_number / second_number
+end # divide
+
+def exponent(first_number)
+  Math.exp(first_number)
+end # exponent
+
+def square_root(number)
+  Math.sqrt(number)
+end # square_root
+
 # Mortgage Calculator
 # Calculate the monthly required payment given the other variables as input (look up the necessary variables)
-#
 # BMI Calculator
 # Calculate the body mass index (BMI) for an individual, given their height and weight
-#
+def bmi_calculator
+  puts "\nBMI Calculator: ".magenta
+  print "How much do you weigh (kg)?  "
+  weight = gets.to_f
+  print "How tall (m) are you?  "
+  height = gets.to_f
+  bmi = calculate_bmi(height, weight)
+
+  puts "\n----------------"
+  puts "Bmi = #{bmi}".blue
+  puts "----------------\n\n"
+
+  end_message
+end # bmi_calculator
+
+def calculate_bmi(height, weight)
+  bmi = weight/(height**2)
+  bmi = bmi.to_i
+end
+
 # Trip Calculator
 # Calculate a trip time and cost given inputs for
 #
@@ -137,3 +164,5 @@ puts main_menu
 # miles per gallon
 # price per gallon
 # speed in miles per hour
+
+start_calculator
