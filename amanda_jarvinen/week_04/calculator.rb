@@ -69,6 +69,7 @@ def display_calculator
   puts "/    : Division"
   puts "e    : Exponent"
   puts "sqrt : Square root"
+  puts "m    : Return to main menu"
   puts "q    : Quit calculator"
   puts " "
   print "Which operation would you like to perform?  "
@@ -83,6 +84,9 @@ def calculator
     if operation == 'q'
       puts "\n\n***********************"
       return " Thanks for using CALC\n".magenta
+    elsif operation == 'm'
+      main_menu
+      return
     elsif operation == 'sqrt' || operation =='e'
       first_number = getOperator
     else
