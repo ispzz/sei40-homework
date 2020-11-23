@@ -87,11 +87,11 @@ const bank = {
   },
 
   updateHTML: function () {
-    $('#balance2').html('$' + this.savingsBalance);
-    $('#balance1').html('$' + this.checkingBalance);
-    this.emptyAccountAlert();
-    document.querySelector('#checkingAmount').value ="";
-    document.querySelector('#savingsAmount').value ="";
+    $('#balance2').html('$' + this.savingsBalance); //update balance onscreen
+    $('#balance1').html('$' + this.checkingBalance);//update balance onscreen
+    this.emptyAccountAlert(); //change background colours
+    $('#checkingAmount').val(""); //reset form
+    $('#savingsAmount').val(""); //reset form
     // if (errorMsg === true) {
       //append note about no balance
   }, //updateHTML
@@ -102,10 +102,10 @@ const bank = {
 
 //click checking deposit
 $('#checkingDeposit').on('click', function (ev) {
-  const accountType = 'checking';
-  const $input = $('#checkingAmount').val();
-  bank.depositFunction($input,accountType);
-  bank.updateHTML();
+  const accountType = 'checking'; //set account using
+  const $input = $('#checkingAmount').val(); //retrieve the value
+  bank.depositFunction($input,accountType); //run function
+  bank.updateHTML(); //update screen
 });
 //click checking withdraw
 $('#checkingWithdraw').on('click', function (ev) {
@@ -121,7 +121,7 @@ $('#savingsDeposit').on('click', function (ev) {
   bank.depositFunction($input,accountType);
   bank.updateHTML();
 });
-//click savingsDeposit
+//click savingsWithdraw
 $('#savingsWithdraw').on('click', function (ev) {
   const accountType = 'savings';
   const $input = $('#savingsAmount').val();
