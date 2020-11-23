@@ -25,12 +25,13 @@ end
 
 def display_menu
   puts "Menu:"
-  puts "+ : Addition"
-  puts "- : Subtraction"
-  puts "* : Multiplication"
-  puts "/ : Division"
-  puts "^ : Exponent"
-  puts "q : Quit calculator"
+  puts "+    : Addition"
+  puts "-    : Subtraction"
+  puts "*    : Multiplication"
+  puts "/    : Division"
+  puts "e    : Exponent"
+  puts "sqrt : Square root"
+  puts "q    : Quit calculator"
   puts " "
   print "Which operation would you like to perform?  "
   gets.chomp
@@ -58,8 +59,12 @@ def divide(first_number, second_number)
   first_number / second_number
 end
 
-def exponent(first_number, second_number)
-  first_number ** second_number
+def exponent(first_number)
+  Math.exp(first_number)
+end
+
+def square_root(number)
+  Math.sqrt(number)
 end
 
 def calculator
@@ -71,17 +76,21 @@ def calculator
     if operation == 'q'
       puts "\n\n***********************"
       return " Thanks for using CALC\n".magenta
+    elsif operation == 'sqrt' || operation =='e'
+      first_number = getOperator
+    else
+      first_number = getOperator
+      second_number = getOperator
     end
 
-    first_number = getOperator
-    second_number = getOperator
 
     result = case operation
     when '+' then add first_number, second_number
     when '-' then subtract first_number, second_number
     when '*' then multiply first_number, second_number
     when '/' then divide first_number, second_number
-    when '^' then exponent first_number, second_number
+    when 'e' then exponent first_number
+    when 'sqrt' then square_root first_number
     else          "Invalid option. Pick from the menu.".red
     end
     puts "\n----------------"
