@@ -29,14 +29,22 @@ end
 def multiply(first_number, second_number)
   first_number * second_number
 end
+
+def divide(first_number, second_number)
+  first_number / second_number
+end
+
 def calculator ()
   operation = display_menu
+
   first_number = getOperator
   second_number = getOperator
+
   result = case operation
   when '+' then add first_number, second_number
   when '-' then subtract first_number, second_number
   when '*' then multiply first_number, second_number
+  when '/' then divide first_number, second_number
   end
   result
 end
