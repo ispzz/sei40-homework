@@ -15,17 +15,17 @@
 # Calculator should be able to do basic arithmetic (exponents, square roots)
 require 'colorize'
 
-# Menus
+# MENUS
 def display_title
   puts "\n***********************"
   puts "  CALC the CALCULATOR   ".magenta
   puts "***********************\n\n"
-end
+end # display_title
 
 def start_calculator
   display_title
   main_menu
-end
+end # start_calculator
 
 def display_main_menu
   puts "Main Menu: ".magenta
@@ -38,7 +38,7 @@ def display_main_menu
 end # display
 
 def end_message
-  puts "\nWould you like to return to the main menu (press 'm') or quit ('q')?"
+  puts "\nWould you like to return to the main menu ('m') or quit ('q')?"
   selection = gets.chomp
   if selection == 'q'
     return
@@ -133,10 +133,41 @@ def square_root(number)
   Math.sqrt(number)
 end # square_root
 
-# Mortgage Calculator
-# Calculate the monthly required payment given the other variables as input (look up the necessary variables)
-# BMI Calculator
-# Calculate the body mass index (BMI) for an individual, given their height and weight
+# MORTGAGE CALCULATOR
+def mortgage_calculator
+  puts "\nMortgage Calculator: ".magenta
+
+  print "How much is your principal?  "
+  principal = gets.to_f
+
+  print "What is your annual interest rate?  "
+  interest_rate = gets.to_f
+
+  print "How many payments ?  "
+  number_payments = gets.to_f
+
+
+  mortgage = calculate_mortgage(principal, interest_rate, number_payments)
+
+  puts "\n----------------"
+  puts "Monthly mortgage payment: $#{mortgage}.".blue
+  puts "----------------\n\n"
+
+  end_message
+end # mortgage_calculator
+
+def calculate_mortgage(principal, interest_rate, number_payments)
+  monthly_interest_rate = interest_rate / 12
+
+  p = principal
+  r = monthly_interest_rate
+  n = number_payments
+
+  mortgage_repayments = p * ((r * ((1 + r) ** n) / (((1 + r) ** n) - 1)))
+  mortgage_repayments.round(2)
+end # calculate_mortgage
+
+# BMI CALCULATOR
 def bmi_calculator
   puts "\nBMI Calculator: ".magenta
   print "How much do you weigh (kg)?  "
@@ -155,7 +186,7 @@ end # bmi_calculator
 def calculate_bmi(height, weight)
   bmi = weight/(height**2)
   bmi = bmi.to_i
-end
+end # calculate_bmi
 
 # Trip Calculator
 # Calculate a trip time and cost given inputs for
@@ -165,4 +196,5 @@ end
 # price per gallon
 # speed in miles per hour
 
+# WAKE UP CAL
 start_calculator
