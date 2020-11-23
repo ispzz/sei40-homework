@@ -26,6 +26,7 @@ def display_menu
   puts "- : Subtraction"
   puts "* : Multiplication"
   puts "/ : Division"
+  puts "q : Quit calculator"
   print "Which operation would you like to perform?  "
   gets.chomp
 end
@@ -57,14 +58,27 @@ def calculator ()
 
   first_number = getOperator
   second_number = getOperator
+  loop do
+    operation = display_menu
 
-  result = case operation
-  when '+' then add first_number, second_number
-  when '-' then subtract first_number, second_number
-  when '*' then multiply first_number, second_number
-  when '/' then divide first_number, second_number
-  end
-  result
-end
+    if operation == 'q'
+      puts "\n\n***********************"
+      return " Thanks for using CALC\n".magenta
+    end
+
+    first_number = getOperator
+    second_number = getOperator
+
+    result = case operation
+    when '+' then add first_number, second_number
+    when '-' then subtract first_number, second_number
+    when '*' then multiply first_number, second_number
+    when '/' then divide first_number, second_number
+    else          "Invalid option. Pick from the menu.".red
+    end
+
+    puts "\n #{first_number} #{operation} #{second_number} =  #{result}\n\n".blue
+  end # loop
+end # calculator
 
 puts calculator
