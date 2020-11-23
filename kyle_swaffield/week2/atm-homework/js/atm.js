@@ -32,20 +32,7 @@ $('body').mouseover(function(){
   }
 });
 //end refresh bank balances
-//set initial value to zero on text fields
-const $onFocusCheck = $checkValue.on('focus',function(){
-  $checkValue.attr('value',0);
-});
-const $offFocusCheck = $checkValue.on('focusout',function(){
-  $checkValue.attr('value','')
-});
-const $onFocusSave = $saveValue.on('focus',function(){
-  $saveValue.attr('value',0);
-});
-const $offFocusSave = $saveValue.on('focusout',function(){
-  $saveValue.attr('value','')
-});
-//end set initial value to zero on text fields
+
 
 //Deposit
 $checkDepPress.on('click',function(){
@@ -86,3 +73,17 @@ $saveWithPress.on('click',function(){
   amount = 0;
 });
 //end Withdraw
+//set initial value to zero on text fields
+const $onFocusCheck = $checkValue.on('focus',function(){
+  $checkValue.attr('value',0);
+});
+const $offFocusCheck = $checkValue.on('focusout',function(){
+  $checkValue.attr('value','')
+});
+const $onFocusSave = $saveValue.on('focus',function(){
+  $saveValue.attr('value',0);
+});
+const $offFocusSave = $saveValue.on('focusout',function(){
+  $saveValue.attr('value','')
+});
+//end set initial value to zero on text fields

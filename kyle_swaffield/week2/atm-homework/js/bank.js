@@ -20,25 +20,24 @@ const bank = {
       return false;
     }
   },
-
   withdrawl : function(amount,account){
     const cheBal = this.checkBalance;
     const savBal = this.saveBalance;
     const totBal = cheBal + savBal;
     let accBal = this.accountBalance(account);
 
-    if((totBal-amount) > 0){
-      if((account === 'check') && ((accBal - amount) > 0)){
+    if((totBal-amount) >= 0){
+      if((account === 'check') && ((accBal - amount) >= 0)){
         this.checkBalance = cheBal - amount;
         return true;
-      }else if((account === 'check') && ((accBal - amount) < 0)){
+      }else if((account === 'check') && ((accBal - amount) <= 0)){
         this.saveBalance = (cheBal - amount)+savBal;
         this.checkBalance = 0;
         return true;
-      }else if(account === 'save' && ((accBal - amount) > 0)){
+      }else if(account === 'save' && ((accBal - amount) >= 0)){
         this.saveBalance = savBal - amount;
         return true;
-      }else if((account === 'save') && ((accBal - amount) < 0)){
+      }else if((account === 'save') && ((accBal - amount) <= 0)){
         this.checkBalance = (savBal - amount)+cheBal;
         this.saveBalance = 0;
         return true;
@@ -50,7 +49,6 @@ const bank = {
       return false;
     }
   },
-
   accountBalance: function(account){ //checks the account balance on either check or savings
     if(account === 'check'){
       return this.checkBalance;
