@@ -29,6 +29,7 @@ def display_menu
   puts "- : Subtraction"
   puts "* : Multiplication"
   puts "/ : Division"
+  puts "^ : Exponent"
   puts "q : Quit calculator"
   puts " "
   print "Which operation would you like to perform?  "
@@ -57,6 +58,10 @@ def divide(first_number, second_number)
   first_number / second_number
 end
 
+def exponent(first_number, second_number)
+  first_number ** second_number
+end
+
 def calculator
   display_title
 
@@ -76,10 +81,12 @@ def calculator
     when '-' then subtract first_number, second_number
     when '*' then multiply first_number, second_number
     when '/' then divide first_number, second_number
+    when '^' then exponent first_number, second_number
     else          "Invalid option. Pick from the menu.".red
     end
-
-    puts "\n #{first_number} #{operation} #{second_number} =  #{result}\n\n".blue
+    puts "\n----------------"
+    puts "#{first_number} #{operation} #{second_number} =  #{result}".blue
+    puts "----------------\n\n"
   end # loop
 end # calculator
 
