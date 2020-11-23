@@ -23,8 +23,31 @@ def display_title
   puts "***********************\n\n"
 end
 
-def display_menu
-  puts "Menu:"
+def display_main_menu
+  puts "Main Menu: ".magenta
+  puts "1: Calculator"
+  puts "2: Mortgage Calculator"
+  puts "q: Quit"
+  print "\nWhat would you like to do?  "
+  gets.chomp
+end
+
+def main_menu
+  display_title
+
+  option = display_main_menu
+
+  case option
+  when '1' then calculator
+  # when '2' then mortgage_calculator
+when 'q' then return
+  else          puts "Pick a valid option"
+  end
+
+end
+
+def display_calculator
+  puts "\nCalculator Menu: ".magenta
   puts "+    : Addition"
   puts "-    : Subtraction"
   puts "*    : Multiplication"
@@ -36,6 +59,7 @@ def display_menu
   print "Which operation would you like to perform?  "
   gets.chomp
 end
+
 
 def getOperator
   print "Enter a number: "
@@ -68,10 +92,8 @@ def square_root(number)
 end
 
 def calculator
-  display_title
-
   loop do
-    operation = display_menu
+    operation = display_calculator
 
     if operation == 'q'
       puts "\n\n***********************"
@@ -99,22 +121,7 @@ def calculator
   end # loop
 end # calculator
 
-puts calculator
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+puts main_menu
 
 # Bonus
 # Mortgage Calculator
