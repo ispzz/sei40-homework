@@ -1,37 +1,8 @@
-# Explanation
-#
-
-# Bonus
-# Mortgage Calculator
-# Calculate the monthly required payment given the other variables as input (look up the necessary variables)
-
-# For amortizing loans, the monthly payment formula is:
-#
-# Loan Payment (P) = Amount (A) / Discount Factor (D)
-#
-# Stick with us here, as this one gets a little hairy. To solve the equation, you’ll need to find the numbers for these values:
-#
-# A = Total loan amount
-# D = {[(1 + r)n] - 1} / [r(1 + r)n]
-# Periodic Interest Rate (r) = Annual rate (converted to decimal figure) divided by number of payment periods
-# Number of Periodic Payments (n) = Payments per year multiplied by number of years
-# Here’s an example: let’s say you get an auto loan for $10,000 at 3% for 7 years. It would shake out as this:
-#
-# n = 84 (12 monthly payments per year x 7 years)
-# r = 0.0025 (a 3% rate converted to 0.03, divided by 12 payments per year)
-# D = 75.6813 {[(1+0.0025)84] - 1} / [0.0025(1+0.0025)84]
-# P = $132.13 (10,000 / 75.6813)
-# In this case, your monthly loan payment for your car would be $132.13.
-#
-# If you have an interest-only loan, calculating loan payments is a lot easier. The formula is:
-#
-# Loan Payment = Loan Balance x (annual interest rate/12)
-#
-# In this case, your monthly interest-only payment for the loan above would be $25.
 
 
 require 'colorize'#this tells ruby that they want to use this library
 
+#mortage calculation
 def loan_calc(loan_amount,interest_rate,loan_term,loan_type)
   if loan_type.downcase == "pi"
     r = interest_rate/12
@@ -45,6 +16,8 @@ def loan_calc(loan_amount,interest_rate,loan_term,loan_type)
   end #end if
 end
 
+
+#calculator operations
 def multiplication(first, second)
   result = first * second
 end
@@ -69,14 +42,22 @@ def exponent(first, second)
   result = first**second
 end
 
+
+
+#BMI calculation
 def bmi(height,weight)
   result = weight / (height/100)**2
 end
 
+
+#trip calculation
 def trip_calc(distance,fuel,consumption)
   result = (distance/100) * consumption * (fuel/100)
 end
 
+
+
+#main calculation
 tool_choice = 0
 until tool_choice == "x"
 
@@ -163,7 +144,7 @@ until tool_choice == "x"
 
     end #calculator loop
 
-
+ #mortage calculator
   elsif tool_choice == "b"
     puts "You chose mortage repayment calculator"
     puts "How much is your loan?"
@@ -180,9 +161,9 @@ until tool_choice == "x"
       else
         loan_type_text = "interest only"
       end
-    puts "Your monthly repayment amount for a $#{loan_type_text} for $#{loan_amount} at #{interest_rate*100}% interest rate, over #{loan_term} years is $#{loan.round(1)} per month"
+    puts "Your monthly repayment amount for a #{loan_type_text} for $#{loan_amount} at #{interest_rate*100}% interest rate, over #{loan_term} years is $#{loan.round(1)} per month"
 
-
+  #BMI calculator
   elsif tool_choice == "c"
     puts "You chose BMI calculator"
     puts "What is your height (in cms)?"
@@ -198,12 +179,12 @@ until tool_choice == "x"
       elsif bmi_calc >= 18.5 && bmi_calc < 26
         puts "You are considered normal weight"
       elsif bmi_calc >= 25 && bmi_calc < 30
-        puts "You are considered Overweight"
+        puts "You are considered overweight"
       end
 
-
+      #trip calculator
   elsif tool_choice == "d"
-    puts "You chose trip time & cost calculator"
+    puts "You chose trip cost calculator"
     puts "How far are you going (kms)?"
     distance = gets.to_f
     puts "How much was fuel (cents per litre - number only)?"
