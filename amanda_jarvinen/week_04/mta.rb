@@ -8,7 +8,7 @@
 # where to change lines, if necessary
 # the total number of stops for the trip.
 # There are 3 subway lines:
-# 
+#
 # The N line has the following stops: Times Square, 34th, 28th, 23rd, Union Square, and 8th
 # The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
 # The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
@@ -26,3 +26,10 @@
 # Make subway lines keys in a hash, while the values are an array of all the stops on each line.
 # The key to the lab is to find the intersection of the lines at Union Square.
 # Make sure the stops that are the same for different lines have different names (i.e. 23rd on the N and on the 6 need to be differentiated)
+
+# Lines
+lines = {
+  n: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
+  l: ['8th', '6th', 'Union Square', '3rd', '1st'],
+  6 => ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
+}
