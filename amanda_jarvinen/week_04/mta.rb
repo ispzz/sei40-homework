@@ -28,8 +28,37 @@
 # Make sure the stops that are the same for different lines have different names (i.e. 23rd on the N and on the 6 need to be differentiated)
 
 # Lines
-lines = {
+mta_lines = {
   n: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
   l: ['8th', '6th', 'Union Square', '3rd', '1st'],
   6 => ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
 }
+
+#print
+# the stations the user must pass through, in order
+# where to change lines, if necessary
+# the total number of stops for the trip.
+def single_line(line, origin, destination, lines)
+  # station user must pass through
+  # find origin station
+  origin_idx = lines[line].index(origin)
+  # find destination station
+  destination_idx = lines[line].index(destination)
+  # Get stations
+  stations = lines[line][origin_idx..destination_idx]
+  puts stations
+end
+
+def run_tests(lines)
+  # Single-line and one direction
+  single_line(:n, '34th', 'Union Square', lines)
+  # plan_trip( :n, "Times Square", :n, "1st" )
+
+  # Single-line and multi-direction
+
+  # Multi-line and one direction
+  # plan_trip( :n, "Times Square", :l, "1st" )
+end
+
+# RUN ALL TESTS
+run_tests(mta_lines)
