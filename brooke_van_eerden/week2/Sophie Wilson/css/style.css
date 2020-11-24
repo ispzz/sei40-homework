@@ -1,7 +1,11 @@
 body{
-  background-color: teal;
+  background-color: rgba(0, 255, 255, 0.5);
   font-family: Orbitron, sans-serif;
   font-size: 20px;
+  background-image: url('https://hackaday.com/wp-content/uploads/2018/05/sophiwilson.jpg?w=800');
+  background-size: cover;
+  background-blend-mode:  hard-light;
+
 }
 #title{
 
@@ -33,36 +37,52 @@ a{
 
 }
 #awards{
-  margin:0;
+  margin:10px;
 }
 .awards{
   width:30%;
   font-size: 20px;
   text-align: justify;
+  padding: 10px;
   margin: 30px;
   margin-top: 30px;
   display: inline-block;
   vertical-align: top;
+  background-color: rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
+
 
 }
 .content{
   display: inline-block;
   vertical-align: top;
-  text-align: right;
+  text-align: justify;
   vertical-align: top;
   float: right;
   width:30%;
+  padding : 20px;
   margin-right: 80px;
+  margin-top: 20px;
+  background-color: rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
+
+
 }
 p{
   margin: 10px;
+  padding: 30px;
+  background-color: rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
 }
+
 h4{
   display: block;
   vertical-align: top;
+  text-align: left;
   margin:10px;
-  position: absolute;
+  position: relative;
   font-size: 30px;
+
 }
 article{
   width:100%;
@@ -70,7 +90,7 @@ article{
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  top:50px;
+  /* top: 50px; */
 }
 strong{
   font-weight: bolder;
@@ -81,23 +101,34 @@ footer{
   font-size: 12px;
   list-style-type: none;
   margin-top: 180px;
-
+  background-color: rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
+  width: 40%;
 }
-
+ul{
+  background-color: rgba(255, 200, 200, 0.8);
+  width: 50%;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
 img{
   display: inline;
-  border-radius: 5px solid 10px;
+  border-radius: 100px ;
   margin-top: 100px;
 }
 .media{
   display: flex;
 }
 iframe{
+  border: 10px solid rgba(255, 200, 200, 0.8);
   border-radius: 10px;
   margin: auto;
 }
 #map{
   position: relative;
+  border: 10px solid rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
 
 text-align: right;
 left:400px;
