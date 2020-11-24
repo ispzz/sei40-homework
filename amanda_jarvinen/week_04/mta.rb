@@ -45,8 +45,8 @@ def single_line(line, origin, destination, lines)
   # find destination station
   destination_idx = lines[line].index(destination)
   # Get stations
-  stations = lines[line][origin_idx..destination_idx]
-  puts stations
+  stations = lines[line][origin_idx + 1..destination_idx]
+  p stations
 end
 
 def run_tests(lines)
