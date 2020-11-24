@@ -16,16 +16,16 @@
 require 'colorize'
 
 # MENUS
+def start_calculator
+  display_title
+  main_menu
+end # start_calculator
+
 def display_title
   puts "\n***********************"
   puts "  CALC the CALCULATOR   ".magenta
   puts "***********************\n\n"
 end # display_title
-
-def start_calculator
-  display_title
-  main_menu
-end # start_calculator
 
 def display_main_menu
   puts "Main Menu: ".magenta
@@ -35,18 +35,8 @@ def display_main_menu
   puts "4: Trip Calculator"
   puts "q: Quit"
   print "\nWhat would you like to use?  "
-  gets.chomp
+  gets.chomp.downcase
 end # display
-
-def end_message
-  puts "\nWould you like to return to the main menu ('m') or quit ('q')?"
-  selection = gets.chomp
-  if selection == 'q'
-    return
-  else
-      main_menu
-  end
-end # end_message
 
 def main_menu
   option = display_main_menu
@@ -76,6 +66,16 @@ def display_calculator
   gets.chomp
 end # display_calculator
 
+def end_message
+  puts "\nWould you like to return to the main menu ('m') or quit ('q')?"
+  selection = gets.chomp
+  if selection == 'q'
+    return
+  else
+    main_menu
+  end
+end # end_message
+
 # CALCULATOR
 def calculator
   loop do
@@ -86,23 +86,21 @@ def calculator
       return " Thanks for using CALC\n".magenta
     elsif operation == 'm'
       main_menu
-      return
-    elsif operation == 'sqrt' || operation =='e'
+    elsif operation == 'sqrt'
       first_number = getOperator
     else
       first_number = getOperator
       second_number = getOperator
     end
 
-
     result = case operation
-    when '+' then add first_number, second_number
-    when '-' then subtract first_number, second_number
-    when '*' then multiply first_number, second_number
-    when '/' then divide first_number, second_number
-    when 'e' then exponent first_number
+    when '+'    then add first_number, second_number
+    when '-'    then subtract first_number, second_number
+    when '*'    then multiply first_number, second_number
+    when '/'    then divide first_number, second_number
+    when 'e'    then exponent first_number, second_number
     when 'sqrt' then square_root first_number
-    else          "Invalid option. Pick from the menu.".red
+    else             "Invalid option. Pick from the menu.".red
     end
     puts "\n----------------"
     puts "#{first_number} #{operation} #{second_number} =  #{result}".blue
@@ -131,8 +129,8 @@ def divide(first_number, second_number)
   first_number / second_number
 end # divide
 
-def exponent(first_number)
-  Math.exp(first_number)
+def exponent(first_number, second_number)
+  first_number ** second_number
 end # exponent
 
 def square_root(number)
