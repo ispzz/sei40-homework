@@ -31,7 +31,8 @@ console.log('click the cat to go into the castle');
         'transition-property': "width",
         "transition-duration": "5s",
         'width': '100px'});
-      $(this).animate({top:"+=180px"},{duration:3000,queue:false}, $('#overlay').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500));
+      $(this).animate({top:"+=180px"},{duration:3000,queue:false},
+       $('#overlay').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500));
       // $('#hi-cat').fadeIn(1000);
       }); //end width css
 //
