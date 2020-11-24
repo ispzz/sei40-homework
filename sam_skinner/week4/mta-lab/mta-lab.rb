@@ -23,7 +23,7 @@ def check_reverse(line, start_station, end_station)
     line_journey line, start_station, end_station
   else
     #stations run in reverse through array
-    line_journey line, end_station, start_station.reverse
+    line_journey(line, end_station, start_station).reverse
   end
 end #check_reverse
 
@@ -50,4 +50,5 @@ end #line_journey
 
 
 plan_trip("6", "23rd", "6", "33rd")
+plan_trip("6", "33rd", "6", "23rd")
 plan_trip("N", "34th", "L", "8th")
