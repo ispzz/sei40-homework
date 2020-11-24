@@ -1,60 +1,141 @@
-# MTA Lab
-# Activity:
-# Students should create a program that models a simple subway system.
-#
-# The program takes the line and stop that a user is getting on at and the line and stop that user is getting off at and prints:
-#
-# the stations the user must pass through, in order
-# where to change lines, if necessary
-# the total number of stops for the trip.
-# There are 3 subway lines:
-#
-# The N line has the following stops: Times Square, 34th, 28th, 23rd, Union Square, and 8th
-# The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
-# The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
-# All 3 subway lines intersect at Union Square, but there are no other intersection points.
-# For example, this means the 28th stop on the N line is different than the 28th street stop on the 6 line, so you'll have to differentiate this when you name your stops in the arrays.
-# We should be able to say:
-#
-# plan_trip( :n, "Times Square", :l, "1st" )
-# # Or something along those lines
-# Hints:
-# Don't worry about user input initially: get it working with hardcoded values first, and wire up the user interface once that's working
-# Scope works in a different way in Ruby, so variables that you define outside won't be accessible in a method. Maybe think about using a function to return data. Or perhaps research other types of variables
-# A symbol can't just be a number!
-# Consider diagraming the lines by sketching out the subway lines and their stops and intersection.
-# Make subway lines keys in a hash, while the values are an array of all the stops on each line.
-# The key to the lab is to find the intersection of the lines at Union Square.
-# Make sure the stops that are the same for different lines have different names (i.e. 23rd on the N and on the 6 need to be differentiated)
+require 'colorize'
 
-# Lines
-mta_lines = {
+# Network lines
+mta = {
   n: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
-  l: ['8th', '6th', 'Union Square', '3rd', '1st'],
+  l: ['8TH', '6th', 'Union Square', '3rd', '1st'],
   6 => ['Grand Central', '33rd', '28TH', '23RD', 'Union Square', 'Astor Place']
 }
 
-def single_line(line, origin, destination, lines)
-  origin_idx = lines[line].index(origin)
-  destination_idx = lines[line].index(destination)
-  stations = lines[line][origin_idx + 1..destination_idx]
+def calculate_num_stops stations
+  stations.length unless stations.nil?
+end
 
-  total_stops = destination_idx - origin_idx
+def get_stations network, line, origin, destination
+  origin_idx = network[line].index(origin)
+  destination_idx = network[line].index(destination)
+
+  case
+  when origin_idx < destination_idx then network[line][(origin_idx + 1)..destination_idx]
+  when origin_idx > destination_idx then network[line][(destination_idx)..origin_idx - 1].reverse!
+  else puts "You are at your destination"
+  end
+end
+
+def single_line line, origin, destination, network
+  stations = get_stations network, line, origin, destination
+  total_stops = calculate_num_stops stations
 
   {stations: stations, total_stops: total_stops}
 end
 
-def run_tests(lines)
-  # Single-line and one direction
-  trip = single_line(:n, '34th', 'Union Square', lines)
-  p trip
-  # plan_trip( :n, "Times Square", :n, "1st" )
+def plan_trip o_line, origin, d_line, destination, network
 
-  # Single-line and multi-direction
+  if o_line == d_line
+    trip = single_line o_line, origin, destination, network
 
-  # Multi-line and one direction
-  # plan_trip( :n, "Times Square", :l, "1st" )
+    puts "You must travel through the following stops on the #{o_line.upcase} line:"
+    puts trip[:stations]
+    puts "Total stations: #{trip[:total_stops]}."
+
+  else
+    exchange = (network[o_line] & network[d_line]).join # Intersection (common elements of 2 arrays)
+    first_leg = single_line o_line, origin, exchange, network
+    first_leg[:stations].pop # Remove exchange station
+    last_leg = single_line d_line, exchange, destination, network
+    stations = (first_leg[:stations] + last_leg[:stations]).join(', ')
+    total_stops = first_leg[:total_stops] + last_leg[:total_stops]
+
+    puts "You must travel through the following stops on the #{o_line.upcase} line:"
+    puts first_leg[:stations]
+    puts "Please exchange to #{d_line.upcase} at #{exchange}. Then travel:"
+    puts last_leg[:stations]
+    puts "Total stations: #{total_stops}."
+  end
+
+  puts "Have a great day!\n"
 end
 
-# RUN ALL TESTS
-run_tests(mta_lines)
+def display_title
+  puts "\n*************************************"
+  puts "     WELCOME TO MTA Trip Planner ".magenta
+  puts " 🚂 We choo...choose to move you 😃 "
+  puts "*************************************\n\n"
+end
+
+def display_menu
+  puts "Menu: ".magenta
+  puts "p : Plan a trip"
+  puts "t : Test the program"
+  puts "q : Quit"
+  print "\nWhich would you like to do?  "
+  gets.chomp
+end
+
+def plan_trip_prompt network
+  print "What line (:n, :l or 6) are you starting on? "
+  start_line = gets.to_sym
+
+  print "Which station are you on now? "
+  start_station = gets.chomp
+
+  print "What is your transfer line (:n, :l or 6)? "
+  end_line = gets.to_sym
+
+  print "Where do you want to get off? "
+  end_station = gets.chomp
+
+  # Edge case: User is already at destination
+  if start_station == end_station
+    puts "\nYou are already at your destination".red
+    main_menu
+  end
+
+  plan_trip start_line, start_station, end_line, end_station, network
+end
+
+def run_tests(network)
+  puts "\nRUNNING TESTS".magenta
+
+  # Single-line and origin is destination
+  puts "\ntest: user at destination:".blue
+  plan_trip(:n, 'Union Square', :n, 'Union Square', network)
+
+
+
+
+  
+  # Single-line and forward direction
+  # trip_sf = single_line(:n, '34th', 'Union Square', network)
+  # p trip_sf
+
+  # Single-line and reverse direction
+  puts "\ntest: (:n, 'Union Square', :n, '34th', 'mta')".blue
+  plan_trip(:n, 'Union Square', :n, '34th', network)
+
+  # Multi-line trip
+  puts "\ntest: (n, '34th', l, '1st', 'mta')".blue
+  plan_trip(:n, '34th', :l, '1st', network)
+
+  puts "\nEND OF TESTS\n".magenta
+end
+
+def main_menu network
+  loop do
+    selection = display_menu
+
+    case selection
+    when 'p' then plan_trip_prompt network
+    when 't' then run_tests(network)
+    when 'q' then return
+    else     puts "Invalid selection".red
+    end
+  end
+end # main_menu
+
+def start_planner network
+  display_title
+  main_menu network
+end # display_title
+
+start_planner mta
