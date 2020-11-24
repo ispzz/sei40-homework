@@ -47,6 +47,10 @@ def single_line(line, origin, destination, lines)
   # Get stations
   stations = lines[line][origin_idx + 1..destination_idx]
   p stations
+
+  # total number of stops
+  total_stops = destination_idx - origin_idx
+  p total_stops
 end
 
 def run_tests(lines)
