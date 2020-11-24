@@ -33,7 +33,7 @@ def menu_write
   puts "Calculate".blue
   puts "1. Addition".light_blue
   puts "2. Subtraction".light_blue
-  puts "3. Mulpiplication".light_blue
+  puts "3. Multiplication".light_blue
   puts "4. Division".light_blue
   puts "5. Exponents".light_blue
   puts "6. Square Root".light_blue
@@ -176,7 +176,7 @@ end
 
 choice=11
 menu_write
-until choice == 0 do
+until choice == 0
 
   case choice
   when 1
