@@ -13,12 +13,14 @@ console.log(catImage.style.left);
 const where = window.innerWidth
 const catSize = catImage.width
 
-// const catWalkLeft = function(){
-//   let pos = parseInt(catImage.style.left);
-//   pos += 10;
-//   catImage.style.left = pos + 'px';
-//   console.log(catImage.style.left);
-// };
+const catWalkLeft = function(){
+  let pos = parseInt(catImage.style.left);
+  pos += 10;
+  catImage.style.left = pos + 'px';
+  console.log(catImage.style.left);
+
+
+};
 
   // if(catImage.style.left === window.innerWidth){
   //   catImage.style.transform= 'rotateY(180deg)' ;
@@ -41,13 +43,13 @@ const catSize = catImage.width
   // }
 
     // if(catImage.style.left === '1630px'){
-    const catWalkRight = function(){
-      let posB = parseInt(catImage.style.right);
-      posB += 20;
-      catImage.style.left = posB + 'px';
-      console.log(catImage.style.right);
-    }
-
+    // const catWalkRight = function(){
+    //   let posB = parseInt(catImage.style.right);
+    //   posB += 20;
+    //   catImage.style.left = posB + 'px';
+    //   console.log(catImage.style.right);
+    // }
+    //
 
 // let catWalk = setInterval(catWalkLeft, 50);
 let catWalk = setInterval(catWalkRight, 50);
