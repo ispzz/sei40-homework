@@ -22,3 +22,11 @@ get '/search_results' do
   @movies = movies['results']
   erb :search_results
 end
+
+get '/movie/:id' do
+  # @id = params[:id]
+
+  @movie = HTTParty.get "https://api.themoviedb.org/3/movie/#{params[:id]}?api_key=24d863d54c86392e6e1df55b9a328755"
+
+  erb :movie_page
+end
