@@ -1,13 +1,9 @@
 <h2>Movie Results</h2>
-
-<!-- movies['results'].each do |m| # Refer to how it was done for student names in the template
-	puts m['title']
-end -->
-
 <ul>
   <% @movies.each do |m| %>
     <li>
       <%= m['title'] %>
+      <img src="https://image.tmdb.org/t/p/w342/<%= m['poster_path'] %>" alt="">
     </li>
     <% end %>
 </ul>
