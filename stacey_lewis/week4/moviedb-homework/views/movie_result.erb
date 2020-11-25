@@ -1,0 +1,24 @@
+<form action="/">
+  <button>Back to Search</button>
+</form>
+
+<p>
+ Here is a list of movies from your search!
+</p>
+
+
+<ul>
+<%@movie['results'].each do |m|%>
+
+  <li><h3><%=m['title'] %></h3>
+  <%=m['release_date']%><br><br>
+  <%=m['overview']%><br>
+  <img src="//image.tmdb.org/t/p/w500/<%=m['poster_path']%>" >
+  </li>
+
+
+  <br>
+
+
+<% end %>
+</ul>
