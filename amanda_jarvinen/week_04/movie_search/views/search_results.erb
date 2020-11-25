@@ -5,9 +5,9 @@
 end -->
 
 <ul>
-  <% @movies.each do |title| %>
+  <% @movies.each do |m| %>
     <li>
-      <%= title %>
+      <%= m['title'] %>
     </li>
     <% end %>
 </ul>
