@@ -1,5 +1,4 @@
 require 'colorize'
-String.color_samples
 
 puts "===================================="
 puts "Your Trip Map"
