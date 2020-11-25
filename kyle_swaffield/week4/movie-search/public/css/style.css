@@ -1,0 +1,42 @@
+body{
+  background-color: lightgray;
+}
+
+.center{
+  margin: auto;
+  width: 800px;
+  /* border: 1px solid red; */
+}
+#main{
+  min-height: 90vh;
+}
+.inner{
+  position: relative;
+  text-align: center;
+}
+.list{
+  margin-top: 5px;
+  height: 350px;
+  padding: 10px;
+  /* border: 1px red solid; */
+}
+.justify{
+  text-align: justify;
+
+}
+.image{
+  list-style-type: none;
+}
+.textwrap{
+  float:left;
+  margin: 5px;
+}
+.large{
+  margin: 10px;
+}
+.textwrap.large{
+  float:right;
+}
+p{
+  line-height: 1.5;
+}

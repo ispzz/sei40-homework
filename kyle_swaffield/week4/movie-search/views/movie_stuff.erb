@@ -1,0 +1,50 @@
+<h2 class='inner'>Movie information for "<%= @movie['title']%>"</h2>
+
+<ul class="image">
+    <%='<p class="list"><img class="textwrap large" src="https://image.tmdb.org/t/p/w300'%><%=@movie['poster_path']%><%='">'%>
+      <%="<strong>Title:</strong>"%>
+        <%= @movie['title']%>
+      <%="<br><br><strong>Release Date:</strong>"%>
+      <%= @movie['release_date']%>
+      <%="<br><br><strong>Overview:</strong>"%>
+      <%= @movie['overview']%>
+
+
+      <%="<br><br><strong>Staring:</strong>"%>
+      <%= @cast['cast'][0]['name']%><%=", "%>
+      <%= @cast['cast'][1]['name']%><%=", "%>
+      <%= @cast['cast'][2]['name']%><%=", "%>
+      <%= @cast['cast'][3]['name']%><%=", "%>
+      <%= @cast['cast'][4]['name']%>
+
+
+      <%="<br><br><strong>Adult:</strong>"%>
+      <%= @movie['adult']%>
+      <%="<br><strong>Budget:</strong>"%>
+      <%= @movie['budget']%>
+      <%="<br><strong>Genres:</strong>"%>
+      <%= @movie['genres'][0]['name']%><%=", "%>
+      <%= @movie['genres'][1]['name']%><%=", "%>
+      <%= @movie['genres'][2]['name']%>
+      <%="<br><strong>Home Page:</strong>"%>
+      <%= @movie['homepage']%>
+      <%="<br><strong>IMDB ID:</strong>"%>
+      <%= @movie['imdb_id']%>
+      <%="<br><strong>Original Language:</strong>"%>
+      <%= @movie['original_language']%>
+      <%="<br><strong>Popularity:</strong>"%>
+      <%= @movie['popularity']%>
+      <%="<br><strong>Revenue:</strong>"%>
+      <%= @movie['revenue']%>
+      <%="<br><strong>Runtime:</strong>"%>
+      <%= @movie['runtime']%>
+      <%="<br><strong>Status:</strong>"%>
+      <%= @movie['status']%>
+      <%="<br><strong>Tagline:</strong>"%>
+      <%= @movie['tagline']%>
+      <%="<br><strong>Vote Average:</strong>"%>
+      <%= @movie['vote_average']%>
+      <%="<br><strong>Vote Count:</strong>"%>
+      <%= @movie['vote_count']%>
+    <%="</p>"%>
+</ul>
