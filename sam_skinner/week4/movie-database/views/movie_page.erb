@@ -1,0 +1,28 @@
+<img src=<%= "https://image.tmdb.org/t/p/w185#{@movie_info['poster_path']}" %> alt="">
+
+<ul>
+  <li>Release Date: <%= @movie_info['release_date'] %></li>
+  <li>Budget: <%= @movie_info['budget'] %></li>
+  <li>Revenue: <%= @movie_info['revenue'] %></li>
+  <li>Genres:
+    <ul>
+      <li><%= @movie_info['genres'][0]['name'] %></li>
+    </ul>
+  </li>
+  <li>Homepage: <%= @movie_info['homepage'] %></li>
+  <li>Popularity: <%= @movie_info['popularity'] %></li>
+  <li>Production Companies:
+    <ul>
+      <li><%= @movie_info['production_companies'][0]['name'] %></li>
+    </ul>
+  </li>
+  <li>Runtime: <%= @movie_info['runtime'] %></li>
+  <li>Overview: <%= @movie_info['overview'] %></li>
+  <li>Tagline: <%= @movie_info['tagline'] %></li>
+  <li>Votes:
+    <ul>
+      <li>Vote Average: <%= @movie_info['vote_average'] %></li>
+      <li>Vote Count: <%= @movie_info['vote_count'] %></li>
+    </ul>
+  </li>
+</ul>
