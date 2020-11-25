@@ -1,0 +1,20 @@
+<h2 class='inner'>Search Results "<%= @keyword%>"</h2>
+<h3 class='inner'>Number of results: <%=@num%></h3>
+
+<ul class="image">
+  <% @movies['results'].each do |movie| %>
+    <%='<li class="list"><img class="textwrap" src="https://image.tmdb.org/t/p/w200'%><%=movie['poster_path']%><%='">'%>
+      <%="<strong>Title:</strong>"%>
+      <%='<a href="/movie/'%><%=movie['id']%>
+      <%='">'%>
+        <%= movie['title']%>
+      <%='</a>'%>
+      <%="<br><strong>Release Date:</strong>"%>
+      <%= movie['release_date']%>
+      <%="<br><strong>Overview:</strong><div class=\"justify\">"%>
+      <%= movie['overview']%>
+    <%="</div></li>"%>
+  <% end%>
+
+
+</ul>
