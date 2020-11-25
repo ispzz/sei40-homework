@@ -1,0 +1,57 @@
+<!--
+movies['results'].each do |m|
+@first_title = movies['results'].first['title']
+@titles =  m['title']
+@release_date = m['release_date']
+@overview = m['overview']
+@poster = m['poster_path']
+# @titles = movies['title']
+@total_pages = movies['total_pages']
+puts @titles -->
+
+end
+<p>
+  <strong> Company name: <%= @names  %> </strong>
+  </p>
+  <strong> first_title: <%= @first_title %> </strong>
+  <p>
+  <strong> Total Titles: <%= @total_pages %> </strong>
+  <br>
+  <strong> Titles </strong>
+  <table>
+    <tr>
+      <td>Title</td>
+      <td>Release Date</td>
+      <td>Overview</td>
+    </tr>
+<td>
+  <ul>
+    <li>Name:</li>  <% @result.each do |m| %>
+      <li> <%= m['title'] %></li>
+      <% end %>
+  </ul>
+  </td>
+  <td>
+  <ul>
+    <li>release_date -  <% @result.each do |m| %>
+      <li> <%= m['release_date'] %></li>
+      <% end %>
+      </ul>
+      </td>
+      <td>
+      <ul>
+    <li>Overview- <br> <% @result.each do |m| %>
+      <li> <%= m['overview'] %></li>
+      <% end %>
+    <li>Poster- <br> <% @result.each do |m| %>
+      <li> <%= m['poster'] %></li>
+      <% end %>
+    </ul>
+    </td>
+
+    </table>
+
+
+<pre>
+
+</pre>
