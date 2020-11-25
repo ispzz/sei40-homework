@@ -6,14 +6,18 @@
   <li>Revenue: <%= @movie_info['revenue'] %></li>
   <li>Genres:
     <ul>
-      <li><%= @movie_info['genres'][0]['name'] %></li>
+      <% @movie_info['genres'].each do |m| %>
+        <li><%= m['name'] %></li>
+      <% end %>
     </ul>
   </li>
   <li>Homepage: <%= @movie_info['homepage'] %></li>
   <li>Popularity: <%= @movie_info['popularity'] %></li>
   <li>Production Companies:
     <ul>
-      <li><%= @movie_info['production_companies'][0]['name'] %></li>
+      <% @movie_info['production_companies'].each do |m| %>
+        <li><%= m['name'] %></li>
+      <% end %>
     </ul>
   </li>
   <li>Runtime: <%= @movie_info['runtime'] %></li>
