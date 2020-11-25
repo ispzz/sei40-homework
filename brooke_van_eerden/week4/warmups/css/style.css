@@ -1,0 +1,14 @@
+body{
+  background-color: black;
+}
+
+#text{
+  display: none;
+}
+
+.word{
+  font-size: 100px;
+  position: absolute;
+  color: white;
+  display: none;
+}
