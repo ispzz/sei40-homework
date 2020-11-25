@@ -1,0 +1,13 @@
+<h2>Movie Results</h2>
+
+<!-- movies['results'].each do |m| # Refer to how it was done for student names in the template
+	puts m['title']
+end -->
+
+<ul>
+  <% @movies.each do |title| %>
+    <li>
+      <%= title %>
+    </li>
+    <% end %>
+</ul>
