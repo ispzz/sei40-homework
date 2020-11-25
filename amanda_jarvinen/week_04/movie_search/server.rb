@@ -15,3 +15,10 @@ movies = HTTParty.get 'https://api.themoviedb.org/3/search/movie?api_key=24d863d
 get '/' do
   erb :movie_form
 end
+
+# A route which uses the submitted search term to search themoviedb.org and output the results into the template, one result per line (probably use <ul> and <li>) - at least the title, maybe the year and overview text too
+get '/search_results' do
+  "Search: #{params[:movie_name]}"
+  # "Searching..."
+  # erb :search_results
+end
