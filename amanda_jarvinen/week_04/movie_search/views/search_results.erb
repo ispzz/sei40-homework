@@ -2,8 +2,11 @@
 <ul>
   <% @movies.each do |m| %>
     <li>
+      <img src="https://image.tmdb.org/t/p/w154/<%= m['poster_path'] %>" alt="<%= m['title']%>">
+      <br>
       <%= m['title'] %>
-      <img src="https://image.tmdb.org/t/p/w342/<%= m['poster_path'] %>" alt="">
     </li>
+    <br>
+    <br>
     <% end %>
 </ul>
