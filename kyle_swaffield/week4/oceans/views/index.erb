@@ -1,0 +1,11 @@
+<h2>Swaff Inc Employee Directory</h2>
+
+<ul>
+  <% @employees.each do |emp| %>
+    <li>
+      <a href="/employee/<%= emp['emp_id']%>">
+      <%= emp['first_name']%> <%= emp['last_name']%>
+      </a>
+    </li>
+  <% end %>
+</ul>
