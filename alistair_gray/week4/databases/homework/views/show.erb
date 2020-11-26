@@ -1,0 +1,25 @@
+<h2>Unit Outline</h2>
+
+<p>
+<strong>Name: </strong> <%= @unit['name'] %>
+</p>
+
+<p>
+  <strong>Species:</strong> <%= @unit['species'] %>
+</p>
+
+<p>
+  <strong>Absoluteness:</strong> <%= @unit['absoluteness'] == 1 ? 'Yes' : 'No' %>
+</p>
+
+<p>
+  <strong>Rating:</strong> <%= @unit['rating'] %>
+</p>
+
+<img src="<%= @unit['image_url'] %>" alt="A beastly image of <%= @unit['name'] %>">
+
+<br>
+
+<a href="/units/<%= @unit['id'] %>/edit">Edit This Unit</a>
+|
+<a href="/units/<%= @unit['id'] %>/delete">Delete This Unit</a>
