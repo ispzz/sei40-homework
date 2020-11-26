@@ -17,7 +17,7 @@ get '/movie' do
   @page = '1'
   url = "#{$API_URL}?api_key=#{$API_KEY}&query=#{@term}"
   if @term.empty?
-    return erb :search
+    redirect '/'
   end
 
   @result = HTTParty.get(url)
