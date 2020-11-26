@@ -1,0 +1,12 @@
+<h2>Stock Lookup Results for "<%= params[:stock_code]%>"</h2>
+
+<p>
+  <strong>Company Name:</strong> <%= @company %>
+  <strong>Latest Price:</strong> <%= @price %>
+</p>
+
+<% @array.each do |letter| %>
+  <p>
+    <%= letter %>
+  </p>
+<% end %>
