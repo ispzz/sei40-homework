@@ -1,0 +1,10 @@
+<h2>Full Mountain Database</h2>
+
+<ul>
+  <% @mountains.each do |m| %>
+    <li>
+      <a href="/mountains/<%= m['id'] %>"><%= m['name'] %></a>
+      - <%= m['elevation_m'] %>m
+    </li>
+  <% end %>
+</ul>

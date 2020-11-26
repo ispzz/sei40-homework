@@ -1,0 +1,51 @@
+<h2>Add A New Mountain</h2>
+<h3>Contribute to the greatest database by adding more mountain content!</h3>
+
+<form action="/mountains" method="post">
+  <label>
+    Name:
+    <input type="text" name="name">
+  </label>
+  <br>
+
+  <label>
+    Elevation(m):
+    <input type="text" name="elevation_m">
+  </label>
+  <br>
+
+  <label>
+    Location:
+    <input type="text" name="location">
+  </label>
+  <br>
+
+  <label>
+    Guided Climbs?:
+    <label for="true">Yes</label>
+    <input type="radio" id="true" value="true" name="guided_climbs">
+    <label for="false">No</label>
+    <input type="radio" id="false" value="false" name="guided_climbs">
+  </label>
+  <br>
+
+  <label>
+    First Climber:
+    <input type="text" name="first_climber">
+  </label>
+  <br>
+
+  <label>
+    Year First Climbed:
+    <input type="text" name="year_climbed">
+  </label>
+  <br>
+
+  <label>
+    Wikipedia:
+    <input type="text" name="wikipedia">
+  </label>
+  <br>
+
+  <input type="submit" value="Add Mountain">
+</form>
