@@ -1,0 +1,13 @@
+body{
+  background-color:teal;
+  font-size: 16pt;
+}
+
+form{
+margin:0 auto;
+}
+
+a{
+  border-radius: 10px
+  border-color: purple
+}

@@ -1,0 +1,36 @@
+<h1> Edit Game: <%= @game['name']%></h1>
+
+
+<form action='/games/<%=@game[:id]%>' method='post'>
+    <label>
+    Name:
+    <input type='text' name='name' value="<%= @game['name']%>">
+    </label>
+    <br>
+    <label>
+    Platform:
+    <input type='text' name='platform'  value="<%= @game['platform']%>">
+    </label>
+    <br>
+    <label>
+    Description:
+    <textarea name='description'> <%= @game['name']%></textarea>
+    </label>
+    <br>
+    <label>
+    Maximum Number of Players:
+    <input type='text' name='max_players'  value="<%= @game['max_players']%>">
+    </label>
+    <br>
+    <label>
+    Multiplayer (1 for yes, 0 for no):
+    <input type='text' name='multiplayer'  value="<%= @game['multiplayer']%>">
+    </label>
+    <br>
+    <label>
+    Box Art:
+    <input type="text" name='box_art'  value="<%= @game['box_art']%>">
+    </label>
+    <br>
+    <input type="submit" value='Update Games'>
+    </form>
