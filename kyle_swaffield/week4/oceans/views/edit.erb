@@ -1,0 +1,36 @@
+<h2>Edit employee: <%=@employee['first_name']%> <%=@employee['last_name']%></h2>
+<form class="" action="/employee/<%=@employee['emp_id']%>" method="post">
+  <table>
+    <tr>
+      <td>First Name:</td>
+      <td><input type="text" name="first_name" value="<%=@employee['first_name']%>"></td>
+    </tr>
+    <tr>
+      <td>Last Name:</td>
+      <td><input type="text" name="last_name" value="<%=@employee['last_name']%>"></td>
+    </tr>
+    <tr>
+      <td>Mobile Number:</td>
+      <td><input type="text" name="mobile" value="<%=@employee['mobile']%>"></td>
+    </tr>
+    <tr>
+      <td>Email Address:</td>
+      <td><input type="text" name="email" value="<%=@employee['email']%>"></td>
+    </tr>
+    <tr>
+      <td>Birth Date (YYYY-MM-DD):</td>
+      <td><input type="text" name="birthdate" value="<%=@employee['birthdate']%>"></td>
+    </tr>
+    <tr>
+      <td>Start Date (YYYY-MM-DD):</td>
+      <td><input type="text" name="start_date" value="<%=@employee['start_date']%>"></td>
+    </tr>
+    <tr>
+      <td>Image URL:</td>
+      <td><input type="text" name="image_url" value="<%=@employee['image_url']%>"></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="right"><input type="submit" name="submit" value="Update"></td>
+    </tr>
+  </table>
+</form>

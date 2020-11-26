@@ -1,0 +1,27 @@
+<h2>Swaff Inc Employee Directory</h2>
+
+<table>
+  <% @employees.each do |emp| %>
+
+  <tr>
+    <td>Employee Name: </td>
+    <td><%=params['first_name']%> <%=params['last_name']%></td>
+  </tr>
+  <tr>
+    <td>Employee Mobile Number: </td>
+    <td><%=params['mobile']%></td>
+  </tr>
+  <tr>
+    <td>Employee Email: </td>
+    <td><%=params['email']%></td>
+  </tr>
+  <tr>
+    <td>Employee DOB: </td>
+    <td><%=params['birthdate']%> () </td>
+  </tr>
+  <tr>
+    <td>Employee Start Date: </td>
+    <td><%=params['start_date']%> () </td>
+  </tr>
+  <% end %>
+</table>
