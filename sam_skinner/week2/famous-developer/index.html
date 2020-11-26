@@ -4,16 +4,157 @@
 <head>
   <title>Edsger Dijkstra - Biography</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/main.js"></script>
 </head>
 
 <body>
-  <div id="background"></div>
-  <header>
-    <div id="left">
-      <img src="images/Edsger_Wybe_Dijkstra.jpg" alt="Photo of Edsger Dijlstra">
-      <h1>Edsger Dijkstra - Mathematical Boss<h1>
-    </div><!--div#left-->
-  </header>
+
+  <div class="flexContainer">
+    <div class="vBar"></div>
+    <div class="centerContainer">
+      <img src="images/EWDHead.gif" alt="Headshot of Edsger Dijlstra"/>
+      <header>
+        <ul id="headerLinks">
+          <li id="home">Home</li>
+          <li id="bio">Bio</li>
+          <li id="media">Media</li>
+          <li id="trivia">Trivia</li>
+          <li id="interactive">Interactive</li>
+        </ul>
+      </header>
+      <h1 class="adjustPosition">Edsger W. Dijkstra</h1>
+      <p id="intro" class="adjustPosition">
+        Edsger Dijkstra was a physicist, computer scientist and software engineer.  He was one of the most influencial figures of computer science's founding generation.  He is best known for his contributions to concurrent computing as well as creating Dijkstra's algorithm.  Lets explore his life together....
+      </p>
+      <p id="quote">
+        <em>"Testing can only prove the presence of bugs, not their absence."<em>
+      </p>
+      <h2 id="earlyYears">Early Years</h2>
+      <h2 id="contributionHeading">Contributions to Computer Science</h2>
+      <h2>Personal Life</h2>
+      <h2>Awards and Honors</h2>
+      <div id="early">
+        Edsger W. Dijkstra was born in Rotterdam. His father was a chemist who was president of the Dutch Chemical Society; he taught chemistry at a secondary school and was later its superintendent. His mother was a mathematician, but never had a formal job.
+        <br>
+        <br>
+        Dijkstra had considered a career in law and had hoped to represent the Netherlands in the United Nations. However, after graduating from school in 1948, at his parents' suggestion he studied mathematics and physics and then theoretical physics at the University of Leiden.
+        <br>
+        <br>
+        In the early 1950s, electronic computers were a novelty. Dijkstra stumbled on his career quite by accident, and through his supervisor, Professor A. Haantjes, he met Adriaan van Wijngaarden, the director of the Computation Department at the Mathematical Center in Amsterdam, who offered Dijkstra a job; he officially became the Netherlands' first "programmer" in March 1952.
+        <br>
+        <br>
+        For some time Dijkstra remained committed to physics, working on it in Leiden three days out of each week. With increasing exposure to computing, however, his focus began to shift. As he recalled:
+
+        <blockquote>
+          After having programmed for some three years, I had a discussion with A. van Wijngaarden, who was then my boss at the Mathematical Center in Amsterdam, a discussion for which I shall remain grateful to him as long as I live. The point was that I was supposed to study theoretical physics at the University of Leiden simultaneously, and as I found the two activities harder and harder to combine, I had to make up my mind, either to stop programming and become a real, respectable theoretical physicist, or to carry my study of physics to a formal completion only, with a minimum of effort, and to become....., yes what? A programmer? But was that a respectable profession? For after all, what was programming? Where was the sound body of knowledge that could support it as an intellectually respectable discipline? I remember quite vividly how I envied my hardware colleagues, who, when asked about their professional competence, could at least point out that they knew everything about vacuum tubes, amplifiers and the rest, whereas I felt that, when faced with that question, I would stand empty-handed. Full of misgivings I knocked on Van Wijngaarden's office door, asking him whether I could "speak to him for a moment"; when I left his office a number of hours later, I was another person. For after having listened to my problems patiently, he agreed that up till that moment there was not much of a programming discipline, but then he went on to explain quietly that automatic computers were here to stay, that we were just at the beginning and could not I be one of the persons called to make programming a respectable discipline in the years to come? This was a turning point in my life and I completed my study of physics formally as quickly as I could.
+        </blockquote>
+        When Dijkstra married Maria (Ria) C. Debets in 1957, he was required as a part of the marriage rites to state his profession. He stated that he was a programmer, which was unacceptable to the authorities, there being no such profession then in The Netherlands.
+        <br>
+        <br>
+        In 1959, he received his PhD from the University of Amsterdam for a thesis entitled 'Communication with an Automatic Computer', devoted to a description of the assembly language designed for the first commercial computer developed in the Netherlands, the X1. His thesis supervisor was Van Wijngaarden.
+        <br>
+        <br>
+        From 1952 until 1962, Dijkstra worked at the Mathematisch Centrum in Amsterdam, where he worked closely with Bram Jan Loopstra and Carel S. Scholten, who had been hired to build a computer. Their mode of interaction was disciplined: They would first decide upon the interface between the hardware and the software, by writing a programming manual. Then the hardware designers would have to be faithful to their part of the contract, while Dijkstra, the programmer, would write software for the nonexistent machine. Two of the lessons he learned from this experience were the importance of clear documentation, and that program debugging can be largely avoided through careful design. Dijkstra formulated and solved the shortest path problem for a demonstration at the official inauguration of the ARMAC computer in 1956. Because of the absence of journals dedicated to automatic computing, he did not publish the result until 1959.
+        <br>
+        <br>
+        At the Mathematical Center, Dijkstra and his colleague Jaap Zonneveld [nl] developed the first compiler for the programming language ALGOL 60 by August 1960, more than a year before a compiler was produced by another group. It had a profound influence on his later thinking on programming as a scientific activity.
+        <br>
+        <br>
+        In 1962, Dijkstra moved to Eindhoven, and later to Nuenen, in the south of the Netherlands, where he became a professor in the Mathematics Department at the Eindhoven University of Technology. The university did not have a separate computer science department and the culture of the mathematics department did not particularly suit him. Dijkstra tried to build a group of computer scientists who could collaborate on solving problems. This was an unusual model of research for the Mathematics Department. In the late 1960s he built the THE operating system (named for the university, then known as Technische Hogeschool Eindhoven), which has influenced the designs of subsequent operating systems through its use of software based paged virtual memory.
+        <br>
+        <br>
+        Dijkstra joined Burroughs Corporation, a company known then for producing computers based on an innovative hardware architecture, as its research fellow in August 1973. His duties consisted of visiting some of the firm's research centers a few times a year and carrying on his own research, which he did in the smallest Burroughs research facility, namely, his study on the second floor of his house in Nuenen. In fact, Dijkstra was the only research fellow of Burroughs and worked for it from home, occasionally travelling to its branches in the United States. As a result, he reduced his appointment at the university to one day a week. That day, Tuesday, soon became known as the day of the famous 'Tuesday Afternoon Club', a seminar during which he discussed with his colleagues scientific articles, looking at all aspects: notation, organisation, presentation, language, content, etc. Shortly after he moved in 1984 to the University of Texas at Austin (USA), a new 'branch' of the Tuesday Afternoon Club emerged in Austin, Texas.
+        <br>
+        <br>
+        The Burroughs years saw him at his most prolific in output of research articles. He wrote nearly 500 documents in the EWD series (described below), most of them technical reports, for private circulation within a select group.
+        <br>
+        <br>
+        Dijkstra accepted the Schlumberger Centennial Chair in the Computer Science Department at the University of Texas at Austin in 1984.
+        <br>
+        <br>
+        Dijkstra worked in Austin until his retirement in November 1999. To mark the occasion and to celebrate his forty-plus years of seminal contributions to computing science, the Department of Computer Sciences organized a symposium, which took place on his 70th birthday in May 2000.
+        <br>
+        <br>
+        Dijkstra and his wife returned from Austin to his original house in Nuenen (Netherlands) where he found that he had only months to live. He said that he wanted to retire in Austin, Texas, but to die in the Netherlands. Dijkstra died on 6 August 2002 after a long struggle with cancer. He and his wife Maria (Ria) Debets were survived by their three children: Marcus, Femke, and the computer scientist Rutger M. Dijkstra.
+      </div>
+      <div id="contributions">
+        <br>
+        <br>
+        <h3>Algorithmic work</h3>
+        Dijkstra's algorithmic work (especially graph algorithms, concurrent algorithms, and distributed algorithms) plays an important role in many areas of computing science. According to Leslie Lamport (2002), Dijkstra "started the field of concurrent and distributed algorithms with his 1965 CACM paper "Solution of a Problem in Concurrent Programming Control", in which he first stated and solved the mutual exclusion problem." As Lamport explains, "that paper is probably why PODC exists (...). It remains to this day the most influential paper in the field. That it did not win a PODC Influential Paper Award reflects an artificial separation between concurrent and distributed algorithms a separation that has never existed in Dijkstra's work."
+        <br>
+        <br>
+        In 1959 Dijkstra published in a 3-page article 'A note on two problems in connexion with graphs' the algorithm to find the shortest path in a graph between any two given nodes, now called Dijkstra's algorithm. Its impact over the next 40 years is summarised from the article of Mikkel Thorup, 'Undirected Single Source Shortest Paths with Positive Integer Weights in Linear Time' (1999): "Since 1959, all theoretical developments in SSSP [Single-Source Shortest Paths] for general directed and undirected graphs have been based on Dijkstra's algorithm." Dijkstra's algorithm is used in SPF, Shortest Path First, which is used in the routing protocols OSPF and IS-IS. Various modifications to Dijkstra's algorithm have been proposed by many authors using heuristics to reduce the run time of shortest path search. One of the most used heuristic algorithms is the A* search algorithm (first described by Peter Hart, Nils Nilsson and Bertram Raphael of Stanford Research Institute in 1968), the main goal is to reduce the run time by reducing the search space. Dijkstra thought about the shortest path problem when working at the Mathematical Center in Amsterdam in 1956 as a programmer to demonstrate capabilities of a new computer named ARMAC. His objective was to choose both a problem and an answer (that would be produced by computer) that non-computing people could understand. He designed the shortest path algorithm in about 20 minutes without aid of paper and pen and later implemented it for ARMAC for a slightly simplified transportation map of 64 cities in the Netherlands (so that 6 bits would suffice to represent the city in the algorithm). As he recalled, in an interview published in 2001:
+        <blockquote>
+          What is the shortest way to travel from Rotterdam to Groningen, in general: from given city to given city? It is the algorithm for the shortest path, which I designed in about twenty minutes. One morning I was shopping in Amsterdam with my young fiancee, and tired, we sat down on the cafe terrace to drink a cup of coffee and I was just thinking about whether I could do this, and I then designed the algorithm for the shortest path. As I said, it was a twenty-minute invention. In fact, it was published in '59, three years late. The publication is still readable, it is, in fact, quite nice. One of the reasons that it is so nice was that I designed it without pencil and paper. I learned later that one of the advantages of designing without pencil and paper is that you are almost forced to avoid all avoidable complexities. Eventually that algorithm became, to my great amazement, one of the cornerstones of my fame.
+        </blockquote>
+        A year later, he came across another problem from hardware engineers working on the institute's next computer: minimize the amount of wire needed to connect the pins on the back panel of the machine. As a solution, he rediscovered the algorithm known as Prim's minimal spanning tree algorithm. The Prim's algorithm was originally developed in 1930 by Czech mathematician Vojtech Jarnik. and later independently rediscovered and republished by Robert C. Prim in 1957,[38] and Dijkstra in 1959. Therefore, it is also sometimes called the DJP algorithm.
+        <br>
+        <br>
+        In 1961, Dijkstra first described the shunting-yard algorithm, a method for parsing mathematical expressions specified in infix notation, in the Mathematisch Centrum report. It can be used to produce output in Reverse Polish notation (RPN) or as an abstract syntax tree (AST). The algorithm was named the shunting yard algorithm because its operation resembles that of a railroad shunting yard. The shunting-yard algorithm is commonly used to implement operator-precedence parsers.
+        <br>
+        <br>
+        In 1962 or 1963, Dijkstra proposed the semaphore mechanism for mutual exclusion algorithm for n processes (a generalization of Dekker's algorithm), which was probably the first published concurrent algorithm and which introduced a new area of algorithmic research. He also identified the deadlock problem and proposed the banker's algorithm that prevents deadlock.
+        <br>
+        <br>
+        In 1974, Dijkstra presented three self-stabilization algorithms for mutual exclusion on a ring. This work is considered the first to introduce and demonstrate the self-stabilization concept.
+        <br>
+        <br>
+        In the mid-1970s, Dijkstra (together with other authors) introduced two useful abstractions (mutator and collector) to the study of garbage collection. The mutator abstracts the process that performs the computation, including allocation of a new storage cell. The collector is the process that automatically reclaims garbage. Further, this paper gives a formalization of tri-color marking that is basic to incremental garbage collection.
+        <br>
+        <br>
+        In the early 1980s, Dijkstra and Carel S. Scholten proposed the Dijkstra-Scholten algorithm for detecting termination in distributed systems.
+        <br>
+        <br>
+        In 1981, Dijkstra developed smoothsort, a comparison-based sorting algorithm and a variation of heapsort.
+        <br>
+        <br>
+        <h3>Compiler construction and programming language research</h3>
+        Dijkstra was known to be a fan of the programming language ALGOL, and worked on the team that implemented the first compiler for ALGOL 60, which he was closely involved in developing, realising, and popularising. As discussed by Peter Naur in the article 'The European side of the last phase of the development of ALGOL 60', in the Proceedings of the First ACM SIGPLAN Conference on History of Programming Languages, January 1978, Dijkstra took part in the period 1958-1959 in a number of meetings that culminated in the publication of the report defining the ALGOL 60 language. Dijkstra's name does not appear in the list of 13 authors of the final report, but he was an official member of the International Federation for Information Processing (IFIP) IFIP Working Group 2.1 on Algorithmic Languages and Calculi, which specified, supports, and maintains ALGOL 60 and ALGOL 68. He eventually left the committee, apparently because he could not agree with the majority opinions. Still, while at the Mathematisch Centrum (Amsterdam), he wrote jointly with Jaap Zonneveld the first ALGOL 60 compiler. Dijkstra and Zonneveld, who collaborated on the compiler, agreed not to shave until the project was completed. Zonneveld shaved shortly thereafter, but Dijkstra kept his beard for the rest of his life.
+        <br>
+        <br>
+        ALGOL was the result of a collaboration of American and European committees. ALGOL 60 (short for ALGOrithmic Language 1960) is a member of the ALGOL family of computer programming languages. It followed on from ALGOL 58 and inspired many languages that followed it. It gave rise to many other languages, including BCPL, B, Pascal, Simula, and C. Algol 60 was a sophisticatedly designed computer language and it provided a large number of hitherto unknown implementation challenges. As Bjarne Stroustrup notes, "one problem with Algol60 was that no one knew how to implement it." A major new challenge in Algol 60 implementation was the run-time allocation and management of data. In 1960, Dijkstra and Zonneveld showed how recursive procedures could be executed using a run-time stack of activation records, and how to efficiently access identifiers from statically enclosing scopes using the so-called display. The ALGOL 60 compiler was one of the first to support recursion employing a novel method to do so. Dijkstra's short book Primer of Algol 60 Programming, originally published in 1962, was the standard reference for the language for several years.
+        <br>
+        <br>
+        <h3>Role of programming methodology and the birth of the structured programming movement</h3>
+        Computer programming in the 1950s to 1960s was not recognized as an academic discipline and unlike mature sciences there were no theoretical concepts or coding systems. Programming as a professional activity was poorly understood in those years. In the late 1960s computer programming was in state of crisis. Software crisis is a term used in the early days of computing science for the difficulty of writing useful and efficient computer programs in the required time. The software crisis was due to the rapid increases in computer power and the complexity of the problems that could be tackled. With the increase in the complexity of the software, many software problems arose because existing methods were insufficient. The term "software crisis" was coined by some attendees at the first of the NATO Software Engineering Conferences in 1968 at Garmisch, Germany. His 1972 ACM Turing Award Lecture makes reference to this same problem: "The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem."
+        <br>
+        <br>
+        While Dijkstra had programmed extensively in machine code in the 1950s, he came to the conclusion that in high-level languages frequent use of the GOTO statement was usually symptomatic of poor structure. In 1968 he wrote a private paper "A Case against the GO TO Statement", which was then published as a letter in CACM. Editor Niklaus Wirth gave this letter the heading "Go To Statement Considered Harmful", which introduced the phrase "considered harmful" into computing.
+        <br>
+        <br>
+        Dijkstra argued that the programming statement GOTO, found in many high-level programming languages, is a major source of errors, and should therefore be eliminated. This letter caused a huge debate in the programming community. Some went to the length of equating good programming with the elimination of GO TO. Dijkstra refused to mention the debate, or even the GO TO statement, in his article "Notes on Structured Programming". The debate has long since died down; programming languages provide alternatives to the GO TO, few programmers today use it liberally, and most never use it at all.
+        <br>
+        <br>
+        Dijkstra's thesis was that departures from linear control flow were clearer if allowed only in disciplined higher-level structures such as the if-then-else statement and the while loop. This methodology was developed into structured programming movement, the title of his 1972 book, coauthored with Tony Hoare and Ole-Johan Dahl. Considered by many as the first significant movement in history of computer programming, structured programming became the new programming orthodoxy during the 1970s.
+        <br>
+        <br>
+        Structured programming is often regarded as "goto-less programming". But as Bertrand Meyer notes, "As the first book on the topic [Structured Programming by Dijkstra, Dahl, and Hoare] shows, structured programming is about much more than control structures and the goto. Its principal message is that programming should be considered a scientific discipline based on mathematical rigor." As a programming paradigm, structured programming - especially in the 1970s and 1980s - significantly influenced the birth of many modern programming languages such as Pascal, C, Modula-2, and Ada. The Fortran 77 version which incorporates the concepts of structured programming, was released in 1978. The C++ language was a considerably extended and enhanced version of the popular structured programming language C (see also: list of C-based programming languages). Since C++ was developed from a more traditional structured language, it is a 'hybrid language', rather than a pure object-oriented programming language.
+        <br>
+        <br>
+        In his article Structured Programming: Retrospect and Prospect (1986), Harlan Mills writes, "Edsger W. Dijkstra's 1969 Structured Programming article precipitated a decade of intense focus on programming techniques that has fundamentally altered human expectations and achievements in software development. Before this decade of intense focus, programming was regarded as a private, puzzle-solving activity of writing computer instructions to work as a program. After this decade, programming could be regarded as a public, mathematics-based activity of restructuring specifications into programs. Before, the challenge was in getting programs to run at all, and then in getting them further debugged to do the right things. After, programs could be expected to both run and do the right things with little or no debugging. Before, it was common wisdom that no sizable program could be error-free. After, many sizable programs have run a year or more with no errors detected. These expectations and achievements are not universal because of the inertia of industrial practices. But they are well-enough established to herald fundamental change in software development."
+        <br>
+        <br>
+        The book Concise Encyclopedia of Computer Science (2004), edited by Edwin D. Reilly, notes that "the major contributions of structured programming have been twofold-the elevation of programming technique to something less of an art and more of a science, and the demonstration that carefully structured programs can be creative works of sufficient literary merit to deserve being read by humans and not just by computer."
+      </div>
+      <ul id="triviaList">
+        <li id="one">Received the 1972 Turing Award for fundamental contributions to developing programming languages</li>
+        <li id="two">After his death in 2002 the ACM PODC Influential Paper Award was renamed the Dijkstra Prize</li>
+        <li id="three">Dijkstra once remarked, "A picture may be worth a thousand words, a formula is worth a thousand pictures"</li>
+        <li id="four">When he stated that he was a programmer, the authorities objected that there was no such profession, and his marriage certificate instead identifies him as a theoretical physicist</li>
+        <li id="five">Despite his contributions to technology and software, Dijkstra prefered to write his articles on a typewrited and resisted the use of word processors</li>
+      </ul>
+
+      <div class="mediaContainer"></div>
+      <div class="mediaRibbon"></div>
+
+    </div>
+
+
+  </div>
+
+
 
 </body>
 

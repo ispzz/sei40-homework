@@ -1,47 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap');
+
+
 body {
   margin: 0;
+  background-color: #e3e0cf;
+  font-family: 'Martel Sans', sans-serif;
 }
 
-div#background {
-  position:absolute;
-  top: 0;
-  height: 150vh;
-  width: 150vw;
-  background-image: linear-gradient(-135deg, #FFFEE9, #963A2F);
+.flexContainer {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerContainer {
+  background-color: white;
+  padding: 15px;
+  width: 1200px;
+  height: 700px;
+  border: 5px solid black;
+  border-radius: 35px;
+  opacity: 0.8;
+}
+
+.vBar {
+  position: absolute;
+  right: 30vw;
+  background-color: #ff6961;
+  height: 100%;
+  width: 200px;
   z-index: -1;
 }
 
-header {
-  height: 120px;
-  /* background-color: rgba(168, 166, 118, 0.65); */
-  background-color: rgba(0, 0, 0, 0.3);
-  margin: 10px;
-  border-radius: 25px;
-}
-
-header img {
+.centerContainer img {
   float: left;
+  height: 700px;
+  border-radius: 35px 0 0 35px;
+  padding-right: 10px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 32pt;
+}
+
+header {
+  height: 50px;
+}
+
+ul#headerLinks {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+ul#headerLinks li {
+  display: inline;
+  list-style: none;
+  margin: 0 8px;
+}
+
+ul li:hover {
+  cursor: pointer;
+}
+
+.adjustPosition {
   position: relative;
-  left: 5px;
-  height: 110px;
-  margin-top: 5px;
-  border-radius: 20px;
+  top: 175px;
 }
 
-header h1 {
+#quote {
+  position: relative;
+  top: 225px;
+}
+
+h2 {
+  display: none;
+  width: auto;
+}
+
+h2:hover {
+  cursor: pointer;
+}
+
+#early {
+  display: none;
+}
+
+#contributions {
+  display: none;
+}
+
+ul#triviaList {
+  display: none;
+  position: relative;
+  left: 50px;
+}
+
+ul#triviaList li{
+  display: none;
+  width: 1100px;
+}
+
+.mediaContainer {
+  display: none;
+  height: 100px;
   border: 1px solid red;
-  margin: 0;
-  font-size: 1.75em;
 }
 
-div#left {
-  border: 1px solid yellow;
-  display: inline-block;
-  width: 550px;
+.mediaRibbon {
+  display: none;
+  height: 100px;
+  border: 1px solid red;
 }
-
-/* #963A2F
-#D58258
-#ECB984
-#FFFEE9
-#A8A676 */

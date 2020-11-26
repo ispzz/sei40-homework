@@ -5,16 +5,20 @@ body {
   padding: 6px;
 }
 
-header {
+*{
   border: 1px solid red;
-  height: 114px;
+}
+
+header {
+  /* border: 1px solid red; */
+  height: 150px;
   background-color: #128d8a;
   color:black;
   padding: 6px;
 }
 
 .left ul {
-  border: 1px dashed green;
+  /* border: 1px dashed green; */
   display: inline;
   text-align: center
 
@@ -38,7 +42,7 @@ header {
 
 
 div.main {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   height: 100%;
 }
 
@@ -63,12 +67,13 @@ header img{
 }
 
 header h1 {
-  display: inline;
+  /* display: inline; */
+  align-items: center;
 }
 
 span {
   transition: all .7s;
 }
 
-span { margin-right: -100px; }
+span { margin-right: 0px; }
 li:hover span { margin-right: 100px; }
