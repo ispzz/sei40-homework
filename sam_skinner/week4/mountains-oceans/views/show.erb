@@ -1,0 +1,31 @@
+<h2>Drill Deep Into This Mountain</h2>
+
+<h3><%= @mountain['name'] %></h3>
+
+<p>
+  <strong>Elevation(m): </strong><%= @mountain['elevation_m'] %>
+</p>
+
+<p>
+  <strong>Location: </strong><%= @mountain['location'] %>
+</p>
+
+<p>
+  <strong>Guided Climbs?: </strong><%= @mountain['guided_climbs'] %>
+</p>
+
+<p>
+  <strong>First Climber: </strong><%= @mountain['first_climber'] %>
+</p>
+
+<p>
+  <strong>Year First Climbed: </strong><%= @mountain['year_climbed'] %>
+</p>
+
+<p>
+  <strong>Wikipedia: </strong><a href="<%= @mountain['wikipedia'] %>"><%= @mountain['name'] %></a>
+</p>
+
+<a href="/mountains/<%= @mountain['id'] %>/edit">Edit Mountain</a>
+|
+<a href="/mountains/<%= @mountain['id'] %>/delete">Delete Mountain</a>
