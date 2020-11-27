@@ -1,0 +1,24 @@
+body{
+  background-color: lightgray;
+}
+.heading{
+  display:inline;
+  margin-right: : 100px;
+  /* border: solid 1px green; */
+}
+.inline{
+  display: inline;
+  margin: 5px;
+}
+ul.inline{
+  margin-left: 100px;
+  /* border: solid 1px yellow; */
+}
+.main{
+  max-width: 900px;
+  margin: auto;
+}
+.bottom{
+  position: relative;
+  bottom:0;
+}
