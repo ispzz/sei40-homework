@@ -1,13 +1,17 @@
 body{
-  background-color:teal;
+  background-image: url("https://media.npr.org/assets/img/2017/08/08/gettyimages-176426057_wide-c6d79c47986bd46b88ffe656b1ca09afd3b7e7b3-s700-c85.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
   font-size: 16pt;
 }
 
 form{
+  border: 5px solid purple
 margin:0 auto;
 }
 
 a{
   border-radius: 10px
-  border-color: purple
+border: 5px solid purple
 }

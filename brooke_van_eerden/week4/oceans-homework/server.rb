@@ -54,7 +54,7 @@ erb :show
 end
 
 #U
-get '/games/:id/edit' do
+get "/games/:id/edit" do
   @game= db_query "SELECT * FROM video_games WHERE id = #{params[:id]};"
   @game= @game.first
   erb :edit
@@ -68,7 +68,7 @@ post '/games/:id' do
   max_players = #{params[:max_players]},
   multiplayer = '#{params[:multiplayer]}',
   box_art = '#{params[:box_art]}'
-  WHERE id = #{params[:id]};
+  WHERE id = #{params[:id]}
   "
 
   redirect "/games/#{params[:id]}"

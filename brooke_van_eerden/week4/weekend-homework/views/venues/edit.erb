@@ -1,0 +1,19 @@
+<h2>Edit: <%= @venue.name %></h2>
+
+<form action ="/venues/<%=@venue.id%>" method= 'post'>
+
+  <label>Name:
+  <input type='text' name='name' value="<%= @venue.name %>">
+  </label>
+  <label>Capacity:
+  <input type='text' name='capacity' value="<%= @venue.capacity %>">
+  </label>
+  <label>Photo:
+  <input type='text' name='image_url' value="<%= @venue.image_url %>">
+  </label>
+  <label>Description:
+    <textarea name='description'> <%= @venue.description %> </textarea>
+    </label>
+
+<input type="submit" value="Update This Venue's Details">
+</form>

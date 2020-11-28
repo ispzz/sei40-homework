@@ -1,0 +1,20 @@
+<h2><%= @venue.name %></h2>
+
+<ul>
+  <li id='description'>
+    <strong>Description:</strong> <%= @venue.description %>
+  </li>
+  <li id='capacity'>
+    <strong>Capacity:</strong> <%= @venue.capacity %>
+  </li>
+  <li>
+
+  </li>
+  <img src="<%= @venue.image_url %>" alt="<%= @venue.name %>">
+</ul>
+  <hr>
+
+
+
+<a class='change_event' href="/venues/<%=@venue.id%>/edit">Edit This Venue's Details</a> ||
+<a class='change_event' id="delete_venue" href="/venues/<%=@venue.id%>/delete">Delete This Venue's Details</a>
