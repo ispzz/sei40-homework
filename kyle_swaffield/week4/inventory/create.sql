@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS location;
 DROP TABLE IF EXISTS supplier;
 DROP TABLE IF EXISTS uom;
 
-CREATE TABLE item (
+CREATE TABLE items (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL UNIQUE,
   description TEXT,
@@ -15,14 +15,14 @@ CREATE TABLE item (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE category (
+CREATE TABLE categories (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL UNIQUE,
   description TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE location (
+CREATE TABLE locations (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL UNIQUE,
   description TEXT,
@@ -31,7 +31,7 @@ CREATE TABLE location (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE supplier (
+CREATE TABLE suppliers (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL UNIQUE,
   description TEXT,
@@ -40,7 +40,7 @@ CREATE TABLE supplier (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE uom (
+CREATE TABLE uoms (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL UNIQUE,
   description TEXT,
@@ -48,7 +48,7 @@ CREATE TABLE uom (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO item (
+INSERT INTO items (
   name,
   description,
   image_url,
@@ -63,7 +63,7 @@ INSERT INTO item (
   "1",
   "1"
 );
-INSERT INTO item (
+INSERT INTO items (
   name,
   description,
   image_url,
@@ -78,7 +78,7 @@ INSERT INTO item (
   "2",
   "2"
 );
-INSERT INTO item (
+INSERT INTO items (
   name,
   description,
   image_url,
@@ -93,7 +93,7 @@ INSERT INTO item (
   "3",
   "3"
 );
-INSERT INTO item (
+INSERT INTO items (
   name,
   description,
   image_url,
@@ -109,28 +109,28 @@ INSERT INTO item (
   "4"
 );
 
-INSERT INTO category (
+INSERT INTO categories (
   name,
   description
 ) VALUES (
   "shoes",
   "shoes for adults"
 );
-INSERT INTO category (
+INSERT INTO categories (
   name,
   description
 ) VALUES (
   "cultlrey",
   "Exotic cutlery sets"
 );
-INSERT INTO category (
+INSERT INTO categories (
   name,
   description
 ) VALUES (
   "furnature",
   "Wooden furnature sets"
 );
-INSERT INTO category (
+INSERT INTO categories (
   name,
   description
 ) VALUES (
@@ -138,7 +138,7 @@ INSERT INTO category (
   "bathroom accesories"
 );
 
-INSERT INTO location (
+INSERT INTO locations (
   name,
   description,
   quantity,
@@ -149,7 +149,7 @@ INSERT INTO location (
   "10",
   "1"
 );
-INSERT INTO location (
+INSERT INTO locations (
   name,
   description,
   quantity,
@@ -160,7 +160,7 @@ INSERT INTO location (
   "4",
   "2"
 );
-INSERT INTO location (
+INSERT INTO locations (
   name,
   description,
   quantity,
@@ -171,7 +171,7 @@ INSERT INTO location (
   "100",
   "3"
 );
-INSERT INTO location (
+INSERT INTO locations (
   name,
   description,
   quantity,
@@ -182,7 +182,7 @@ INSERT INTO location (
   "50",
   "4"
 );
-INSERT INTO location (
+INSERT INTO locations (
   name,
   description,
   quantity,
@@ -193,7 +193,7 @@ INSERT INTO location (
   "10",
   "1"
 );
-INSERT INTO location (
+INSERT INTO locations (
   name,
   description,
   quantity,
@@ -204,7 +204,7 @@ INSERT INTO location (
   "4",
   "2"
 );
-INSERT INTO location (
+INSERT INTO locations (
   name,
   description,
   quantity,
@@ -215,7 +215,7 @@ INSERT INTO location (
   "20",
   "3"
 );
-INSERT INTO location (
+INSERT INTO locations (
   name,
   description,
   quantity,
@@ -227,7 +227,7 @@ INSERT INTO location (
   "4"
 );
 
-INSERT INTO supplier (
+INSERT INTO suppliers (
   name,
   description,
   email,
@@ -238,7 +238,7 @@ INSERT INTO supplier (
   "shoe@king.com",
   "0450121212"
 );
-INSERT INTO supplier (
+INSERT INTO suppliers (
   name,
   description,
   email,
@@ -249,7 +249,7 @@ INSERT INTO supplier (
   "everything@buy.com",
   "0450121212"
 );
-INSERT INTO supplier (
+INSERT INTO suppliers (
   name,
   description,
   email,
@@ -260,7 +260,7 @@ INSERT INTO supplier (
   "ahhh@no.com",
   "0450121212"
 );
-INSERT INTO supplier (
+INSERT INTO suppliers (
   name,
   description,
   email,
@@ -272,35 +272,35 @@ INSERT INTO supplier (
   "0450121212"
 );
 
-INSERT INTO uom (
+INSERT INTO uoms (
   name,
   description
 ) VALUES (
   "ea",
   "Each"
 );
-INSERT INTO uom (
+INSERT INTO uoms (
   name,
   description
 ) VALUES (
   "L",
   "Liters"
 );
-INSERT INTO uom (
+INSERT INTO uoms (
   name,
   description
 ) VALUES (
   "Ton",
   "Tons"
 );
-INSERT INTO uom (
+INSERT INTO uoms (
   name,
   description
 ) VALUES (
   "Pack",
   "Full Packs"
 );
-INSERT INTO uom (
+INSERT INTO uoms (
   name,
   description
 ) VALUES (

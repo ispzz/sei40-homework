@@ -11,31 +11,42 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 class Item < ActiveRecord::Base
-  belongs_to :category
-  belongs_to :supplier
-  belongs_to :uom
-  has_many :locations
+   belongs_to :category
+  # belongs_to :supplier
+  # belongs_to :uom
+  # has_many :locations
 end
 class Category < ActiveRecord::Base
-  has_many :items
+   has_many :items
 end
 class Location < ActiveRecord::Base
-  belongs_to :item
+  # belongs_to :item
 end
 class Supplier < ActiveRecord::Base
-  has_many :items
+  # has_many :items
 end
 class Uom < ActiveRecord::Base
-  has_many :items
+  # has_many :items
 end
 
+# require 'pry'
+# binding.pry
+
 get '/' do
+  @items = Item.all
+  @categories = Category.all
+  @uoms = Uom.all
+  @locs = Location.all
+
+  puts "==============================="
+   # p @categories[0].name
+  puts "==============================="
   erb :index
 end
 
 # items
   # create
-  get '/items/new' do
+  get '/item/new' do
     erb :item_new
   end
   post '/items' do
@@ -50,12 +61,16 @@ end
     redirect '/item'
   end
   # read
-  get '/items/' do
-    @items = Items.all
-    erb :index
-  end
   get '/item/:id' do
+    id = :id
     @item = Item.find params[:id]
+    @category = Category.find_by id: @item.category_id
+    @supplier = Supplier.find_by id: @item.supplier_id
+    @uom = Uom.find_by id: @item.uom_id
+    @locations = Location.where item_id: params[:id]
+    puts "==============================="
+       p :id
+    puts "==============================="
     erb :item_show
   end
   # update

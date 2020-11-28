@@ -1,1 +1,28 @@
 <h2>Inventory Index</h2>
+<table>
+  <tr>
+    <th>Item Name</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Quantity</th>
+  </tr>
+  <%  i = 0
+      @items.each do |item|
+      category = @categories[i].name
+      uom = @uoms[i].name
+      add = 0
+      @locs.each do |qty|
+        if qty.item_id == i + 1
+          add += qty.quantity
+        end
+      end
+      i += 1
+  %>
+  <tr>
+      <td><a href="/item/<%=item.id%>"><%=item.name%></a></td>
+      <td><%=item.description%></td>
+      <td><%=category%></td>
+      <td><%=add%> (<%=uom%>)</td>
+  </tr>
+  <% end %>
+</table>
