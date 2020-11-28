@@ -1,19 +1,20 @@
-<h2>Location: ##</h2>
+<h2>Location: <%=@location.name%></h2>
 <table>
   <tr>
-    <td>Name: </td>
-    <td>##</td>
+    <td><strong>Name:  </strong></td>
+    <td><%=@location.name%></td>
   </tr>
   <tr>
-    <td>Description: </td>
-    <td>##</td>
+    <td><strong>Description:  </strong></td>
+    <td><%=@location.description%></td>
   </tr>
   <tr>
-    <td>Item: </td>
-    <td>## (##qty/uom##)</td>
+    <td><strong>Item:  </strong></td>
+    <td><%=@location.quantity%></td>
   </tr>
+  <% if @location.id != 1%>
   <tr>
-    <td>Edit</td>
-    <td>Delete</td>
+    <td><a href="/location/<%=@location.id%>/edit">Edit</a></td>
   </tr>
+  <% end %>
 </table>

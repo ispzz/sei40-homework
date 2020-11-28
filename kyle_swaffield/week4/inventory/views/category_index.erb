@@ -1,11 +1,16 @@
 <h2>Categories</h2>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
+    <th><strong>Name</strong></th>
+    <th><strong>Description</strong></th>
   </tr>
+    <% @categories.each do |cat|%>
   <tr>
-    <td>##</td>
-    <td>##</td>
+    <td><a href="/category/<%=cat.id%>"><%=cat.name%></a></td>
+    <td><%=cat.description%></td>
+  </tr>
+    <% end %>
+  <tr>
+    <td colspan="2" class="align-right"><a href="/category/new">Add a category</a></td>
   </tr>
 </table>

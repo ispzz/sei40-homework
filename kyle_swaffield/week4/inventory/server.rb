@@ -11,13 +11,13 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 class Item < ActiveRecord::Base
-   belongs_to :category
+   # belongs_to :category
   # belongs_to :supplier
   # belongs_to :uom
   # has_many :locations
 end
 class Category < ActiveRecord::Base
-   has_many :items
+   # has_many :items
 end
 class Location < ActiveRecord::Base
   # belongs_to :item
@@ -38,10 +38,15 @@ get '/' do
   @uoms = Uom.all
   @locs = Location.all
 
-  puts "==============================="
-   # p @categories[0].name
-  puts "==============================="
+  # puts "==============================="
+  #  # p @categories[0].name
+  # puts "==============================="
   erb :index
+end
+
+get '/settings' do
+
+  erb :settings
 end
 
 # items
@@ -49,16 +54,26 @@ end
   get '/item/new' do
     erb :item_new
   end
-  post '/items' do
+  post '/item' do
+
     Item.create(
-      name: params[:name],
-      description: params[:description],
-      image_url: params[:image_url],
-      category_id: params[:category_id],
-      supplier_id: params[:supplier_id],
-      uom_id: params[:uom_id]
+      name: params[:item_name],
+      description: params[:item_description],
+      image_url: params[:item_image_url],
+      category_id: 1,
+      supplier_id: 1,
+      uom_id: 1
     )
-    redirect '/item'
+    @items = Item.all
+    if Location.where("name = 'default'") == false
+      Location.create(
+        name: "default",
+        description: "default",
+        quantity: 0,
+        item_id: 1
+      )
+    end
+    redirect "/item/#{@items.last.id}"
   end
   # read
   get '/item/:id' do
@@ -68,32 +83,36 @@ end
     @supplier = Supplier.find_by id: @item.supplier_id
     @uom = Uom.find_by id: @item.uom_id
     @locations = Location.where item_id: params[:id]
-    puts "==============================="
-       p :id
-    puts "==============================="
+    # puts "==============================="
+    #    p :id
+    # puts "==============================="
     erb :item_show
   end
   # update
   get '/item/:id/edit' do
     @item = Item.find params[:id]
+    @categories = Category.all
+    @suppliers = Supplier.all
+    @uoms = Uom.all
+    @locations = Location.all
     erb :item_edit
   end
   post '/item/:id' do
     item = Item.find params[:id]
-    item.create(
-      name: params[:name],
-      description: params[:description],
-      image_url: params[:image_url],
-      category_id: params[:category_id],
-      supplier_id: params[:supplier_id],
-      uom_id: params[:uom_id]
+    item.update(
+      name: params[:item_name],
+      description: params[:item_description],
+      image_url: params[:item_image_url],
+      category_id: params[:item_category_id],
+      supplier_id: params[:item_supplier_id],
+      uom_id: params[:item_uom_id]
     )
-    redirect "/items/#{params[:id]}"
+    redirect "/item/#{params[:id]}"
   end
   # delete
   get '/item/:id/delete' do
     Item.destroy params[:id]
-    redirect '/items'
+    redirect '/'
   end
 # Categories
   # create
@@ -102,14 +121,14 @@ end
   end
   post '/category' do
     Category.create(
-      name: params[:name],
-      description: params[:description]
+      name: params[:category_name],
+      description: params[:category_description]
     )
     redirect '/categories'
   end
   # read
   get '/categories' do
-    @categories = Categories.all
+    @categories = Category.all
     erb :category_index
   end
   get '/category/:id' do
@@ -123,11 +142,11 @@ end
   end
   post '/category/:id' do
     category = Category.find params[:id]
-    category.create(
-      name: params[:name],
-      description: params[:description]
+    category.update(
+      name: params[:category_name],
+      description: params[:category_description]
     )
-    redirect "/categories/#{params[:id]}"
+    redirect "/category/#{params[:id]}"
   end
   # delete
   get '/category/:id/delete' do
@@ -141,16 +160,16 @@ end
   end
   post '/location' do
     Location.create(
-      name: params['name'],
-      description: params['description'],
-      quantity: params['quantity'],
-      item_id: params['item_id']
+      name: params['location_name'],
+      description: params['location_description'],
+      quantity: 0,
+      item_id: 1
     )
     redirect '/locations'
   end
   # read
   get '/locations' do
-    @locations = Locations.all
+    @locations = Location.all
     erb :location_index
   end
   get '/location/:id' do
@@ -160,14 +179,15 @@ end
   # update
   get '/location/:id/edit' do
     @location = Location.find params[:id]
+    @item = Item.all
     erb :location_edit
   end
   post '/location/:id' do
     location = Location.find params[:id]
     location.update(
-    name: params['name'],
-    description: params['description'],
-    quantity: params['quantity'],
+    name: params['location_name'],
+    description: params['location_description'],
+    quantity: params['location_quantity'],
     item_id: params['item_id']
     )
     redirect "/location/#{params[:id]}"
@@ -184,16 +204,16 @@ end
   end
   post '/supplier' do
     Supplier.create(
-      name: params['name'],
-      description: params['description'],
-      email: params['email'],
-      phone: params['phone']
+      name: params['supplier_name'],
+      description: params['supplier_description'],
+      email: params['supplier_email'],
+      phone: params['supplier_phone']
     )
-    redirect '/supplier'
+    redirect '/suppliers'
   end
   # read
   get '/suppliers' do
-    @suppliers = Suppliers.all
+    @suppliers = Supplier.all
     erb :supplier_index
   end
   get '/supplier/:id' do
@@ -208,17 +228,17 @@ end
   post '/supplier/:id' do
     supplier = Supplier.find params[:id]
     supplier.update(
-    name: params['name'],
-    description: params['description'],
-    email: params['email'],
-    phone: params['phone']
+    name: params['supplier_name'],
+    description: params['supplier_description'],
+    email: params['supplier_email'],
+    phone: params['supplier_phone']
     )
     redirect "/supplier/#{params[:id]}"
   end
   # delete
   get '/supplier/:id/delete' do
     Supplier.destroy params[:id]
-    redirect '/supplier'
+    redirect '/suppliers'
   end
 # Uom
   # create
@@ -227,14 +247,14 @@ end
   end
   post '/uom' do
     Uom.create(
-      name: params['name'],
-      description: params['description']
+      name: params['uom_name'],
+      description: params['uom_description']
     )
-    redirect '/uom'
+    redirect '/uoms'
   end
   # read
-  get '/uom' do
-    @uom = Uom.all
+  get '/uoms' do
+    @uoms = Uom.all
     erb :uom_index
   end
   get '/uom/:id' do
@@ -249,13 +269,13 @@ end
   post '/uom/:id' do
     uom = Uom.find params[:id]
     uom.update(
-      name: params['name'],
-      description: params['description']
+      name: params['uom_name'],
+      description: params['uom_description']
     )
     redirect "/uom/#{params[:id]}"
   end
   # delete
   get '/uom/:id/delete' do
     Uom.destroy params[:id]
-    redirect '/uom'
+    redirect '/uoms'
   end

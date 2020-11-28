@@ -1,24 +1,40 @@
-<h2>Location Edit: ##</h2>
+<h2>Location Edit: <%=@location.name%></h2>
 <table>
+  <form action='/location/<%=@location.id%>' method='post'>
   <tr>
-    <td>ID:</td>
-    <td><input type="text" name="location_id" value="##"></td>
+    <td><strong>ID:</strong></td>
+    <td><input type="text" name="location_id" value="<%=@location.id%>" readonly></td>
   </tr>
   <tr>
-    <td>Name:</td>
-    <td><input type="text" name="location_name" value="##"></td>
+    <td><strong>Name:</strong></td>
+    <td><input type="text" name="location_name" value="<%=@location.name%>"></td>
   </tr>
   <tr>
-    <td>Description:</td>
-    <td><input type="text" name="location_description" value="##"></td>
+    <td><strong>Description:</strong></td>
+    <td><input type="text" name="location_description" value="<%=@location.description%>"></td>
   </tr>
   <tr>
-    <td>Item:</td>
+    <td><strong>Quantity:</strong></td>
+    <td><input type="text" name="location_quantity" value="<%=@location.quantity%>"></td>
+  </tr>
+  <tr>
+    <td><strong>Item:</strong></td>
     <td><select class="" name="item_id">
-      <option value="##"></option>
+      <%  ins = ''
+          ins2 = ''
+          @item.each do |item|
+          if item.id == @location.item_id
+            ins = item.name
+            ins2= item.description
+          end
+       %>
+        <option value="<%=item.id%>"><%=item.name%> - <%=item.description%></option>
+      <% end%>
+      <option value="<%=@location.item_id%>" selected><%=ins%> - <%=ins2%></option>
     </select></td>
   </tr>
   <tr>
-    <td colspan="2"><input type="submit" name="Update" value="##"></td>
+    <td colspan="2" class='align-right'><input type="submit" name="Update" value="Update"></td>
   </tr>
+  </form>
 </table>

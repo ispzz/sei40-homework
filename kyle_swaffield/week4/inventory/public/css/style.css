@@ -13,7 +13,7 @@ body{
   /* border: 1px red solid; */
 }
 ul.inline{
-  margin-left: 100px;
+  margin-left: 420px;
   /* border: solid 1px yellow; */
 }
 .main{
@@ -38,4 +38,16 @@ td{
 }
 .none{
   border: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: red;
+}
+.align-right{
+  text-align: right;
 }

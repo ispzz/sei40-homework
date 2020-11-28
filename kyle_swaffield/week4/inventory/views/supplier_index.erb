@@ -6,10 +6,15 @@
     <th>Phone</th>
     <th>Email</th>
   </tr>
+  <%  @suppliers.each do |sup| %>
   <tr>
-    <td>##</td>
-    <td>##</td>
-    <td>##</td>
-    <td>##</td>
+    <td><a href="/supplier/<%=sup.id%>"><%=sup.name%></a></td>
+    <td><%=sup.description%></td>
+    <td><%=sup.phone%></td>
+    <td><%=sup.email%></td>
+  </tr>
+  <%end%>
+  <tr>
+    <td colspan="4" class="align-right"><a href="/supplier/new">Add a supplier</a></td>
   </tr>
 </table>

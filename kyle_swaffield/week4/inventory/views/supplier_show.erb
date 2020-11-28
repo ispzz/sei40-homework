@@ -1,23 +1,24 @@
-<h2>Supplier: ##</h2>
+<h2>Supplier: <%=@supplier.name%></h2>
 <table>
   <tr>
-    <td>Name: </td>
-    <td>##</td>
+    <td><strong>Name: </strong></td>
+    <td><%=@supplier.name%></td>
   </tr>
   <tr>
-    <td>Description: </td>
-    <td>##</td>
+    <td><strong>Description: </strong></td>
+    <td><%=@supplier.description%></td>
   </tr>
   <tr>
-    <td>Email: </td>
-    <td>##</td>
+    <td><strong>Email: </strong></td>
+    <td><%=@supplier.email%></td>
   </tr>
   <tr>
-    <td>Phone: </td>
-    <td>##</td>
+    <td><strong>Phone: </strong></td>
+    <td><%=@supplier.phone%></td>
   </tr>
+  <% if @supplier.id != 1 %>
   <tr>
-    <td>Edit</td>
-    <td>Delete</td>
+    <td><a href="/supplier/<%=@supplier.id%>/edit">Edit</a></td>
   </tr>
+  <%end%>
 </table>

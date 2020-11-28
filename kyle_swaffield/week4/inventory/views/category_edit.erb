@@ -1,18 +1,20 @@
-<h2>Category Edit: ##</h2>
+<h2>Category Edit: <%=@category.name%></h2>
 <table>
+  <form action="/category/<%=@category.id%>" method="post">
   <tr>
-    <td>ID</td>
-    <td><input type="text" name="category_id" value="##"readonly="readonly"></td>
+    <td><strong>ID</strong></td>
+    <td><input type="text" name="category_id" value="<%=@category.id%>"readonly="readonly"></td>
   </tr>
   <tr>
-    <td>Name:</td>
-    <td><input type="text" name="category_name" value="##"></td>
+    <td><strong>Name:</strong></td>
+    <td><input type="text" name="category_name" value="<%=@category.name%>"></td>
   </tr>
   <tr>
-    <td>Description:</td>
-    <td><input type="text" name="category_description" value="##"></td>
+    <td><strong>Description:</strong></td>
+    <td><input type="text" name="category_description" value="<%=@category.description%>"></td>
   </tr>
   <tr>
-    <td colspan="2"><input type="submit" name="Update" value="##"></td>
+    <td colspan="2" class="align-right"><input type="submit" name="" value="Update"></td>
   </tr>
+  </form>
 </table>

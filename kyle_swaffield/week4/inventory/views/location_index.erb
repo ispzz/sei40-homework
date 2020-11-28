@@ -3,13 +3,18 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
-    <th>Items</th>
+    <th>Item_id</th>
     <th>Quantity</th>
   </tr>
+    <% @locations.each do |loc|%>
   <tr>
-    <td>##</td>
-    <td>##</td>
-    <td>##</td>
-    <td>##</td>
+    <td><a href="/location/<%=loc.id%>" ><%=loc.name%></a></td>
+    <td><%=loc.description%></td>
+    <td><%=loc.item_id%></td>
+    <td><%=loc.quantity%></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td colspan="4" class="align-right"><a href="/location/new">Add a location</a></td>
   </tr>
 </table>

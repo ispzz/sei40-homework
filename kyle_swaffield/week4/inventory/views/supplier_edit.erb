@@ -1,26 +1,27 @@
-<h2>Supplier edit: ##</h2>
+<h2>Supplier edit: <%=@supplier.name%></h2>
 <table>
+  <form action="/supplier/<%=@supplier.id%>" method="post">
   <tr>
-    <td>Id:</td>
-    <td><input type="text" name="supplier_id" value="##"></td>
+    <td><strong>Id:</strong></td>
+    <td><input type="text" name="supplier_id" value="<%=@supplier.id%>"></td>
   </tr>
   <tr>
-    <td>name:</td>
-    <td><input type="text" name="supplier_name" value="##"></td>
+    <td><strong>name:</strong></td>
+    <td><input type="text" name="supplier_name" value="<%=@supplier.name%>"></td>
   </tr>
   <tr>
-    <td>Description:</td>
-    <td><input type="text" name="supplier_description" value="##"></td>
+    <td><strong>Description:</strong></td>
+    <td><input type="text" name="supplier_description" value="<%=@supplier.description%>"</td>
   </tr>
   <tr>
-    <td>Email:</td>
-    <td><input type="text" name="supplier_email" value="##"></td>
+    <td><strong>Email:</strong></td>
+    <td><input type="text" name="supplier_email" value="<%=@supplier.email%>"></td>
   </tr>
   <tr>
-    <td>Phone:</td>
-    <td><input type="text" name="supplier_phone" value="##"></td>
+    <td><strong>Phone:</strong></td>
+    <td><input type="text" name="supplier_phone" value="<%=@supplier.phone%>"></td>
   </tr>
   <tr>
-    <td colspan="2"><input type="submit" name="Update" value="##"></td>
+    <td colspan="2" class='align-right'><input type="submit" name="" value="Update"></td>
   </tr>
 </table>

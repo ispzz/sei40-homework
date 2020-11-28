@@ -4,8 +4,13 @@
     <th>Name</th>
     <th>Description</th>
   </tr>
+  <% @uoms.each do |uom| %>
   <tr>
-    <td>##</td>
-    <td>##</td>
+    <td><a href="/uom/<%=uom.id%>"><%=uom.name%></a></td>
+    <td><%=uom.description%></td>
+  </tr>
+  <%end%>
+  <tr>
+    <td colspan="2" class="align-right"><a href="/uom/new">Add a Unit of Measure</a></td>
   </tr>
 </table>

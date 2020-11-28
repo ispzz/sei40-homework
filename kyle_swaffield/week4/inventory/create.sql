@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS item;
-DROP TABLE IF EXISTS category;
-DROP TABLE IF EXISTS location;
-DROP TABLE IF EXISTS supplier;
-DROP TABLE IF EXISTS uom;
+DROP TABLE IF EXISTS items;
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS locations;
+DROP TABLE IF EXISTS suppliers;
+DROP TABLE IF EXISTS uoms;
 
 CREATE TABLE items (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -108,7 +108,13 @@ INSERT INTO items (
   "4",
   "4"
 );
-
+INSERT INTO categories (
+  name,
+  description
+) VALUES (
+  "default",
+  "default"
+);
 INSERT INTO categories (
   name,
   description
@@ -137,7 +143,17 @@ INSERT INTO categories (
   "bathroom",
   "bathroom accesories"
 );
-
+INSERT INTO locations (
+  name,
+  description,
+  quantity,
+  item_id
+) VALUES (
+  "default",
+  "default",
+  "0",
+  "0"
+);
 INSERT INTO locations (
   name,
   description,
@@ -226,7 +242,17 @@ INSERT INTO locations (
   "70",
   "4"
 );
-
+INSERT INTO suppliers (
+  name,
+  description,
+  email,
+  phone
+) VALUES (
+  "default",
+  "default",
+  "",
+  ""
+);
 INSERT INTO suppliers (
   name,
   description,
@@ -271,7 +297,13 @@ INSERT INTO suppliers (
   "wish@wash.com",
   "0450121212"
 );
-
+INSERT INTO uoms (
+  name,
+  description
+) VALUES (
+  "default",
+  "default"
+);
 INSERT INTO uoms (
   name,
   description
