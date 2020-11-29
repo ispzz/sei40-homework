@@ -1,0 +1,12 @@
+<h2>Index of Renters</h2>
+
+<ul>
+  <% @renters.each do |renter| %>
+    <li>
+      <a href="/renters/<%= renter.id  %>">
+        <%= renter.first_name %> <%= renter.last_name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+<a href="/renters/new">Add renter</a>

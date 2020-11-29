@@ -1,0 +1,34 @@
+<h1>Edit Renter</h1>
+<form action="/renters/<%= @renter.id %>" method="post">
+  <label>
+    First name:
+    <input type="text" name="first_name" value="<%= @renter.first_name %>">
+  </label>
+  <br>
+  <label>
+    last_name:
+    <input type="text" name="last_name" value="<%= @renter.last_name %>">
+  </label>
+  <br>
+  <label>
+    phone_number:
+    <input type="text" name="phone_number" value="<%= @renter.phone_number %>">
+  </label>
+  <br>
+  <label>
+    paid:
+    <input type="text" name="paid" value="<%= @renter.paid %>">
+  </label>
+  <br>
+  <label>
+    rent:
+    <input type="text" name="rent" value="<%= @renter.rent %>">
+  </label>
+  <br>
+  <label>
+    Property:
+    <input type="text" name="property_id" value="<%= @renter.property_id %>">
+  </label>
+  <br>
+  <button type="submit">Update renter</button>
+</form>

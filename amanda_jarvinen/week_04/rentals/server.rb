@@ -23,7 +23,8 @@ get '/' do
   erb :home
 end
 
-# Create
+# CREATE
+# Properties
 get '/properties/new' do
   erb :'properties/new'
 end
@@ -33,7 +34,7 @@ post '/properties' do
     description: params[:description],
     street_name: params[:street_name],
     suburb: params[:suburb],
-    postcode: params[:postcode],
+    postcode: params[:postcode], 
     state: params[:state],
     image_url: params[:image_url]
   )
@@ -41,7 +42,26 @@ post '/properties' do
   redirect '/properties'
 end
 
-# Read
+# Renters
+get '/renters/new' do
+  erb :'renters/new'
+end
+
+post '/renters' do
+  Renter.create(
+    first_name: params[:first_name],
+    last_name: params[:last_name],
+    phone_number: params[:phone_number],
+    paid: params[:paid],
+    rent: params[:rent],
+    property_id: params[:property_id]  
+  )
+
+  redirect '/renters'
+end
+
+# READ
+# Properties
 get '/properties' do
   @properties = Property.all
   erb :'properties/index'
@@ -52,7 +72,19 @@ get '/properties/:id' do
   erb :'properties/show'
 end
 
-# Update
+# Renters
+get '/renters' do
+  @renters = Renter.all
+  erb :'renters/index'
+end
+
+get '/renters/:id' do
+  @renter = Renter.find params[:id]
+  erb :'renters/show'
+end
+
+# UPDATE
+# Properties
 get '/properties/:id/edit' do
   @property = Property.find params[:id]
   erb :'properties/edit'
@@ -67,13 +99,39 @@ post '/properties/:id' do
     postcode: params[:postcode],
     state: params[:state],
     image_url: params[:image_url]
-  )
+    )
+    
+    redirect "/properties/#{params[:id]}"
+  end
+  
+  # Renters
+  get '/renters/:id/edit' do
+    @renter = Renter.find params[:id]
+    erb :'renters/edit'
+  end
 
-  redirect "/properties/#{params[:id]}"
-end
+  post '/renters/:id' do
+    renter = Renter.find params[:id]
+    renter.update(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      phone_number: params[:phone_number],
+      paid: params[:paid],
+      rent: params[:rent],
+      property_id: params[:property_id]  
+    )
+    redirect "renters/#{params[:id]}"
+  end
 
-# Delete
+# DELETE
+# Properties
 get '/properties/:id/delete' do
   Property.destroy params[:id]
   redirect '/properties'
+end
+
+# Renters
+get '/renters/:id/delete' do
+  Renter.destroy params[:id]
+  redirect '/renters'
 end
