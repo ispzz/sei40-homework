@@ -30,3 +30,23 @@ VALUES (
   "540",
   "2"
 );
+
+INSERT INTO renters ("first_name", "last_name", "phone_number", "paid", "rent", "property_id")
+VALUES (
+  "Sam",
+  "Lu",
+  "0457776864",
+  "false",
+  "540",
+  "2"
+);
+
+INSERT INTO renters ("first_name", "last_name", "phone_number", "paid", "rent", "property_id")
+VALUES (
+  "Kate",
+  "Wallace",
+  "0464366864",
+  "true",
+  "890",
+  "3"
+);

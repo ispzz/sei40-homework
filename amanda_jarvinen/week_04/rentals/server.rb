@@ -44,6 +44,7 @@ end
 
 # Renters
 get '/renters/new' do
+  @properties = Property.all
   erb :'renters/new'
 end
 

@@ -22,11 +22,11 @@ CREATE TABLE properties (
 INSERT INTO properties ("description", "street_name", "suburb", "postcode", "state", "image_url")
 VALUES (
   "Brand new apartment with ample natural light and stunning Botanic Gardens backdrop",
-  "121 St Kilda Rd",
+  "42 St Kilda Rd",
   "Southbank",
   "3006",
   "VIC",
-  "https://placekitten.com/200/200"
+  "https://picsum.photos/id/1029/400"
 );
 
 INSERT INTO properties ("description", "street_name", "suburb", "postcode", "state", "image_url")
@@ -36,5 +36,15 @@ VALUES (
   "Richmond",
   "3121",
   "VIC",
-  "https://placekitten.com/200/200"
+  "https://picsum.photos/id/1047/400"
+);
+
+INSERT INTO properties ("description", "street_name", "suburb", "postcode", "state", "image_url")
+VALUES (
+  "A house with housiness and boatiness",
+  "654-65 Esplanade Rd",
+  "Mornington",
+  "3931",
+  "VIC",
+  "https://picsum.photos/id/211/400"
 );
