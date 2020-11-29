@@ -90,7 +90,7 @@ end #POST /websites/:id
 ##DELETE
 get '/websites/:id/delete' do
   Website.destroy params[:id]
-  
+
   redirect '/websites'
 end #GET /websites/:id/delete
 
@@ -116,18 +116,18 @@ end #POST /frontends
 get '/frontends' do
   @frontends = Frontend.all
   erb :'frontends/index'
-end
+end # /frontends
 
 get '/frontends/:id' do
   @frontend = Frontend.find params[:id]
   erb :'frontends/show'
-end
+end #GET /frontends/:id
 
 ##UPDATE
 get '/frontends/:id/edit' do
   @frontend = Frontend.find params[:id]
   erb :'/frontends/edit'
-end
+end #GET /frontends/:id/edit
 
 post '/frontends/:id' do
   frontend = Frontend.find params[:id]
@@ -138,21 +138,21 @@ post '/frontends/:id' do
   )
 
   redirect "/frontends/#{params[:id]}"
-end
+end #POST /frontends
 
 ##DELETE
 get '/frontends/:id/delete' do
   Frontend.destroy params[:id]
 
   redirect '/frontends'
-end
+end #GET /frontends/:id/delete
 
 
 ##CRUD routes for backends
 ##CREATE
 get '/backends/new' do
   erb :'/backends/new'
-end
+end #GET /backends/new
 
 post '/backends' do
   Backend.create(
@@ -162,24 +162,24 @@ post '/backends' do
   )
 
   redirect '/backends'
-end
+end #POST /backends
 
 ##READ
 get '/backends' do
   @backends = Backend.all
   erb :'/backends/index'
-end
+end #GET /backends
 
 get '/backends/:id' do
   @backend = Backend.find params[:id]
   erb :'/backends/show'
-end
+end #GET /backends/:id
 
 ##UPDATE
 get '/backends/:id/edit' do
   @backend = Backend.find params[:id]
   erb :'/backends/edit'
-end
+end #GET /backends/:id/edit
 
 post '/backends/:id' do
   backend = Backend.find params[:id]
@@ -190,11 +190,11 @@ post '/backends/:id' do
   )
 
   redirect "/backends/#{params[:id]}"
-end
+end #POST /backends
 
 ##DELETE
 get '/backends/:id/delete' do
   Backend.destroy params[:id]
 
   redirect '/backends'
-end
+end #GET /backends/:id/delete

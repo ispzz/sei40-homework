@@ -23,7 +23,7 @@
 </p>
 
 <p>
-  <strong>Domain: </strong><%= @website.domain %>
+  <strong>Domain: </strong><a href="http://www.<%= @website.domain %>" target="_blank"><%= @website.domain %></a>
 </p>
 
 <p>
@@ -31,7 +31,7 @@
 </p>
 
 <p>
-  <strong>Wikipedia: </strong><%= @website.wiki %>
+  <strong>Wikipedia: </strong><a href="<%= @website.wiki %>"><%= @website.name %></a>
 </p>
 
 <a href="/websites/<%= @website.id %>/edit">Edit Website</a>

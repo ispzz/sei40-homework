@@ -1,8 +1,8 @@
 body {
-  background-color: black;
-  color: white;
+  background-color: lightgrey;
+  /* color: white; */
 }
 
 img {
-  width: 100px;
+  height: 100px;
 }
