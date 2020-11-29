@@ -2,3 +2,9 @@
 <p>
   <%= @property.street_name %>, <%= @property.suburb %>, <%= @property.state %> <%= @property.postcode %>
 </p>
+<p>
+  <%= @property.description %>
+</p>
+<a href="/properties/<%= @property.id %>/edit">Edit</a>
+|
+<a href="/properties/<%= @property.id %>/delete">Delete</a>
