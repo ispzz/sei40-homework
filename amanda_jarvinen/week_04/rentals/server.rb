@@ -19,13 +19,9 @@ class Renter < ActiveRecord::Base
   belongs_to :property
 end
 
-# require 'pry'; binding.pry
-
 get '/' do
   erb :home
-  # views/properties/index.erb
 end
-
 
 # Create
 get '/properties/new' do
@@ -55,7 +51,6 @@ get '/properties/:id' do
   @property = Property.find params[:id]
   erb :'properties/show'
 end
-
 
 # Update
 get '/properties/:id/edit' do
