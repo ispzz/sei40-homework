@@ -11,22 +11,22 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 class Item < ActiveRecord::Base
-   # belongs_to :category
-  # belongs_to :supplier
-  # belongs_to :uom
-  # has_many :locations
+  belongs_to :category
+  belongs_to :supplier
+  belongs_to :uom
+  has_many :locations
 end
 class Category < ActiveRecord::Base
-   # has_many :items
+   has_many :items
 end
 class Location < ActiveRecord::Base
-  # belongs_to :item
+  belongs_to :item
 end
 class Supplier < ActiveRecord::Base
-  # has_many :items
+  has_many :items
 end
 class Uom < ActiveRecord::Base
-  # has_many :items
+  has_many :items
 end
 
 # require 'pry'

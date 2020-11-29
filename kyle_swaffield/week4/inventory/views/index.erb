@@ -3,11 +3,26 @@
   <tr>
     <th>Item Name</th>
     <th>Description</th>
+    <th>Category</th>
+    <th>Supplier</th>
+    <th>Quantity</th>
   </tr>
   <% @items.each do |item|%>
   <tr>
       <td><a href="/item/<%=item.id%>"><%=item.name%></a></td>
       <td><%=item.description%></td>
+      <td><%=item.category.name%></td>
+      <td><%=item.supplier.name%></td>
+      <%   add = 0
+          @locs.each do |loc|
+            if loc.item_id == item.id
+              add += loc.quantity
+            end
+          end
+       %>
+       <td><%=add%> <%=item.uom.name%></td>
+
+
   </tr>
   <% end %>
 </table>
