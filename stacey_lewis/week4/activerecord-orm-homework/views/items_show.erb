@@ -1,0 +1,15 @@
+<h2> Item details: <%= @item.item_name %></h2>
+
+<p>Cost: $<%= @item.item_cost %></p>
+<p>Suggestion where to buy: <%= @item.store_name %></p>
+
+<p>Recipient: <%= @item.recipient %></p>
+<p>Event: <%= @item.event %></p>
+<p>Event date: <%= @item.event_date %></p>
+<p><strong>member responsible for buying: <%=@item.member.name%></strong></p
+<p><a href="<%= @item.link %>">Click for details</a> </p>
+<p><img src="<%= @item.image_url%>" alt="<%= @item.item_name %>"></p>
+
+
+<a href="/items/<%= @item.id %>/edit">Edit</a>
+<a href="/items/<%= @item.id %>/delete">Delete</a>
