@@ -1,0 +1,29 @@
+<h1>Edit Property</h1>
+<form action="/properties/<%= @property.id %> method="post">
+  <label>
+    Street number and name:
+    <input type="text" name="street_name" value="<%= @property.street_name %>">
+  </label>
+  <br>
+  <label>
+    Suburb:
+    <input type="text" name="suburb" value="<%= @property.suburb %>">
+  </label>
+  <br>
+  <label>
+    State:
+    <input type="text" name="state" value="<%= @property.state %>">
+  </label>
+  <br>
+  <label>
+    Postcode:
+    <input type="text" name="postcode" value="<%= @property.postcode %>">
+  </label>
+  <br>
+  <label>
+    Photo:
+    <input type="text" name="image_url" value="<%= @property.image_url %>">
+  </label>
+  <br>
+  <button type="submit">Update property</button>
+</form>

@@ -26,7 +26,7 @@ VALUES (
   "Southbank",
   "3006",
   "VIC",
-  "https://unsplash.com/photos/MP0bgaS_d1c"
+  "https://placekitten.com/200/200"
 );
 
 INSERT INTO properties ("description", "street_name", "suburb", "postcode", "state", "image_url")
@@ -36,5 +36,5 @@ VALUES (
   "Richmond",
   "3121",
   "VIC",
-  "https://unsplash.com/photos/MP0bgaS_d1c"
+  "https://placekitten.com/200/200"
 );

@@ -48,18 +48,19 @@ end
 # Read
 get '/properties' do
   @properties = Property.all
-  erb :index
+  erb :'properties/index'
 end
 
 get '/properties/:id' do
   @property = Property.find params[:id]
-  erb :show
+  erb :'properties/show'
 end
 
 
 # Update
 get '/properties/:id/edit' do
-  erb :edit
+  @property = Property.find params[:id]
+  erb :'properties/edit'
 end
 
 post '/properties/:id' do
