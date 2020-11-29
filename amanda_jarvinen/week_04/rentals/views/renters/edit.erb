@@ -27,7 +27,12 @@
   <br>
   <label>
     Property:
-    <input type="text" name="property_id" value="<%= @renter.property_id %>">
+    <select name="property_id">
+      <option value="" disabled selected>Please choose a property</option>
+      <% @properties.each do |property| %>
+        <option name="<%= property.id %>" value="<%= property.id %>"><%= property.street_name %>, <%= property.suburb %>, <%= property.state %> <%= property.postcode %></option>
+      <% end %>
+    </select>
   </label>
   <br>
   <button type="submit">Update renter</button>

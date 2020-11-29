@@ -1,3 +1,36 @@
- body {
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: 0;
+}
+
+body {
    font-family: Helvetica, sans-serif;
+
+  height: 100vh;
+  max-width: 960px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-rows: 100px 1fr 64px;
+  grid-template-areas:
+  "nav"
+  "main"
+  "footer";
+ }
+
+ nav {
+   grid-area: nav;
+ }
+
+ main {
+   grid-area: main;
+ }
+
+ footer {
+   grid-area: footer;
+ }
+
+ h2 {
+   font-size: medium;
  }

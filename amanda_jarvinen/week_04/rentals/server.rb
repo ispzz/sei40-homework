@@ -107,6 +107,7 @@ post '/properties/:id' do
   # Renters
   get '/renters/:id/edit' do
     @renter = Renter.find params[:id]
+    @properties = Property.all
     erb :'renters/edit'
   end
 
