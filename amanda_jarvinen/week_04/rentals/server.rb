@@ -25,7 +25,7 @@ end
 
 # Create
 get '/properties/new' do
-  erb :new
+  erb :'properties/new'
 end
 
 post '/properties' do
