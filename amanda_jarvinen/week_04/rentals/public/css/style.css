@@ -34,3 +34,7 @@ body {
  h2 {
    font-size: large;
  }
+
+ label {
+   line-height: 48px;
+ }
