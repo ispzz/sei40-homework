@@ -1,0 +1,25 @@
+<h1>Edit Framework: <%= @backend.name %></h1>
+
+<form action="/backends/<%= @backend.id %>" method="post">
+
+  <label>
+    Name:
+    <input type="text" name="name" value="<%= @backend.name %>">
+  </label>
+  <br>
+
+  <label>
+    Date Released:
+    <input type="text" name="date_released" value="<%= @backend.date_released %>">
+  </label>
+  <br>
+
+  <label>
+    Logo:
+    <input type="text" name="logo" value="<%= @backend.logo %>">
+  </label>
+  <br>
+
+  <input type="submit" value="Edit Framework">
+
+</form>

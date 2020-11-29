@@ -1,0 +1,26 @@
+<h2>Framework Details</h2>
+
+<h3><%= @frontend.name %></h3>
+
+<img src="<%= @frontend.logo %>" alt="<%= @frontend.name %> logo">
+
+<p>
+  <strong>Date Released: </strong><%= @frontend.date_released %>
+</p>
+
+<p>
+  <strong>Used in:</strong>
+  <ul>
+    <% @frontend.websites.each do |website| %>
+      <li>
+        <a href="/websites/<%= website.id %>">
+        <%= website.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<a href="/frontends/<%= @frontend.id %>/edit">Edit Frontend</a>
+|
+<a href="/frontends/<%= @frontend.id %>/delete">Delete Frontend</a>

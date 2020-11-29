@@ -1,0 +1,11 @@
+<h2>Index of Backends</h2>
+
+<ul>
+  <% @backends.each do |backends| %>
+  <li>
+    <a href="/backends/<%= backends.id %>">
+    <%= backends.name %>
+    </a> - (<%= backends.date_released %>)
+  </li>
+  <% end %>
+</ul>
