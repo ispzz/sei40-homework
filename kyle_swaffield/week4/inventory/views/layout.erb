@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Inventory System</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="main">
+      <nav class="navtop">
+        <h1 class="heading">Inventory Tracker</h1>
+          <ul class="inline">
+            <li class="inline"><a href="/">Main Index</a></li>
+            <li class="inline"><a href="/item/new">Add Item</a></li>
+            <li class="inline"><a href="/settings">Settings</a></li>
+          </ul>
+      </nav>
+      <hr>
+      <section class="content">
+      <%= yield %>
+      </section>
+      <div class="bottom">
+        <hr>
+        <footer>&copy; Inventory Tracker 2020</footer>
+      </div>
+    </div>
+
+  </body>
+</html>

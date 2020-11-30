@@ -1,0 +1,33 @@
+<div class="hero-image" style="background-image:url(<%= @prop['image_url'] %>)">
+  <div class="action">
+    <a href="/property/<%= @prop['id'] %>/edit">Edit Property</a>
+    |
+    <a href="/property/<%= @prop['id'] %>/delete">Delete Property</a>
+  </div>
+</div>
+<div class="">
+  <h1><%= @prop['name'] %></h1>
+  <div class="features">
+    <span class="price">$<%= @prop['price'] %> /mo</span>
+    <div class="">
+      <span><%= @prop['beds'] %> bds</span>
+      |
+      <span><%= @prop['bath'] %> ba</span>
+      |
+      <span><%= @prop['size'] %> sqft</span>
+    </div>
+    <div class="address">
+      <span><%= @prop['address'] %></span>
+    </div>
+  </div>
+
+  <div class="description">
+    <h2>Description</h2>
+    <p>
+      <%= @prop['description'] %>
+    </p>
+  </div>
+</div>
+
+
+</div>

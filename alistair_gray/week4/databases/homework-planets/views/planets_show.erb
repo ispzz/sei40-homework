@@ -1,0 +1,50 @@
+<h2>Details for the Planet: <%= @planet.name %></h2>
+
+<p>
+  <strong>Orbital Period: </strong><%= @planet.orbital_period %> Earth days
+</p>
+
+<br>
+
+<p>
+  <strong>Average Day Length: </strong><%= @planet.day_length %> Earth Days
+</p>
+
+<br>
+
+<p>
+  <strong>Distance from our Sun: </strong><%= @planet.dist_sun %> AU (1AU is the distance from the Earth to our Sun)
+</p>
+
+<br>
+
+<p>
+<strong>Evidence of Life: </strong> <%= @planet.inhabited ? 'Yes' : 'Not Yet' %>
+</p>
+
+<br>
+
+<p>
+  <strong>Atmosphere: </strong> <%= @planet.atmosphere ? 'Yes' : 'No' %>
+</p>
+
+<br>
+
+<p><strong>Image of the planet: </strong> <%= @planet.name %></p>
+<img class="main" src="<%= @planet.img_url %>" alt="Image of the planet <%= @planet.name %>">
+
+<br>
+
+<h4>Moons of <%=@planet.name %>:</h4>
+
+<% @planet.moons.each do |moon| %>
+<li>
+    <a href="/moons/<%= moon.id %>"><%= moon.name %></a>
+    <br>
+    <img class="sub_image" src="<%= moon.img_url %>" alt="image of <%= moon.name %>">
+</li>
+<% end %>
+
+<a href="/planets/<%= @planet.id %>/edit_planet">Edit Planet</a>
+|
+<a href="/planets/<%= @planet.id %>/delete">Delete This Planet</a>

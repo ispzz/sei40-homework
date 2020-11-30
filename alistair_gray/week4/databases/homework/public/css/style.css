@@ -1,11 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 
+
 body {
+  margin-left: 50%;
   background-color: black;
   color: white;
   font-family: 'Roboto', sans-serif;
 }
 
+nav {
+  margin: 0 auto;
+}
+
+a {
+  /* border: 1px solid red; */
+  text-decoration: none;
+  decoration: none;
+}
+
 img {
   max-width: 600px;
+}
+
+.thumb {
+  max-width: 50px;
 }

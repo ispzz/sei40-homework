@@ -51,7 +51,7 @@ end
 # READ
 get '/units' do
   @units = db_query 'SELECT * FROM units;'
-  erb :list
+  erb :list #rename index
 end
 
 get '/units/:id' do

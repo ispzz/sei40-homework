@@ -1,0 +1,12 @@
+<h2>Moon Index</h2>
+
+<ul>
+
+  <% @moons.each do |moon| %>
+  <li>
+    <a href="/moons/<%= moon.id %>"><%= moon.name %></a>
+    <img class="thumb" src="<%= moon.img_url %>" alt="">
+  </li>
+  <% end %>
+
+</ul>

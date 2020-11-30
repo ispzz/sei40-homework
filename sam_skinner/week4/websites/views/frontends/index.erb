@@ -1,0 +1,11 @@
+<h2>Index of Frontends</h2>
+
+<ul>
+  <% @frontends.each do |frontend| %>
+  <li>
+    <a href="/frontends/<%= frontend.id %>">
+    <%= frontend.name %>
+    </a> - (<%= frontend.date_released %>)
+  </li>
+  <% end %>
+</ul>

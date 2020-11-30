@@ -1,0 +1,98 @@
+
+<div class="container camper">
+  <ul>
+    <li>
+      <div class="image">
+      </div>
+    </li>
+    <li class="form">
+      <form action="/camps" method="POST">
+        <h2>Add a new Camp.</h2>
+        <div>
+          <div class="camper-wrapper">
+            <label>
+              Camper's Name:
+              <select name="camper_id">
+                <% @campers.each do |camper| %>
+                <option value="<%= camper.id %>"><%= camper.name %></option>
+                <% end %>
+              </select>
+            </label>
+          </div>
+          <ul>
+            <li class="left">
+              <div>
+                <label>
+                  Camp's Name:
+                  <input type="text" name="name">
+                </label>
+              </div>
+              <div>
+                <label>
+                  Camp's Address:
+                  <input id="autocomplete" onFocus="geolocate()" type="text" name="location">
+                </label>
+              </div>
+            </li>
+            <li class="right">
+              <div>
+                <label>
+                  Images/Pictures:
+                  <input type="text" name="image_url">
+                </label>
+              </div>
+              <div>
+                <label>
+                  Camp's Price (/person, /day):
+                  <input type="number" name="price">
+                </label>
+              </div>
+            </li>
+          </ul>
+          <div>
+            <label>
+              Camp's Description:
+              <textarea name="description" ></textarea>
+            </label>
+          </div>
+        </div>
+        <button class="submit">Add Camp</button>
+      </form>
+    </li>
+  </ul>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC92A27W3HNJ_kxea2POCviAfhVHsIknso&libraries=places&callback=initAutocomplete" defer></script>
+
+<script type="text/javascript">
+	var autocomplete;
+
+	function initAutocomplete() {
+		autocomplete = new google.maps.places.Autocomplete(
+			document.getElementById('autocomplete'),
+			{ types: ['geocode'] }
+		);
+
+		autocomplete.setFields(['address_component']);
+	}
+
+	function fillInAddress() {
+		autocomplete.getPlace();
+	}
+
+	function geolocate() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function (position) {
+				var geolocation = {
+					lat: position.coords.latitude,
+					lng: position.coords.longitude,
+				};
+				var circle = new google.maps.Circle({
+					center: geolocation,
+					radius: position.coords.accuracy,
+				});
+				autocomplete.setBounds(circle.getBounds());
+			});
+		}
+	}
+</script>

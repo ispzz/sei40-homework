@@ -1,0 +1,45 @@
+
+<div class="container camper">
+  <ul>
+    <li>
+      <div class="image" style="background-image:url(<%= @camp.image_url %>)">
+      </div>
+    </li>
+    <li class="form">
+      <form action="/comments/<%= @camp.id %>" method="POST">
+        <h2>Add a new Comment.</h2>
+        <div>
+          <div class="camper-wrapper">
+            <label>
+              Camper's Name:
+              <select name="camper_id">
+                <% @campers.each do |camper| %>
+                <option value="<%= camper.id %>"><%= camper.name %></option>
+                <% end %>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label>
+              Enter you comment here:
+              <textarea name="comment" ></textarea>
+            </label>
+          </div>
+          <div>
+            <label>
+              How do you rate this camp:
+              <select name="rating" style="background-color:white">
+                <option value="1">1 Star</option>
+                <option value="2">2 Star</option>
+                <option value="3">3 Star</option>
+                <option value="4">4 Star</option>
+                <option value="5">5 Star</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <button class="submit">Post Comment</button>
+      </form>
+    </li>
+  </ul>
+</div>

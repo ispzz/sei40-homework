@@ -1,0 +1,67 @@
+<h2>Item edit: <%=@item.name%></h2>
+
+<table>
+  <form action="/item/<%=@item.id%>" method="post">
+  <tr>
+    <td><strong>ID:</strong></td>
+    <td><input type="text" name="item_id" value="<%=@item.id%>" readonly="readonly"></td>
+  </tr>
+  <tr>
+    <td><strong>Name:</strong></td>
+    <td><input type="text" name="item_name" value="<%=@item.name%>"></td>
+  </tr>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td><input type="text" name="item_description" value="<%=@item.description%>"></td>
+  </tr>
+  <tr>
+    <td><strong>Image URL:</strong></td>
+    <td><input type="text" name="item_image_url" value="<%=@item.image_url%>"></td>
+  </tr>
+  <tr>
+    <td><strong>UOM:</strong></td>
+    <td><select class="" name="item_uom_id">
+
+      <%  ins = ''
+          @uoms.each do |uom|
+          if uom.id == @item.uom_id
+            ins = uom.name
+          end
+       %>
+        <option value="<%=uom.id%>"><%=uom.name%></option>
+      <% end%>
+      <option value="<%=@item.uom_id%>" selected><%=ins%></option>
+    </select></td>
+  </tr>
+  <tr>
+    <td><strong>Category:</strong></td>
+    <td><select class="" name="item_category_id">
+      <%  ins = ''
+          @categories.each do |cat|
+          if cat.id == @item.category_id
+            ins = cat.name
+          end
+       %>
+        <option value="<%=cat.id%>"><%=cat.name%></option>
+      <% end%>
+      <option value="<%=@item.category_id%>" selected><%=ins%></option>
+  </tr>
+  <tr>
+    <td><strong>Supplier:</strong></td>
+    <td><select class="" name="item_supplier_id">
+      <%  ins = ''
+          @suppliers.each do |sup|
+          if sup.id == @item.supplier_id
+            ins = sup.name
+          end
+       %>
+        <option value="<%=sup.id%>"><%=sup.name%></option>
+      <% end%>
+      <option value="<%=@item.supplier_id%>" selected><%=ins%></option>
+    </select></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="align-right"><input type="submit" name="" value="Update"></td>
+  </tr>
+  </form>
+</table>

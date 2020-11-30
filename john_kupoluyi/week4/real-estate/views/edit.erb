@@ -1,0 +1,60 @@
+<div class="form">
+  <form class="" action="/property/<%= @prop['id'] %>" method="POST">
+    <h2>Update Property</h2>
+    <ul>
+      <li>
+        <div class="">
+          <label>
+            <p>Property Name:</p>
+            <input type="text" name="name" value="<%= @prop['name'] %>">
+          </label>
+        </div>
+        <div class="">
+          <label>
+            <p>Property Address:</p>
+            <input type="text" name="address" value="<%= @prop['address'] %>">
+          </label>
+        </div>
+        <div class="">
+          <label>
+            <p>Property Description:</p>
+            <input type="text" name="description" value="<%= @prop['description'] %>">
+          </label>
+        </div>
+        <div class="">
+          <label>
+            <p>Property Size:</p>
+            <input type="text" name="size" value="<%= @prop['size'] %>">
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="">
+          <label>
+            <p>Property Image:</p>
+            <input type="text" name="image_url" value="<%= @prop['image_url'] %>">
+          </label>
+        </div>
+        <div class="">
+          <label>
+            <p>Property Price:</p>
+            <input type="text" name="price" value="<%= @prop['price'] %>">
+          </label>
+        </div>
+        <div class="">
+          <label>
+            <p>Number of Beds:</p>
+            <input type="text" name="beds" value="<%= @prop['beds'] %>">
+          </label>
+        </div>
+        <div class="">
+          <label>
+            <p>Number of Baths:</p>
+            <input type="text" name="bath" value="<%= @prop['bath'] %>">
+          </label>
+        </div>
+      </li>
+    </ul>
+    <button>Update Property</button>
+  </form>
+</div>

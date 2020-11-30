@@ -1,0 +1,39 @@
+<h2>Website Details</h2>
+
+<h3><%= @website.name %></h3>
+
+<p>
+  <strong>Frontend: </strong>
+  <a href="/frontends/<%= @website.frontend.id %>">
+    <%= @website.frontend.name %></a>
+</p>
+
+<p>
+  <strong>Backend: </strong>
+  <a href="/backends/<%= @website.backend.id %>">
+    <%= @website.backend.name %></a>
+</p>
+
+<p>
+  <strong>Year Launched: </strong><%= @website.launched %>
+</p>
+
+<p>
+  <strong>Database Breached?: </strong><%= @website.hacked %>
+</p>
+
+<p>
+  <strong>Domain: </strong><a href="http://www.<%= @website.domain %>" target="_blank"><%= @website.domain %></a>
+</p>
+
+<p>
+  <strong>Owned By: </strong><%= @website.owned_by %>
+</p>
+
+<p>
+  <strong>Wikipedia: </strong><a href="<%= @website.wiki %>"><%= @website.name %></a>
+</p>
+
+<a href="/websites/<%= @website.id %>/edit">Edit Website</a>
+|
+<a href="/websites/<%= @website.id %>/delete">Delete Website</a>
