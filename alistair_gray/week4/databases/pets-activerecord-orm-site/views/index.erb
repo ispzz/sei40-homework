@@ -1,0 +1,18 @@
+<h2>Index of Pets</h2>
+
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <a href="/pets/<%= pet.id%>">
+      <%= pet.name %>
+      </a>
+      (<%= pet.roundness %>)
+      -
+      <% if pet.alive %>
+        alive
+      <% else %>
+        dead
+      <% end %>
+    </li>
+  <% end %>
+</ul>

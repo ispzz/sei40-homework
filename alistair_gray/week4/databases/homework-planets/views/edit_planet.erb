@@ -1,0 +1,61 @@
+<h1>Edit Planet: <%= @planet.name %></h1>
+
+<form action="/planets/<%= @planet.id %>" method="post">
+
+  <label>
+    Name:
+    <input type="text" name="name" value="<%= @planet.name %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Orbital Period:
+    <input type="integer" name="orbital_period" value="<%= @planet.orbital_period %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Day Length:
+    <input type="integer" name="day_length" value="<%= @planet.day_length %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Distance to the Sun (Astronomical Units - AU):
+    <input type="integer" name="dist_sun" value="<%= @planet.dist_sun %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Is there life?:
+    <input type="text" name="inhabited" value="<%= @planet.inhabited %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Does it have an atmosphere?:
+    <input type="text" name="atmosphere" value="<%= @planet.atmosphere %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Image URL:
+    <input type="text" name="img_url" value="<%= @planet.img_url %>">
+  </label>
+  <br>
+  <br>
+
+<button>Update Planet</button>
+</form>
