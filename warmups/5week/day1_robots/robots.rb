@@ -1,5 +1,4 @@
-##############################################
-
+# -----------------------------------------
 # instructions for me, the human #
 # create a robot name using 2 letters and 3 numbers
 # - robot.name
@@ -9,8 +8,7 @@
 #  - robot.instruction_count
 # a method to get the total age of the robot - " since last reset and since last creation"
 # - robot.timers
-
-###############################################
+# -----------------------------------------
 
 class Robot
     
