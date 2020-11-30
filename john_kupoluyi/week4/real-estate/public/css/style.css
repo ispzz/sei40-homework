@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap');
+
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+.wrapper {
+  border-bottom: 1px solid lightgrey;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding:0;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav a {
+  margin: 0 10px;
+}
+
+.hero-image a {
+  color: #fff;
+}
+
+.property-list {
+  margin-top: 50px;
+}
+
+.property-list ul {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.prop-item {
+  box-shadow: 1px 1px #abab;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.prop-item:hover {
+  box-shadow: 3px 3px #abab;
+}
+
+.prop-item .image {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.prop-item .snapshot {
+  padding: 10px 15px;
+}
+
+.snapshot .features {
+  display: flex;
+  align-items: center;
+  color: grey;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.snapshot .price {
+  flex-grow: 1;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hero-image {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-image .action {
+  padding: 15px;
+  background-color: rgba(0,0,0,0.8);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+}
+
+.features .price {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.features > div, .features . address {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.description {
+  margin-top: 50px;
+}
+.description p {
+  line-height: 22px;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.form {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.form li {
+  margin: 0 10px;
+}
+
+.form input {
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: grey;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 50px;
+  border-top: 1px solid lightgrey;
+}

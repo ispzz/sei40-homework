@@ -1,0 +1,99 @@
+
+<div class="container camper">
+  <ul>
+    <li>
+      <div class="image" style="background-image:url(<%= @camp.image_url %>)">
+        <h2><%= @camp.name %></h2>
+      </div>
+    </li>
+    <li class="form">
+      <form action="/camps/<%= @camp.id %>" method="POST">
+        <h2>Update Camp.</h2>
+        <div>
+          <div class="camper-wrapper">
+            <label>
+              Updated By:
+              <select name="camper_id">
+                <% @campers.each do |camper| %>
+                <option value="<%= camper.name %>"><%= camper.name %></option>
+                <% end %>
+              </select>
+            </label>
+          </div>
+          <ul>
+            <li class="left">
+              <div>
+                <label>
+                  Camp's Name:
+                  <input type="text" name="name" value="<%= @camp.name %>">
+                </label>
+              </div>
+              <div>
+                <label>
+                  Camp's Address:
+                  <input id="autocomplete" onFocus="geolocate()" type="text" name="location" value="<%= @camp.location %>">
+                </label>
+              </div>
+            </li>
+            <li class="right">
+              <div>
+                <label>
+                  Images/Pictures:
+                  <input type="text" name="image_url" value="<%= @camp.image_url %>">
+                </label>
+              </div>
+              <div>
+                <label>
+                  Camp's Price (/person, /day):
+                  <input type="number" name="price" value="<%= @camp.price %>">
+                </label>
+              </div>
+            </li>
+          </ul>
+          <div>
+            <label>
+              Camp's Description:
+              <textarea name="description"><%= @camp.description %></textarea>
+            </label>
+          </div>
+        </div>
+        <button>Update Camp</button>
+      </form>
+    </li>
+  </ul>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC92A27W3HNJ_kxea2POCviAfhVHsIknso&libraries=places&callback=initAutocomplete" defer></script>
+
+<script type="text/javascript">
+	var autocomplete;
+
+	function initAutocomplete() {
+		autocomplete = new google.maps.places.Autocomplete(
+			document.getElementById('autocomplete'),
+			{ types: ['geocode'] }
+		);
+
+		autocomplete.setFields(['address_component']);
+	}
+
+	function fillInAddress() {
+		autocomplete.getPlace();
+	}
+
+	function geolocate() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function (position) {
+				var geolocation = {
+					lat: position.coords.latitude,
+					lng: position.coords.longitude,
+				};
+				var circle = new google.maps.Circle({
+					center: geolocation,
+					radius: position.coords.accuracy,
+				});
+				autocomplete.setBounds(circle.getBounds());
+			});
+		}
+	}
+</script>
