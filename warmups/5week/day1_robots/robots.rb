@@ -83,6 +83,7 @@ sleep 2
 
 puts "-" * 20
 puts "Resetting robot ..."
+puts "The new name of this robot is #{robot1.name}"
 robot1.reset
 sleep 2
 robot1.timers
