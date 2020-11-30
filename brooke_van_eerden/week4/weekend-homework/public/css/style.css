@@ -44,7 +44,7 @@ textarea{
 }
 #description{
   /* border: 10px solid blue; */
-  width: 80%;
+  width: 55%;
   display: block;
   margin: auto;
   margin-top: 10px;
@@ -82,7 +82,7 @@ li{
   width: 15%;
   padding: 10px;
   margin: 10px;
-  
+
 
 }
 #dates{

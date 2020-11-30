@@ -2,18 +2,18 @@
 
 <form action ="/venues/<%=@venue.id%>" method= 'post'>
 
-  <label>Name:
+  <label class='add'>Name:
   <input type='text' name='name' value="<%= @venue.name %>">
   </label>
-  <label>Capacity:
+  <label class='add'>Capacity:
   <input type='text' name='capacity' value="<%= @venue.capacity %>">
   </label>
-  <label>Photo:
+  <label class='add'>Photo:
   <input type='text' name='image_url' value="<%= @venue.image_url %>">
   </label>
-  <label>Description:
+  <label class='add'>Description:
     <textarea name='description'> <%= @venue.description %> </textarea>
     </label>
 
-<input type="submit" value="Update This Venue's Details">
+<input class='add_button' type="submit" value="Update This Venue's Details">
 </form>
