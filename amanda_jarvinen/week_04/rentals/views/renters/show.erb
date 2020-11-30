@@ -1,0 +1,27 @@
+<p>
+  Name: <%= @renter.first_name %> <%= @renter.last_name %>
+</p>
+<p>
+  Phone: <%= @renter.phone_number %>
+</p>
+<p>
+Rent: $<%= @renter.rent %>/week
+</p>
+<p>
+  Rent paid? 
+  <% if @renter.paid %>
+    Yes
+  <% else %>
+    No
+  <% end %>
+</p>
+<p>
+  Rental: 
+  <a href="/properties/<%= @renter.id%>">
+     <%= @renter.property.street_name %>, <%= @renter.property.suburb %>, <%= @renter.property.state %> <%= @renter.property.postcode %>
+  </a>
+  </p>
+
+<a href="/renters/<%= @renter.id %>/edit">Edit</a>
+|
+<a href="/renters/<%= @renter.id %>/delete">Delete</a>
