@@ -1,0 +1,60 @@
+<h2>Item: <%=@item.name%></h2>
+<%    add = 0
+      @locations.each do |locs|
+        if locs.item_id == @item.id
+          add += locs.quantity
+        end
+      end%>
+<table class="noborder">
+  <tr>
+    <td class="none">
+      <img src="<%= @item.image_url %>" class="inline" alt="">
+    </td>
+    <td class="noborder">
+      <h3>Details:</h3>
+        <table>
+          <tr>
+            <td><strong>Name: </strong></td>
+            <td><%=@item.name%></td>
+          </tr>
+          <tr>
+            <td><strong>Description: </strong></td>
+            <td><%=@item.description%></td>
+          </tr>
+          <tr>
+            <td><strong>Quantity: </strong></td>
+            <td><%=add%> (<a href="/uom/<%=@uom.id%>"><%= @uom.name %></a>)</td>
+          </tr>
+          <tr>
+            <td><strong>Category: </strong></td>
+            <td><a href="/category/<%=@category.id%>"><%= @category.name %></a></td>
+          </tr>
+          <tr>
+            <td><strong>Supplier: </strong></td>
+            <td><a href="/supplier/<%=@supplier.id%>"><%= @supplier.name %></a></td>
+          </tr>
+          <tr>
+            <td><a href="/item/<%=@item.id%>/edit">Edit</a></td>
+            <td><a href="/item/<%=@item.id%>/delete">Delete</a></td>
+          </tr>
+        </table>
+      </td>
+      <td class="noborder">
+        <h3>Locations: </h3>
+        <table>
+          <tr>
+            <td><strong>Location </strong></td>
+            <td><strong>Location Description </strong></td>
+            <td><strong>Quantity </strong></td>
+          </tr>
+          <% @locations.each do |location|%>
+          <tr>
+            <td><a href="/location/<%=location.id%>"><%=location.name%></a></td>
+            <td><%=location.description%></td>
+            <td><%=location.quantity%></td>
+          </tr>
+          <%end%>
+        </table>
+      </td>
+    </tr>
+  </table>

@@ -1,0 +1,19 @@
+<h2>Unit of Measure edit: <%=@uom.name%></h2>
+<table>
+  <form action="/uom/<%=@uom.id%>" method="post">
+  <tr>
+    <td><strong>id:</strong></td>
+    <td><input type="text" name="uom_id" value="<%=@uom.id%>" readonly="readonly"></td>
+  </tr>
+  <tr>
+    <td><strong>name:</strong></td>
+    <td><input type="text" name="uom_name" value="<%=@uom.name%>"></td>
+  </tr>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td><input type="text" name="uom_description" value="<%=@uom.description%>"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="align-right"><input type="submit" name="" value="Update"></td>
+  </tr>
+</table>

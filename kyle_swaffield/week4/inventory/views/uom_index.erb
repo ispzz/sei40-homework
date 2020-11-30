@@ -1,0 +1,19 @@
+<h2>Units of Measure</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% @uoms.each do |uom| %>
+  <tr>
+    <td><a href="/uom/<%=uom.id%>"><%=uom.name%></a></td>
+    <td><%=uom.description%></td>
+    <% if uom.id != 1 %>
+    <td class="noborder"><a href="uom/<%=uom.id%>/edit">edit</a></td>
+    <% end %>
+  </tr>
+  <%end%>
+  <tr>
+    <td colspan="2" class="align-right"><a href="/uom/new">Add a Unit of Measure</a></td>
+  </tr>
+</table>
