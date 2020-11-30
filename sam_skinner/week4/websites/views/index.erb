@@ -1,0 +1,11 @@
+<h2>Index of Websites</h2>
+
+<ul>
+  <% @websites.each do |website| %>
+  <li>
+    <a href="/websites/<%= website.id %>">
+    <%= website.name %>
+    </a> - (<%= website.launched %>)
+  </li>
+  <% end %>
+</ul>

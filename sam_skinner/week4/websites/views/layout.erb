@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Database of Website Frameworks</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+  <nav>
+    <h1>
+      Websites and their Frameworks!
+    </h1>
+    <a href="/websites">Index of Websites</a>
+    |
+    <a href="/websites/new">Add New Website</a>
+    |
+    <a href="/frontends">Index of Frontends</a>
+    |
+    <a href="/frontends/new">Add New Frontend</a>
+    |
+    <a href="/backends">Index of Backends</a>
+    |
+    <a href="/backends/new">Add New Backend</a>
+    <hr>
+  </nav>
+
+  <section>
+    <%= yield %>
+  </section>
+
+  <br>
+  <hr>
+  <footer>
+    &copy; Some Nonsense 2020
+  </footer>
+</body>
+</html>
