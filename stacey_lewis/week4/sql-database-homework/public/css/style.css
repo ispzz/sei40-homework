@@ -9,3 +9,18 @@ li {
 form {
   display: inline-block;
 }
+
+#yield {
+  display: inline-block;
+  position: relative;
+  margin: auto 0;
+  width: 50%;
+  border: 4pt solid lightgrey;
+  text-align: center;
+  padding: 20px 0px 40px 20px;
+
+}
+
+header, footer {
+  text-align: center;
+}

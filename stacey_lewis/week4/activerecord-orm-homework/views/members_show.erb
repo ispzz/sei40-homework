@@ -1,0 +1,20 @@
+<h2> Household member Profile: <%= @member.name %></h2>
+
+<p>Competency rating: <%= @member.competency_rating %></p>
+<p>Shopping style: <%= @member.shopping_style%></p>
+
+<p>Phone number: <%= @member.phone_number %></p>
+<p><strong>List of items assigned to purchase:</strong>
+  <ul><% @member.items.each do |item| %>
+    <li>
+      <a href="/items/<%= item.id %>">
+      <%= item.item_name %>
+      </a>
+    </li>
+      <% end %>
+  </ul>
+</p>
+
+
+<a href="/members/<%= @member.id %>/edit">Edit</a>
+<a href="/members/<%= @member.id %>/delete">Delete</a>
