@@ -8,10 +8,12 @@
   <tr>
     <td><a href="/category/<%=cat.id%>"><%=cat.name%></a></td>
     <td><%=cat.description%></td>
-    <td><a href="category/<%=cat.id%>/edit">edit</a></td>
+    <%if cat.id != 1%>
+    <td class="noborder"><a href="category/<%=cat.id%>/edit">edit</a></td>
+    <%end%>
   </tr>
     <% end %>
   <tr>
-    <td colspan="3" class="align-right"><a href="/category/new">Add a category</a></td>
+    <td colspan="2" class="align-right"><a href="/category/new">Add a category</a></td>
   </tr>
 </table>

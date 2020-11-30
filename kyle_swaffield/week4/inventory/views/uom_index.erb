@@ -8,7 +8,9 @@
   <tr>
     <td><a href="/uom/<%=uom.id%>"><%=uom.name%></a></td>
     <td><%=uom.description%></td>
-    <td><a href="uom/<%=uom.id%>/edit">edit</a></td>
+    <% if uom.id != 1 %>
+    <td class="noborder"><a href="uom/<%=uom.id%>/edit">edit</a></td>
+    <% end %>
   </tr>
   <%end%>
   <tr>

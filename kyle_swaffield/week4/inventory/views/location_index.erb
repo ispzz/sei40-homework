@@ -12,10 +12,12 @@
     <td><%=loc.description%></td>
     <td><%=loc.item_id%></td>
     <td><%=loc.quantity%></td>
-    <td><a href="location/<%=loc.id%>/edit">edit</a></td>
+    <% if loc.id != 1%>
+    <td class="noborder"><a href="location/<%=loc.id%>/edit">edit</a></td>
+    <% end %>
   </tr>
   <% end %>
   <tr>
-    <td colspan="5" class="align-right"><a href="/location/new">Add a location</a></td>
+    <td colspan="4" class="align-right"><a href="/location/new">Add a location</a></td>
   </tr>
 </table>

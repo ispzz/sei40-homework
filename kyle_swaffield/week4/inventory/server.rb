@@ -56,7 +56,7 @@ end
   end
   post '/item' do
 
-    Item.create(
+    item = Item.create(
       name: params[:item_name],
       description: params[:item_description],
       image_url: params[:item_image_url],
@@ -64,8 +64,8 @@ end
       supplier_id: 1,
       uom_id: 1
     )
-    @items = Item.all
-    if Location.where("name = 'default'") == false
+
+    if Location.where(name: 'default') == false
       Location.create(
         name: "default",
         description: "default",
@@ -73,7 +73,7 @@ end
         item_id: 1
       )
     end
-    redirect "/item/#{@items.last.id}"
+    redirect "/item/#{item.id}"
   end
   # read
   get '/item/:id' do
