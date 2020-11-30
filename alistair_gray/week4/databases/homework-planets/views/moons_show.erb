@@ -1,0 +1,44 @@
+<h2>Details for the Moon: <%= @moon.name %></h2>
+
+<p>
+  <strong>Orbital Period: </strong><%= @moon.orbital_period %> Earth days
+</p>
+
+<br>
+
+<p>
+  <strong>Average Day Length: </strong><%= @moon.day_length %> Earth Days
+</p>
+
+<br>
+
+<p>
+<strong>Evidence of Life: </strong> <%= @moon.inhabited ? 'Yes' : 'Not Yet' %>
+</p>
+
+<br>
+
+<p>
+  <strong>Atmosphere: </strong> <%= @moon.atmosphere ? 'Yes' : 'No' %>
+</p>
+
+<br>
+
+<p><strong>Image of the moon: </strong> <%= @moon.name %></p>
+<img class="main" src="<%= @moon.img_url %>" alt="Image of the moon <%= @moon.name %>">
+
+<br>
+
+<h4>Home planet of <%=@moon.name %>:</h4>
+
+<% Planet.all.each do |planet| %>
+<% if @moon.planet_id == planet.id%>
+    <a href="/planets/<%= planet.id %>"><%= planet.name %></a>
+    <br>
+    <img class="sub_image" src="<%= planet.img_url %>" alt="image of <%= planet.name %>">
+    <% end %>
+<% end %>
+
+<a href="/moons/<%= @moon.id %>/edit_moon">Edit Moon</a>
+|
+<a href="/moons/<%= @moon.id %>/delete">Delete This Moon</a>

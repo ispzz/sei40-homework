@@ -1,0 +1,17 @@
+<h2>Details for Owner: <%= @owner.name %></h2>
+
+<p>
+  <strong>Email: </strong>
+  <%= @owner.email %>
+</p>
+<br>
+<h4>Pets</h4>
+<ul>
+<% @owner.pets.each do |pet| %>
+  <li>
+    <a href="/pets/<%= pet.id %>">
+      <%= pet.name %>
+    </a>
+  </li>
+<% end %>
+</ul>
