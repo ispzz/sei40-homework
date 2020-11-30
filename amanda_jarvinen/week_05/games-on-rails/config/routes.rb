@@ -12,5 +12,13 @@ get '/games/magic/ask' => 'magic#ask_question'
 get '/games/magic/answer' => 'magic#get_answer'
 
 
+# Secret Number
+
+# Users click a number between 1 and 10. The controller validates the guess and renders the win or lose view.
+# You should make a route like /games/secret/:guess which routes to secret#play
+
+get '/games/secret/guess_form' => 'secret#form'
+
+
 
 end
