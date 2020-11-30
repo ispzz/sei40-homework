@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 get '/games/magic/ask' => 'magic#ask_question'
 
 # 2. Route for magic 8 ball answer
-
+get '/games/magic/answer' => 'magic#get_answer'
 
 
 
