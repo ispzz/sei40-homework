@@ -7,25 +7,25 @@ $subway = {
 }
 
 #set start and end positions.. run twice for changeover stations
-def find_position(x,y,z)
-  start_position = $subway[x].find_index(y)
-  end_position = $subway[x].find_index(z)
-  # p start_position, end_position
+def find_position(line,start_point,end_point)
+  start_position = $subway[line].find_index(start_point)
+  end_position = $subway[line].find_index(end_point)
+
   if start_position > end_position
-    stop_array = $subway[x][end_position..start_position]
-    stop_array = stop_array.reverse
+    stop_array = $subway[line][end_position..start_position]
+    stop_array.reverse
   else
-    stop_array = $subway[x][start_position..end_position]
+    $subway[line][start_position..end_position]
   end
 end
 
 
 #variables to test with.
-$start_line = :l_line
-$start_stop = "8th (l line)"
+$start_line = :six_line
+$start_stop = "Grand Central"
 $changeover = "Union Square"
-$end_line = :six_line
-$end_stop = "Grand Central"
+$end_line = :l_line
+$end_stop = "8th (l line)"
 
 
 #find crossover station

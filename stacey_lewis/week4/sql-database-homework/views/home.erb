@@ -1,0 +1,11 @@
+<h2>Here is a lists of some artists</h2>
+
+<ul>
+  <% @artists.each do |artist| %>
+  <li>
+    <a href="/<%= artist['id'] %>">
+    <%= artist['name'] %>
+    </a>
+    <% end %>
+  </li>
+</ul>

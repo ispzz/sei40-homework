@@ -1,0 +1,39 @@
+<h2>Employee: <%=@employees['first_name']%> <%=@employees['last_name']%></h2>
+<div class="show">
+<img src="<%=@employees['image_url']%>" alt="Employee">
+
+<table>
+  <%
+    tn = Time.now.to_i
+    bd = Date.parse(@employees['birthdate'])
+    bd = bd.strftime("%s").to_i
+    age = tn - bd
+    age = age / 31536000
+    sd = Date.parse(@employees['start_date'])
+    sd = sd.strftime("%s").to_i
+    term = tn - sd
+    term = term / 31536000
+  %>
+  <tr>
+    <td class="align_right">Name: </td>
+    <td><%=@employees['first_name']%> <%=@employees['last_name']%></td>
+  </tr>
+  <tr>
+    <td class="align_right">Mobile Number: </td>
+    <td><%=@employees['mobile']%></td>
+  </tr>
+  <tr>
+    <td class="align_right">Email: </td>
+    <td><%=@employees['email']%></td>
+  </tr>
+  <tr>
+    <td class="align_right">DOB: </td>
+    <td><%=@employees['birthdate']%> (<%=age%> years) </td>
+  </tr>
+  <tr>
+    <td class="align_right">Start Date: </td>
+    <td><%=@employees['start_date']%> (<%=term%> years) </td>
+  </tr>
+</table>
+<a href="/employee/<%=@employees['emp_id']%>/edit">Edit</a> | <a href="/employee/<%=@employees['emp_id']%>/delete">Delete</a>
+</div>

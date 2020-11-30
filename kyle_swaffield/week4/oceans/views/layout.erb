@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Employees</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <h1 id="heading">Swaff Inc Employees</h1>
+        <div class="right" id="navlink">
+          <a href="/">Index</a> |
+          <a href="/employees/new">Add Employee</a>
+        </div>
+        <hr>
+      </nav>
+
+      <section>
+        <%= yield %>
+      </section>
+
+      <footer>
+        <hr>
+        &copy; Employee Data 2020
+      </footer>
+    </div>
+  </body>
+</html>
