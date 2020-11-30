@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="content">
+    <div class="nav">
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <a href="/">
+              <h2>Campers life</h2>
+            </a>
+          </div>
+          <div class="menu">
+            <ul>
+              <li>
+                <a href="/camps">
+                  <i class="fab fa-free-code-camp"></i> Camps
+                </a>
+              </li>
+              |
+              <li>
+                <a href="/camps/new">
+                  <i class="fas fa-campground"></i> New Camp
+                </a>
+              </li>
+              |
+              <li>
+                <a href="/campers/new">
+                  <i class="fas fa-hiking"></i> New Camper
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <%= yield %>
+
+  </div>
+  <div class="footer">
+    <div class="container">
+      <p>&copy; Campers life 2020.</p>
+      <p>Campers life is a community portal for campers to share great locations for other campers to find. The platform is community driven and content curated by active and enthusiastic campers.</p>
+    </div>
+  </div>
+</body>
+</html>

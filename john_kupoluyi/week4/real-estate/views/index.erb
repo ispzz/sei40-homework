@@ -1,0 +1,27 @@
+<div class="property-list">
+  <ul>
+    <% @prop.each do |prop| %>
+    <li class="prop-item">
+      <a href="/property/<%= prop['id'] %>">
+        <div class="image">
+          <img src="<%= prop['image_url'] %>" alt="">
+        </div>
+        <div class="snapshot">
+          <h2><%= prop['name'] %></h2>
+          <div class="features">
+            <span class="price">$<%= prop['price'] %> /mo</span>
+            <span><%= prop['beds'] %> bds</span>
+            |
+            <span><%= prop['bath'] %> ba</span>
+            |
+            <span><%= prop['size'] %> sqft</span>
+          </div>
+          <div class="address">
+            <span><%= prop['address'] %></span>
+          </div>
+        </div>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</div>
