@@ -1,0 +1,20 @@
+<h2> Game Details </h2>
+
+<%= @game['name']%>
+
+<p>
+  <strong>Platform:</strong> <%= @game['platform'] %>
+</p>
+<p>
+<strong>Description:</strong> <%= @game['description'] %>
+</p>
+<p>
+<strong>Maximum Number of Players</strong> <%= @game['max_players'] %>
+</p>
+<p>
+<strong>Multiplayer:</strong> <%= @game['multiplayer'] == 1 ? "yes" : "no" %>
+</p>
+<br>
+<img src="<%= @game['box_art'] %> alt="Box art for <%= @game['name'] %>">
+<a href="/games/<%= @game['id']%>/edit">Edit This Game</a>
+<a href="/games/<%= @game['id']%>/delete">Delete This Game</a>

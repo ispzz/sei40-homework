@@ -1,0 +1,23 @@
+<h2 Marriner Group Database <h2>
+
+  <p>
+    Look at our <a href= '/venues' >Venues </a>
+    <ul>
+      <% @venues.each do |v| %>
+      <li>
+        <a href="/venues/<%= v.id%>">
+        
+        <img src="<%=v.image_url%>"></img>
+        <br>
+          <%= v.name %>
+
+        </li>
+
+      <% end %>
+</a>
+</ul>
+  </p>
+  or
+  <p>
+    Check out some of our <a href='/events'> Events </a>
+    </p>
