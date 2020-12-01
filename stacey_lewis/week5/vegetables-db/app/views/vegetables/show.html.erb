@@ -1,0 +1,10 @@
+
+<%= link_to 'Edit', edit_vegetable_path(@vegetable.id) %>
+<%= link_to 'Delete', destroy_vegetable_path(@vegetable.id) %>
+
+<h4><%= @vegetable.name %></h4>
+
+<p id="scientific_name"> Scientific name: <%= @vegetable.scientific_name %></p>
+<p>Time to harvest from planting: <%= @vegetable.harvest_time %></p>
+<p>Height (cms): <%= @vegetable.height %></p>
+<p>Spacing (cms): <%= @vegetable.spacing %></p>
