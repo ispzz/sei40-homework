@@ -19,7 +19,7 @@ def get_stations network, line, start, finish
   if start_idx < finish_idx
     stations[(start_idx + 1)..finish_idx]
   else
-    stations[(finish_idx)..start_idx - 1].reverse!
+    stations[(finish_idx)..start_idx - 1].reverse
   end
 end # get_stations
 
@@ -44,11 +44,12 @@ def plan_trip start_line, start, end_line, finish, network
     first_leg = single_line start_line, start, exchange, network
     first_leg[:stations].pop # Remove exchange station
     last_leg = single_line end_line, exchange, finish, network
+
     stations = (first_leg[:stations] + last_leg[:stations]).join(', ')
     total_stops = first_leg[:total_stops] + last_leg[:total_stops]
 
     puts first_leg[:stations]
-    puts "Please exchange to #{end_line.upcase} at #{exchange}. Then travel:".blue
+    puts "Please exchange to #{end_line} at #{exchange}. Then travel:".blue
     puts last_leg[:stations]
   end
 
@@ -107,7 +108,7 @@ def plan_trip_prompt network
   end
 end # plan_trip_prompt
 
-def run_tests(network)
+def run_tests(network) # PRINT OUT THE EXPECTED OUTPUT
   puts "\nRUNNING TESTS".magenta
 
   # Single-line and origin is destination
@@ -125,6 +126,9 @@ def run_tests(network)
 
   puts "\ntest: (6, 'Grand Central', l, '1st', 'mta')".blue
   plan_trip(6, 'Grand Central', :l, '1st', network)
+
+  puts "\ntest: (6, 'Grand Central', 6, '28TH', 'mta')".blue
+  plan_trip(6, 'Grand Central', 6, '28TH', network)
 
   puts "\nEND OF TESTS\n".magenta
 end # run_tests
