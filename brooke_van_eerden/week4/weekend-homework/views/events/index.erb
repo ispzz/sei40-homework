@@ -1,0 +1,11 @@
+<h2>List of Events</h2>
+
+<ul>
+  <% @events.each do |e| %>
+  <li>
+    <a href="/events/<%= e.id%>">
+      <%= e.name %>
+    </a>
+  </li>
+  <% end %>
+  <ul>

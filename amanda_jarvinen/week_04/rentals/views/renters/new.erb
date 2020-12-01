@@ -1,0 +1,40 @@
+<h2>Add Renter</h2>
+<form action="/renters" method="post">
+  <label>
+    First name:
+    <input type="text" name="first_name">
+  </label>
+  <br>
+  <label>
+    Last name:
+    <input type="text" name="last_name">
+  </label>
+  <br>
+  <label>
+    Phone number:
+    <input type="text" name="phone_number">
+  </label>
+  <br>
+  <label>
+    Paid:
+    <input type="text" name="paid">
+  </label>
+  <br>
+  <label>
+    Rent:
+    <input type="integer" name="rent">
+  </label>
+  <br>
+  <label>
+    Property:
+    <select name="property_id">
+      <option value="" disabled selected>Please choose a property</option>
+      <% @properties.each do |property| %>
+        <option value="<%= property.id %>"><%= property.street_name %>, <%= property.suburb %>, <%= property.state %> <%= property.postcode %></option>
+      <% end %>
+    </select>
+  </label>
+  <br>
+  <br>
+  <button type="submit">Add renter</button>
+</form>

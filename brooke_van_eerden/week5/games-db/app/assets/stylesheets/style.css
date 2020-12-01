@@ -1,0 +1,29 @@
+body{
+  background-color:rgba(221, 133, 69, 0.7) ;
+  font-size: 16pt;
+  font-family: ;
+  color: ;
+  margin:  auto;
+    text-align: center;
+}
+ul{
+  list-style: none;
+}
+nav{
+
+  text-align: center;
+}
+button{
+  background-color: rgba(238, 134, 26, 0.78);
+  border-radius: 10px;
+}
+a{
+  background-color: rgba(238, 134, 26, 0.78);
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+  padding: 5px;
+  height: 40px;
+ top: 20px;
+}

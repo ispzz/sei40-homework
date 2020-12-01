@@ -1,0 +1,19 @@
+<h2>Categories</h2>
+<table>
+  <tr>
+    <th><strong>Name</strong></th>
+    <th><strong>Description</strong></th>
+  </tr>
+    <% @categories.each do |cat|%>
+  <tr>
+    <td><a href="/category/<%=cat.id%>"><%=cat.name%></a></td>
+    <td><%=cat.description%></td>
+    <%if cat.id != 1%>
+    <td class="noborder"><a href="category/<%=cat.id%>/edit">edit</a></td>
+    <%end%>
+  </tr>
+    <% end %>
+  <tr>
+    <td colspan="2" class="align-right"><a href="/category/new">Add a category</a></td>
+  </tr>
+</table>

@@ -1,0 +1,61 @@
+<h3>Item Details : <%= @item.item_name %></h3>
+
+<form class="" action="/items/<%=@item.id%>" method="post">
+
+  <label>
+    Item name:
+    <input type="text" name="item_name" value="<%=@item.item_name%>">
+  </label>
+  <br>
+
+  <label>
+    Item cost:
+    <input type="INTEGER" name="item_cost" value="<%=@item.item_cost%>">
+  </label>
+  <br>
+
+  <label>
+    Store:
+    <input type="text" name="store_name" value="<%=@item.store_name%>">
+  </label>
+  <br>
+
+  <label>
+    Recipient:
+    <input type="text" name="recipient" value="<%=@item.recipient %>">
+  </label>
+  <br>
+
+  <label>
+    Event:
+    <input type="text" name="event" value="<%=@item.event %>">
+  </label>
+  <br>
+
+  <label>
+    Event date:
+    <input type="text" name="event_date" value="<%=@item.event_date %>">
+  </label>
+  <br>
+
+  <label>
+    member assigned to purchase:
+    <input type="text" name="member_id" value="<%=@item.member_id%>">
+  </label>
+  <br>
+
+  <label>
+    Link:
+    <input type="text" name="Link" value="<%=@item.link %>">
+  </label>
+  <br>
+
+  <label>
+    Image URL:
+    <input type="text" name="image_url" value="<%=@item.image_url %>">
+  </label>
+  <br>
+
+<button type="submit">Update</button>
+
+</form>

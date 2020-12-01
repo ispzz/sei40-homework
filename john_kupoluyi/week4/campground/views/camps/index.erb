@@ -1,0 +1,52 @@
+
+  <div class="hero">
+    <div class="container">
+      <h2>Campers love Camping!</h2>
+      <p>It is our mission to provide an accurate curation of great camping locations for campers to explore and enjoy. If you find anything useful, please pay it forward by posting a great camp or by simply leaving a comment.</p>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="camps">
+      <% if @camps.length > 0 %>
+        <% @camps.each do |camp| %>
+          <li class="camp">
+            <a href="/camps/<%= camp.id %>">
+              <div class="thumb" style="background-image:url(<%= camp.image_url %>)">
+              </div>
+              <div class="summary">
+                <div>
+                  <div class="name">
+                    <h2><%= camp.name %></h2>
+                    <h3>$ <%= camp.price %>/person/day</h3>
+                  </div>
+                  <div class="location">
+                    <p><%= camp.location %></p>
+                  </div>
+                </div>
+                <div class="rating">
+                  <% if camp.comments.length > 0 %>
+                    <% rating = camp.comments.pluck('rating').sum %>
+                    <% rating = rating/camp.comments.length.floor %>
+                    <% 5.times do |i| %>
+                      <% if i < rating %>
+                        <i class="fas fa-star rated"></i>
+                      <% else %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                    <% end %>
+                    <span> (<%= camp.comments.length %> comments)</span>
+                  <% else %>
+                    <span>Be first to comment.</span>
+                  <% end %>
+                </div>
+              </div>
+            </a>
+          </li>
+        <% end %>
+      <% else %>
+        <P>Working on adding the first camp. If you have suggestions please add them by clicking 'New Camp'</P>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

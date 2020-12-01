@@ -1,0 +1,69 @@
+<div class="container">
+  <ul class="camp show">
+    <li>
+      <div class="camp-image" style="background-image:url(<%= @camp.image_url %>)">
+        <a class="edit-camp" href="/camps/<%= @camp.id %>/edit">Update</a>
+        <a class="edit-camp" href="/camps/<%= @camp.id %>/delete">Remove</a>
+      </div>
+      <div class="published">
+
+        <p>First published by <strong><%= @camp.camper.name %></strong> on <strong><%= @camp.created_on.strftime "%d/%m/%Y" %></strong></p>
+        <% if @camp.updated_by %>
+          <p>Last updated by <strong><%= @camp.updated_by %></strong> on <strong><%= @camp.updated_on.strftime "%d/%m/%Y" %></strong></p>
+        <% end %>
+
+      </div>
+    </li>
+    <li>
+      <div class="details">
+        <h2><%= @camp.name %></h2>
+        <h3>$ <%= @camp.price %>/person/day</h3>
+        <p><%= @camp.description %></p>
+        <div class="location">
+          <h4>Camp address and location on the map:</h4>
+          <iframe
+					class="border rounded shadow-sm"
+					allowfullscreen=""
+					frameborder="0"
+					src="https://www.google.com/maps/embed/v1/place?
+						key=AIzaSyCdUMO5lFn8XLThP8fHi1b_2mIxEdJsv0c&amp;
+						q=<%= @camp.location %>&amp;zoom=11"
+					width="100%"
+					height="400"
+				></iframe>
+        </div>
+        <div class="comments">
+          <div class="">
+            <span>Comments</span>
+            <a href="/comments/<%= @camp.id %>/new">Add Comment</a>
+          </div>
+          <% if @camp.comments.length > 0 %>
+            <ul>
+              <% @camp.comments.each do |comment| %>
+                <li>
+                  <div class="comment-item">
+                    <span><%= comment.camper.name %> - <%= comment.created_on.strftime "%d/%m/%Y" %></span>
+                    <% if comment.rating %>
+                      <div>
+                        <% 5.times do |i| %>
+                          <% if i < comment.rating %>
+                            <i class="fas fa-star rated"></i>
+                          <% else %>
+                            <i class="fas fa-star"></i>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </div>
+                  <p><%= comment.comment %></p>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p style="color:grey">Be the first to leave a comment.</p>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

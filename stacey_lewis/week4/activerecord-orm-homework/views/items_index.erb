@@ -1,0 +1,17 @@
+<h2>Shopping List</h2>
+
+<a href="/items/new">Add item</a>
+
+<ul>
+
+<% @items.each do |item| %>
+<li><strong>
+  <a href="/items/<%= item.id %>">
+  <%= item.item_name  %>
+  </a>
+     - $<%= item.item_cost %> </strong>    |
+    <a href="/items/<%= item.id %>/edit">Edit</a> |
+     <a href="/items/<%= item.id %>/delete">Delete</a>
+</li>
+<% end %>
+</ul>

@@ -1,0 +1,39 @@
+<h2>Edit Renter</h2>
+<form action="/renters/<%= @renter.id %>" method="post">
+  <label>
+    First name:
+    <input type="text" name="first_name" value="<%= @renter.first_name %>">
+  </label>
+  <br>
+  <label>
+    Last name:
+    <input type="text" name="last_name" value="<%= @renter.last_name %>">
+  </label>
+  <br>
+  <label>
+    Phone:
+    <input type="text" name="phone_number" value="<%= @renter.phone_number %>">
+  </label>
+  <br>
+  <label>
+    Paid:
+    <input type="text" name="paid" value="<%= @renter.paid %>">
+  </label>
+  <br>
+  <label>
+    Rent:
+    <input type="text" name="rent" value="<%= @renter.rent %>">
+  </label>
+  <br>
+  <label>
+    Property:
+    <select name="property_id">
+      <option value="" disabled selected>Please choose a property</option>
+      <% @properties.each do |property| %>
+        <option value="<%= property.id %>"><%= property.street_name %>, <%= property.suburb %>, <%= property.state %> <%= property.postcode %></option>
+      <% end %>
+    </select>
+  </label>
+  <br>
+  <button type="submit">Update renter</button>
+</form>

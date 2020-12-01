@@ -1,0 +1,12 @@
+<div style="margin-top: 50px;">
+  <h2><%= @result['title'] %></h2>
+</div>
+<ul class="movie">
+  <li>
+    <img src="https://image.tmdb.org/t/p/w200/<%= @result['poster_path'] %>" alt="">
+  </li>
+  <li>
+    <p><%= @result['overview'] %></p>
+  </li>
+</ul>
+<button class="btn" onclick="history.back(-1)">Back</button>

@@ -1,0 +1,13 @@
+<h2>List of household members</h2>
+
+<a href="/members/new">Add household member</a>
+
+<ul>
+
+<% @members.each do |member| %>
+<li><strong>
+  <a href="/members/<%= member.id %>">
+  <%= member.name  %>
+</li>
+<% end %>
+</ul>

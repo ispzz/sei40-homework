@@ -1,0 +1,16 @@
+<h2>List of Venues</h2>
+
+<ul>
+  <% @venues.each do |v| %>
+  <li>
+    <a href="/venues/<%= v.id%>">
+
+    <img src="<%=v.image_url%>"></img>
+    <br>
+      <%= v.name %>
+
+    </li>
+
+  <% end %>
+</a>
+</ul>

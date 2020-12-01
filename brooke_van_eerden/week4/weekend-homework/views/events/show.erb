@@ -1,0 +1,30 @@
+<h2> <%= @event.name %> </h2>
+
+<ul>
+  <li>
+    <strong>Contact Name:</strong> <br><%= @event.contact_name %>
+  </li>
+  <li>
+    <strong>Contact Email:</strong> <br><%= @event.contact_email %>
+  </li>
+  <li>
+    <strong>Which Venue:</strong> <br><%= @event.venue.name%>
+  </li>
+
+  <li id='description'>
+    <strong>Description:</strong> <%= @event.description %>
+  </li>
+  <li>
+    <strong>Number of People:</strong> <%= @event.cast_count %>
+  </li>
+  <li id="dates">
+    <strong>Dates:</strong> <%=@event.start_date %> - <%= @event.end_date %>
+  </li>
+
+  </ul>
+<br>
+
+
+
+  <a href="/events/<%=@event.id%>/edit">Edit This Event's Details</a> ||
+  <a id="delete_event" href="/events/<%=@event.id%>/delete">Delete This Event</a>
