@@ -1,0 +1,36 @@
+<h3>Add new probe!</h3>
+
+<%= form_with model: @probe, local: true do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+
+<%= f.label :year_launched %>
+<%= f.text_field :year_launched %>
+<br>
+
+<%= f.label :mission %>
+<%= f.text_field :mission %>
+<br>
+
+<%= f.label :mission_outcome %>
+<%= f.radio_button :mission_outcome, true %>Success
+<%= f.radio_button :mission_outcome, false %>Failure
+<br>
+
+<%= f.label :probe_status %>
+<%= f.radio_button :probe_status, true %>Functioning
+<%= f.radio_button :probe_status, false %>No longer functioning
+<br>
+
+<%= f.label :country %>
+<%= f.text_field :country %>
+<br>
+
+<%= f.label :image %>
+<%= f.text_field :image %>
+<br>
+
+<%= f.submit %>
+<% end %>

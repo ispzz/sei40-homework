@@ -1,0 +1,11 @@
+<h3>Index of Probes</h3>
+
+<ul>
+  <% @probes.each do |p| %>
+
+    <li>
+      <%= link_to p.name, probe_path(p.id) %> - <%= p.year_launched %>
+    </li>
+
+  <% end %>
+</ul>
