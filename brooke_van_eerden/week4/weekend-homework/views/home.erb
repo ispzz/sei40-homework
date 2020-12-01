@@ -6,17 +6,18 @@
       <% @venues.each do |v| %>
       <li>
         <a href="/venues/<%= v.id%>">
-        
+
         <img src="<%=v.image_url%>"></img>
+
         <br>
           <%= v.name %>
-
-        </li>
+        </a>
+      </li>
 
       <% end %>
-</a>
-</ul>
-  </p>
+
+    </ul>
+</p>
   or
   <p>
     Check out some of our <a href='/events'> Events </a>

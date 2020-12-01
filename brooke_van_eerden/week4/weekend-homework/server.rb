@@ -46,7 +46,7 @@ post '/events' do
     end_date: params[:end_date],
     cast_count: params[:end_date],
     paid: params[:paid],
-    venue_id: params[:id]
+    venue_id: params[:venue_id]
   )
 
   redirect '/events'
@@ -110,7 +110,7 @@ post '/events/:id' do
     end_date: params[:end_date],
     cast_count: params[:end_date],
     paid:params[:paid],
-    venue_id: params[:id]
+    venue_id: params[:venue_id]
   )
   redirect "/events/#{params[:id]}"
 end
