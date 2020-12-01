@@ -1,0 +1,49 @@
+.index {
+  border: solid 1px red;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(<%= assets_path 's3xy.jpg' %>);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ul {
+  display: inline;
+  text-align: center;
+  top: 5%;
+  position: relative;
+  left: -2%;
+}
+
+li {
+  display: inline;
+  padding: 20px;
+  text-align: center;
+  font-size: 16pt;
+}
+
+body {
+  background-color: #222222;
+  color: white;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  margin: 0 auto;
+  font-size: 18pt;
+}
+
+h2 {
+  font-size: 22pt;
+}

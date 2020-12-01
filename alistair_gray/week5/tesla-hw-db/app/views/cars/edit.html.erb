@@ -1,0 +1,21 @@
+<h2>Edit The Car: <%= @car.name %></h2>
+
+<%= form_with model: @car, local: true, method: 'post' do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :image_url, 'Image URL' %>
+  <%= f.text_field :image_url %>
+  <br>
+  <%= f.label :self_driving %>
+  <%= f.text_field :self_driving %>
+  <br>
+  <%= f.label :range %>
+  <%= f.text_field :range %>
+  <br>
+  <%= f.label :starting_price %>
+  <%= f.text_field :starting_price %>
+  <br>
+  <%= f.submit %>
+<% end %>
