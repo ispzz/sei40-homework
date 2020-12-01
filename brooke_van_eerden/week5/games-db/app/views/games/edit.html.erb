@@ -1,0 +1,21 @@
+<h2>Edit a Game <%= @game.name %></h2>
+
+<%= form_with model:@game, local: true, method:'post' do |f|%>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :platform %>
+<%= f.text_field :platform %>
+<br>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<br>
+<%= f.label :max_players, 'Maximum Number of Players' %>
+<%= f.text_field :max_players %>
+<br>
+<%= f.label :box_art, 'Box Art' %>
+<%= f.text_field :box_art %>
+<br>
+<%= f.submit %>
+
+<% end %>
