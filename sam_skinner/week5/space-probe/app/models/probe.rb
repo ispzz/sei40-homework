@@ -1,0 +1,3 @@
+class Probe < ApplicationRecord
+
+end

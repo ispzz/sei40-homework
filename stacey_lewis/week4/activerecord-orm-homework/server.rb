@@ -71,8 +71,7 @@ end
 #1.
 get '/items' do
 
-@items = Item.all
-
+  @items = Item.all
 
   erb :items_index
 
@@ -81,8 +80,7 @@ end
 #2.
 get '/items/:id' do
 
-
-@item = Item.find params[:id]
+  @item = Item.find params[:id]
   erb :items_show
 
 end
@@ -93,9 +91,9 @@ end
 # 1.
 get '/items/:id/edit' do
 
-@item = Item.find params[:id]
+  @item = Item.find params[:id]
 
-erb :items_edit
+  erb :items_edit
 
 end
 
@@ -103,20 +101,20 @@ end
 post '/items/:id' do
 
 
-item = Item.find params[:id]
-item.update(
-item_name: params[:item_name],
-item_cost: params[:item_cost],
-store_name: params[:store_name],
-link: params[:link],
-image_url: params[:image_url],
-recipient: params[:recipient],
-event: params[:event],
-event_date: params[:event_date],
-member_id: params[:member_id]
-)
+  item = Item.find params[:id]
+  item.update(
+    item_name: params[:item_name],
+    item_cost: params[:item_cost],
+    store_name: params[:store_name],
+    link: params[:link],
+    image_url: params[:image_url],
+    recipient: params[:recipient],
+    event: params[:event],
+    event_date: params[:event_date],
+    member_id: params[:member_id]
+  )
 
-redirect "/items/#{params[:id]}"
+  redirect "/items/#{params[:id]}"
 
 end
 
@@ -159,7 +157,7 @@ end
 #1.
 get '/members' do
 
-@members = Member.all
+  @members = Member.all
 
 
   erb :members_index
@@ -170,7 +168,7 @@ end
 get '/members/:id' do
 
 
-@member = Member.find params[:id]
+  @member = Member.find params[:id]
   erb :members_show
 
 end
@@ -181,9 +179,9 @@ end
 # 1.
 get '/members/:id/edit' do
 
-@member = Member.find params[:id]
+  @member = Member.find params[:id]
 
-erb :members_edit
+  erb :members_edit
 
 end
 
@@ -191,15 +189,15 @@ end
 post '/members/:id' do
 
 
-member = Member.find params[:id]
-member.update(
-  name: params[:name],
-  competency_rating: params[:competency_rating],
-  shopping_style: params[:shopping_style],
-  phone_number: params[:phone_number]
-)
+  member = Member.find params[:id]
+  member.update(
+    name: params[:name],
+    competency_rating: params[:competency_rating],
+    shopping_style: params[:shopping_style],
+    phone_number: params[:phone_number]
+  )
 
-redirect "/members/#{params[:id]}"
+  redirect "/members/#{params[:id]}"
 
 end
 

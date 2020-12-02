@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BooksDb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <main>
+    <%= yield %>
+    </main>
+  <nav>
+      <hr>
+      <%= link_to 'All books', books_path %>
+      <div class="divider">|</div>
+      <%= link_to 'Add book', new_book_path %>
+    </nav>
+    <%# <footer>
+      <br>
+      <br>
+      &copy; GA Library, 2020
+    </footer> %>
+  </body>
+</html>

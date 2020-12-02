@@ -1,0 +1,10 @@
+<br>
+<%= image_tag @book.image_url, alt: @book.title, class: 'book-cover' %>
+<div class="container">
+    <h2><%= @book.title%></h2>
+    <p><%= @book.author %></p>
+    <p><%= @book.description %></p>
+    <%= link_to 'Edit', edit_book_path(@book.id) %> | <%= link_to 'Destroy', destroy_book_path(@book.id) %>
+</div>
+<br>
+

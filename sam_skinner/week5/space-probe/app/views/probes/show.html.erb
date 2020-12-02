@@ -1,0 +1,28 @@
+<h2><%= @probe.name %></h2>
+
+<%= image_tag @probe.image %>
+
+<p>
+  <strong>Year Launched: </strong>
+  <%= @probe.year_launched %>
+</p>
+<p>
+  <strong>Mission Details: </strong>
+  <%= @probe.mission %>
+</p>
+<p>
+  <strong>Mission Outcome: </strong>
+  <%= @outcome %>
+</p>
+<p>
+  <strong>Probe Status: </strong>
+  <%= @status %>
+</p>
+<p>
+  <strong>Launched From: </strong>
+  <%= @probe.country %>
+</p>
+
+<%= link_to 'Edit Probe', edit_probe_path(@probe.id) %>
+|
+<%= link_to 'Delete Probe', delete_probe_path(@probe.id) %>

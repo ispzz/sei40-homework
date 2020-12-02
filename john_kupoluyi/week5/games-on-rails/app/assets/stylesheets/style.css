@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Signika Negative', sans-serif;
+
+}
+
+.wrapper {
+  background-color: #F2DAC4;
+}
+
+.wrapper > a {
+  display: inline-block;
+  position: absolute;
+  padding: 15px;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.games a {
+  display: inline-block;
+  padding: 15px;
+  margin: 0 5px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #A66851;
+  font-size: 20px;
+}
+
+.games a:hover, .games button:hover {
+  background-color: #731F1F;
+  color: #fff;
+}
+
+h2 {
+  margin-top: 0;
+  color: #1A2440;
+}
+
+.games input {
+  display: block;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing:border-box;
+  font-size: 18px;
+}
+
+.games button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #A66851;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.games .play {
+  width: 450px;
+}
+
+.answer p {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.answer p:last-child {
+  margin-right: 15px;
+  background-color: #A66851;
+  text-align: right;
+}
+
+.answer p:first-child {
+  margin-left: 15px;
+  background-color: #731F1F;
+  text-align: left;
+}
