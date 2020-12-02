@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VegetablesDb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+  <nav>
+    <h1>Vegetable database</h1>
+
+    <%=link_to "Index of vegetables", vegetables_path %>
+    <%=link_to "Add new vegetable", new_vegetable_path %>
+
+    <hr>
+  </nav>
+
+    <%= yield %>
+
+  <footer>
+    <hr>
+    <h6>&copy Vegetables incorporated.</h6>
+  </footer>
+
+
+  </body>
+</html>
