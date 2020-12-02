@@ -1,0 +1,21 @@
+<h2>Students</h2>
+
+  <table class="index-table">
+    <tr>
+      <th class="index-th">Name</th>
+      <th class="index-th">Date of birth</th>
+      <th class="index-th">Class</th>
+      <th class="index-th">Teacher</th>
+    </tr>
+  <% @students.each do |student| %>
+    <tr>
+      <td class="index-td"><%= link_to student.name, student_path(student.id) %></td>
+      <td class="index-td"><%=student.dob%></td>
+      <td class="index-td"><%= link_to student.grade.name, grade_path(student.grade.id) %></td>
+      <td class="index-td"><%= link_to student.teacher.name, teacher_path(student.teacher.id) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="4" class="index-td align-right"><%=link_to "New Student", new_student_path%></td>
+  </tr>
+  </table>

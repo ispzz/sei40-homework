@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SchoolDob</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>Student Tracker</h1>
+      <nav>
+        <ul class="nav-st">
+          <li class='inline'><%= link_to "Class Index", grades_path%> | </li>
+          <li class='inline'><%= link_to "Teacher Index", teachers_path%> | </li>
+          <li class='inline'><%= link_to "Student Index", students_path%> </li>
+        </ul>
+      </nav>
+      <hr>
+    </header>
+    <%= yield %>
+    <footer>
+      <hr>
+      &copy; Students 2020
+    </footer>
+  </body>
+</html>

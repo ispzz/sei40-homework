@@ -1,0 +1,35 @@
+<h2>Teachers: <%=@teacher.name%></h2>
+
+<%= image_tag @teacher.image, class: 'large-img', alt: @teacher.name %>
+
+<table class="index-table">
+  <tr>
+    <th class="index-th">Name:</th>
+    <td class="index-th"><%= @teacher.name %></td>
+  </tr>
+  <tr>
+    <th class="index-th">Date of birth:</th>
+    <td class="index-th"><%= @teacher.dob %></td>
+  </tr>
+  <tr>
+    <th class="index-th">class:</th>
+    <td class="index-th"><%= link_to @teacher.grade.name, grade_path(@teacher.grade.id) %></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="index-td">
+      <strong>Students:</strong>
+        <ul class='index-list'>
+          <% @teacher.students.each do |student|%>
+          <li><%= link_to student.name, student_path(student.id) %></li>
+          <% end %>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="index-td"><%= link_to "Edit", edit_teacher_path(@teacher.id)%></td>
+    <td class="index-td"><%= link_to "Delete", teacher_path(@teacher.id), method: 'delete'%></td>
+  </tr>
+  <tr>
+    <td class='show'></td>
+  </tr>
+</table>

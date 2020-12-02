@@ -1,0 +1,81 @@
+body{
+  background-color: rgb(100,150,200);
+  max-width: 1200px;
+  margin: auto;
+}
+img{
+  width: 200px;
+}
+
+td{
+  padding: 5px;
+}
+
+.inline{
+  display: inline;
+}
+
+.align-right{
+  text-align: right;
+}
+.align-left{
+  text-align: left;
+}
+
+.large-img{
+  width: 400px;
+  display: inline;
+  float: left;
+  margin-right: 20px;
+}
+
+.show{
+  height: 400px
+}
+
+.class-index-img{
+  width: 250px;
+}
+.inline{
+  display: inline;
+}
+.nav-st{
+  display: inline-flex;
+
+}
+
+h1{
+  display: inline-flex;
+
+}
+nav{
+  display: inline-flex;
+
+}
+
+.student-index-img{
+  width: 100px;
+}
+
+.index-table{
+  border-collapse: collapse;
+}
+.index-td{
+  padding: 4px;
+  border: 1px solid black;
+}
+.index-th{
+  padding: 4px;
+  border: 2px solid black;
+}
+.index-list{
+  list-style:none;
+  text-align: left;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color:red;
+}

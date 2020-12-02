@@ -1,0 +1,16 @@
+<%= form_with model: @grade, local: true do |f|%>
+<table>
+  <tr>
+    <td><%=f.label :name%></td>
+    <td><%=f.text_field :name, placeholder: 'Class Name'%></td>
+  </tr>
+  <tr>
+    <td><%=f.label :image%></td>
+    <td><%=f.text_field :image, placeholder: "http://"%></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="align-right"><%=f.submit%></td>
+  </tr>
+
+</table>
+<% end %>
