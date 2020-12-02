@@ -1,0 +1,14 @@
+<%= form_with model: @backend, local: true do |b| %>
+
+<%= b.label :name %><br>
+<%= b.text_field :name %><br><br>
+
+<%= b.label :date_released, 'Year Released' %><br>
+<%= b.text_field :date_released %><br><br>
+
+<%= b.label :logo %><br>
+<%= b.text_field :logo %><br><br>
+
+<%= b.submit %>
+
+<% end %>

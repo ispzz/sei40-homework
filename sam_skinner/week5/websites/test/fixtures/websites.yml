@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  frontend_id: 1
+  backend_id: 1
+  launched: 1
+  hacked: false
+  domain: MyText
+  owned_by: MyText
+  wiki: MyText
+
+two:
+  name: MyText
+  frontend_id: 1
+  backend_id: 1
+  launched: 1
+  hacked: false
+  domain: MyText
+  owned_by: MyText
+  wiki: MyText
