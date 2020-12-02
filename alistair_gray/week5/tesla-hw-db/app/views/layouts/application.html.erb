@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Tesla Fan Site</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1>My Tesla Fan Site</h1>
+    <nav>
+      <hr>
+      <%= link_to 'All Cars', cars_path %>
+      |
+      <%= link_to 'Create Car', new_car_path %>
+      <hr>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

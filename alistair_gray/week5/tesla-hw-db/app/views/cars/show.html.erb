@@ -1,0 +1,23 @@
+<h2>TESLA <%= @car.name.upcase %></h2>
+
+<p>
+  <strong>Range:</strong>
+  <%= @car.range %>km
+</p>
+<br>
+<p>
+  <strong>Self Driving Ability:</strong>
+  <%= @car.self_driving ? 'Yes' : 'No' %>
+</p>
+<br>
+<p>
+  <strong>Starting Price:</strong>
+  <%= @car.starting_price %>
+</p>
+<br>
+<%= image_tag @car.image_url, alt: @car.name %>
+<br>
+<br>
+<%= link_to 'Edit Car', edit_car_path(@car.id) %>
+|
+<%= link_to 'Destroy Car', destroy_car_path(@car.id) %>

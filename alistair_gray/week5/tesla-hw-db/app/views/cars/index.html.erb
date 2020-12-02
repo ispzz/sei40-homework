@@ -1,0 +1,14 @@
+<div class="index">
+<!--
+  <h2>Meet the Tesla Range</h2> -->
+<!-- <img src="/assets/" alt=""> -->
+
+<ul>
+  <% @cars.each do |c| %>
+  <li>
+    <%= link_to c.name, car_path(c.id) %>
+  </li>
+  <% end %>
+</ul>
+
+</div>
