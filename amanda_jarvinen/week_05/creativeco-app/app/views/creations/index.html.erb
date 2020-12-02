@@ -1,2 +1,12 @@
-<h1>Creations#index</h1>
-<p>Find me in app/views/creations/index.html.erb</p>
+<h2>Gallery</h2>
+<ul>
+<% @creations.each do |creation| %>
+    <li>
+        <%= link_to creation_path(creation.id) do %>
+            <%= image_tag creation.image_url, alt: creation.title, class: "creation" %>
+            <%# creation.title %> <!--by-->
+             <%# creation.coder.name %>
+        <% end %>
+    </li>
+<% end %>
+</ul>

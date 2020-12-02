@@ -1,2 +1,8 @@
-<h1>Coders#index</h1>
-<p>Find me in app/views/coders/index.html.erb</p>
+<h2>Creative Coders</h2>
+<ul>
+<% @coders.each do |coder| %>
+    <li>
+    <%= link_to coder.name, coder_path(coder.id) %>
+    </li>
+<% end %>
+</ul>

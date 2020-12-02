@@ -71,7 +71,7 @@ Creation.create!(
 Creation.create!(
     title: 'Geometric Galaxy Voyage',
     medium: 'Video',
-    image_url: 'geometricgalaxyvoyage.jpg',
+    image_url: 'geometricgalaxyvoyage.png',
     coder_id: freeke.id
 )
 

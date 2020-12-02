@@ -1,2 +1,3 @@
-<h1>Creations#show</h1>
-<p>Find me in app/views/creations/show.html.erb</p>
+<%= image_tag @creation.image_url, alt: @creation.title, class: "creation" %>
+<h2><%= @creation.title %></h2> <p><%= @creation.coder.name %></p>
+<%= @creation.medium %>
