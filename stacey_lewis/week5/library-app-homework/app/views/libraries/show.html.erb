@@ -1,0 +1,17 @@
+
+<br>
+<%= link_to "Edit this library", edit_library_path %>
+<%= link_to "Delete this library", library_path(@library.id), method: 'delete' %>
+
+<%= image_tag @library.logo, alt: @library.name, class: 'library' %>
+
+<h2>
+  <strong> <%= @library.name %></strong>
+</h2>
+<p>
+  <%=@library.address%>, <%= @library.city %>, <%= @library.postcode%>
+</p>
+<p>Opening hours:<br><em>
+  <%=  @library.opening_hours %>
+</em></p>
+<br>
