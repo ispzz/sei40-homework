@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+  color: rgb(187, 140, 140);
+}
+
+img {
+  max-width: 300px;
+}
+
+a {
+  color: rgb(228, 209, 35);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
