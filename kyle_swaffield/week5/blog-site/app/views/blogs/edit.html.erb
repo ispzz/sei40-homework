@@ -1,0 +1,17 @@
+<h2>Edit Blog: <%@blog.title%></h2>
+
+<%= form_with model: @blog, local: true, method: 'post' do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :article %>
+  <%= f.text_area :article %>
+  <br>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <br>
+  <%= f.label :create_date %>
+  <%= f.text_field :create_date %>
+  <br>
+  <%=f.submit%>
+<% end %>

@@ -1,0 +1,21 @@
+<h2><%=@blog.title%> <%=@blog.id%></h2>
+
+<%= link_to 'Edit Blog', edit_blog_path(@blog.id)%>
+<%= link_to 'Delete Blog', destroy_blog_path(@blog.id)%>
+
+<table>
+  <tr>
+    <th colspan="2"><%=@blog.title%></th>
+  </tr>
+  <tr>
+    <td colspan="2"><%=@blog.article%></td>
+  </tr>
+  <tr>
+    <td>Author:</td>
+    <td><%=@blog.author%></td>
+  </tr>
+  <tr>
+    <td>Date Created:</td>
+    <td><%=@blog.create_date%></td>
+  </tr>
+</table>

@@ -13,7 +13,7 @@ class RpsController < ApplicationController
       @result = "Draw"
     elsif ((@comp_choice == "Rock" && @user == "Scissors") || (@comp_choice == "Paper" && @user == "Rock") || (@comp_choice == "Scissors" && @user == "Paper"))
       @result = comp
-    else ((@comp_choice == "Rock" && @user == "Paper") || (@comp_choice == "Paper" && @user == "Scissors") || (@comp_choice == "Scissors" && @user == "Rock"))
+    else 
       @result = use
     end
   end

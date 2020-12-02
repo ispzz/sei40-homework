@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogSite</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <nav>
+      <h1>Blog site</h1>
+      <%= link_to 'Blogs', index_blogs_path%> |
+      <%= link_to 'Create a Blog', new_blog_path%>
+      <hr>
+    </nav>
+    <%= yield %>
+    <footer>
+      <hr>
+      &copy Ahhhh 2020
+    </footer>
+  </body>
+</html>

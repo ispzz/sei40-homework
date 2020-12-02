@@ -1,0 +1,14 @@
+<h2>Blog Index</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+  </tr>
+  <% @blogs.each do |blog|%>
+  <tr>
+    <td><%= link_to blog.title, blog_path(blog.id)%></td>
+    <td><%= blog.author %></td>
+  </tr>
+  <% end %>
+</table>
