@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CitiesDb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+  <nav>
+    <h1>The Best Cities in Brazil</h1>
+
+
+    <%= link_to 'All Cities', cities_path %>
+    |
+    <%= link_to 'Enter New City', new_city_path %>
+  
+
+    <hr>
+  </nav>
+
+    <%= yield %>
+
+
+
+    <footer>
+      <hr>
+      &copy Made in Brazil 2020
+    </footer>
+
+  </body>
+</html>
