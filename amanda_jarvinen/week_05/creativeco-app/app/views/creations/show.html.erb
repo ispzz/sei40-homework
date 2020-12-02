@@ -1,3 +1,5 @@
 <%= image_tag @creation.image_url, alt: @creation.title, class: "creation" %>
 <h2><%= @creation.title %></h2> <p><%= @creation.coder.name %></p>
 <%= @creation.medium %>
+<%= link_to 'Edit', edit_creation_path %>
+<%= link_to 'Delete', creation_path(@creation.id), method: 'delete' %>

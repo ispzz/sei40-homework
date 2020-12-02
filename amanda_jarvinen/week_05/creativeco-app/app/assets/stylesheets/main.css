@@ -1,0 +1,16 @@
+body {
+    font-family: Helvetica, sans-serif;
+}
+img {
+    max-width: 500px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */

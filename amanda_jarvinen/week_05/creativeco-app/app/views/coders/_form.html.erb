@@ -1,0 +1,27 @@
+<%= form_with model: @coder, local: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :nationality %>
+    <%= f.text_field :nationality %>
+    <br>
+    <br>
+    <%= f.label :bio, 'Biography:' %>
+    <%= f.text_area :bio %>
+    <br>
+    <br>
+    <%= f.label :portfolio_url, 'Portfolio link:' %>
+    <%= f.text_field :portfolio_url %>
+    <br>
+    <br>
+    <%= f.label :instagram_url, 'Instagram link:' %>
+    <%= f.text_field :instagram_url %>
+    <br>
+    <br>
+    <%= f.label :image_url, 'Image link:' %>
+    <%= f.text_field :image_url %>
+    <br>
+    <br>
+    <%= f.submit %>
+<% end %>
