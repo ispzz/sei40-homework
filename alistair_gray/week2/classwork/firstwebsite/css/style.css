@@ -1,0 +1,20 @@
+body {
+  background-color: black;
+}
+
+.larger {
+  font-size: 18pt;
+  color: yellow;
+}
+
+#firstPara {
+  color: green;
+}
+
+* {
+  color: white;
+}
+
+* {
+  border: 2px solid red;
+}

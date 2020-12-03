@@ -1,0 +1,30 @@
+<h3>Create Household member: </h3>
+
+<form class="" action="/members/<%=@member.id%>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" value="<%=@member.name %>">
+  </label>
+  <br>
+
+  <label>
+    Compentency rating:
+    <input type="INTEGER" name="competency_rating" value="<%=@member.competency_rating %>">
+  </label>
+  <br>
+
+  <label>
+    Shopping Style:
+    <input type="text" name="shopping_style" value="<%=@member.shopping_style %>">
+  </label>
+  <br>
+
+  <label>
+    Phone Number:
+    <input type="text" name="phone_number" value="<%=@member.phone_number %>">
+  </label>
+  <br>
+
+<button type="submit">Update</button>
+
+</form>

@@ -1,0 +1,15 @@
+<h1>Movie Results for "<%= @movie_title %>"</h1>
+
+<ul>
+  <% @movie_request['results'].each do |m| %>
+
+    <li>
+      <a href=<%= "/movie/#{m['id']}" %>><h2><%= m['title'] %></h2></a>
+    </li>
+    <img src=<%= "https://image.tmdb.org/t/p/w92#{m['poster_path']}" %> alt="">
+    <ul>
+      <li>Release Date: <%= m['release_date'] %></li>
+      <li>Overview: <%= m['overview'] %></li>
+    </ul>
+  <% end %>
+</ul>

@@ -1,0 +1,24 @@
+
+
+<h2>Your results are:</h2>
+
+<p>
+  <strong>Movie Name</strong> <%= params[:movie_name] %>
+</p>
+
+<% @movies_results.each do |m| %>
+
+ <p>
+  Title: <%= m['title'] %>
+</p>
+
+<p>
+  Release Date: <%= m['release_date'] %>
+</p>
+
+<p>
+  Overview: <%= m['overview'] %>
+</p>
+
+
+<% end %>

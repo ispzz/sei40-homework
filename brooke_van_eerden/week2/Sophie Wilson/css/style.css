@@ -1,0 +1,186 @@
+body{
+  background-color: rgba(0, 255, 255, 0.5);
+  font-family: Orbitron, sans-serif;
+  font-size: 20px;
+  background-image: url('https://hackaday.com/wp-content/uploads/2018/05/sophiwilson.jpg?w=800');
+  background-size: cover;
+  background-blend-mode:  hard-light;
+
+}
+#title{
+
+  margin-left: 15px;
+  text-align: left;
+  font-size: 50px;
+}
+nav{
+  background-color: #EE9999;
+  width:100%;
+  border-radius: 10px;
+
+}
+
+div.links{
+  display: inline-block;
+  text-align: right;
+  margin-left: 900px;
+  padding:30px;
+
+
+}
+
+a{
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+  text-align: right;
+
+}
+#awards{
+  margin:10px;
+}
+.awards{
+  width:30%;
+  font-size: 20px;
+  text-align: justify;
+  padding: 10px;
+  margin: 30px;
+  margin-top: 30px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
+
+
+}
+.content{
+  display: inline-block;
+  vertical-align: top;
+  text-align: justify;
+  vertical-align: top;
+  float: right;
+  width:30%;
+  padding : 20px;
+  margin-right: 80px;
+  margin-top: 20px;
+  background-color: rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
+
+
+}
+p{
+  margin: 10px;
+  padding: 30px;
+  background-color: rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
+}
+
+h4{
+  display: block;
+  vertical-align: top;
+  text-align: left;
+  margin:10px;
+  position: relative;
+  font-size: 30px;
+
+}
+article{
+  width:100%;
+  text-align:justify;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  /* top: 50px; */
+}
+strong{
+  font-weight: bolder;
+  text-decoration: underline;
+}
+footer{
+  positon:fixed;
+  font-size: 12px;
+  list-style-type: none;
+  margin-top: 180px;
+  background-color: rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
+  width: 40%;
+}
+ul{
+  background-color: rgba(255, 200, 200, 0.8);
+  width: 50%;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+img{
+  display: inline;
+  border-radius: 100px ;
+  margin-top: 100px;
+}
+.media{
+  display: flex;
+}
+iframe{
+  border: 10px solid rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
+  margin: auto;
+}
+#map{
+  position: relative;
+  border: 10px solid rgba(255, 200, 200, 0.8);
+  border-radius: 10px;
+
+text-align: right;
+left:400px;
+bottom: 500px;
+
+
+}
+
+
+
+
+
+
+@media screen and (max-width:400px){
+
+  body{
+    font-size:18px;
+
+  }
+
+  div.links{
+    display: block;
+    text-align: left;
+
+    padding:30px;
+
+  img{
+    display: inline;
+    position: relative;
+    left: 300px;
+    bottom: 135px;
+    text-align: center;
+  }
+
+  .content{
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    vertical-align: top;
+    float: right;
+    width:100%;
+    height:
+
+  }
+
+  article{
+    width:100%;
+    text-align:justify;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top:50px;
+
+}
+};

@@ -1,0 +1,51 @@
+<h2>Edit: <%= @mountain['name'] %></h2>
+
+
+<form action="/mountains/<%= @mountain['id'] %>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" value="<%= @mountain['name'] %>">
+  </label>
+  <br>
+
+  <label>
+    Elevation(m):
+    <input type="text" name="elevation_m" value="<%= @mountain['elevation_m'] %>">
+  </label>
+  <br>
+
+  <label>
+    Location:
+    <input type="text" name="location" value="<%= @mountain['location'] %>">
+  </label>
+  <br>
+
+  <label>
+    Guided Climbs?:
+    <label for="true">Yes</label>
+    <input type="radio" id="true" value="true" name="guided_climbs">
+    <label for="false">No</label>
+    <input type="radio" id="false" value="false" name="guided_climbs">
+  </label>
+  <br>
+
+  <label>
+    First Climber:
+    <input type="text" name="first_climber" value="<%= @mountain['first_climber'] %>">
+  </label>
+  <br>
+
+  <label>
+    Year First Climbed:
+    <input type="text" name="year_climbed" value="<%= @mountain['year_climbed'] %>">
+  </label>
+  <br>
+
+  <label>
+    Wikipedia:
+    <input type="text" name="wikipedia" value="<%= @mountain['wikipedia'] %>">
+  </label>
+  <br>
+
+  <input type="submit" value="Edit Mountain">
+</form>

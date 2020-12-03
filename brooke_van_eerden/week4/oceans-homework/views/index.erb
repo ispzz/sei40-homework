@@ -1,0 +1,13 @@
+<h2>Index of Games</h2>
+
+<ul>
+  <% @games.each do |game| %>
+  <li>
+    <a href = "/games/<%= game['id']%>">
+    <%= game['name'] %>
+  -
+    <%= game['platform'] %>
+</a>
+  </li>
+  <% end %>
+</ul>

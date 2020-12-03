@@ -1,0 +1,53 @@
+body{
+  background-color: lightgray;
+  margin-top: 50px;
+}
+.heading{
+  display:inline;
+  margin-right: : 100px;
+  /* border: solid 1px green; */
+}
+.inline{
+  display: inline;
+  margin: 5px;
+  /* border: 1px red solid; */
+}
+ul.inline{
+  margin-left: 420px;
+  /* border: solid 1px yellow; */
+}
+.main{
+  max-width: 900px;
+  margin: auto;
+}
+.bottom{
+  position: relative;
+  bottom:0;
+}
+table{
+  border-collapse: collapse;
+}
+td{
+  border: 1px solid grey;
+  padding:5px;
+}
+.noborder{
+  border: none;
+  vertical-align: top;
+  text-align: left;
+}
+.none{
+  border: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: red;
+}
+.align-right{
+  text-align: right;
+}

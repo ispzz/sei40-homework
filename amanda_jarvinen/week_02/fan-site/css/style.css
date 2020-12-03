@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
+
+:root {
+  --hoverColor: ghostWhite;
+}
+
+/* Ensure sizing is intuitive https://learnlayout.com/box-sizing.html */
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', Helvetica, sans-serif;
+  line-height: 28px;
+}
+
+.container {
+  height: 100vh;
+  width: 80%;
+
+  /* Center horizontally */
+  margin-left: auto;
+  margin-right: auto;
+
+  display: grid; /* block-level grid */
+  grid-template-columns: auto;
+  grid-template-rows: 100px 4fr 0.5fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer"
+}
+
+/* TODO: Change navigation to be a grid area so that can easily reposition for small screen */
+
+header {
+  /* background-color: #efefef; */
+  grid-area: header;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* When page shrinks nav wraps to next line */
+  justify-content: space-between; /* Pushes elements to either side and has empty spaces between them */
+  align-items: center; /* h1 and nav are vertically aligned center */
+}
+
+header h1 {
+  /* border: 1px solid pink; */
+  margin: 12px;
+  color: lightgrey;
+}
+header h1>a {
+  text-decoration: none;
+  color: lightgrey;
+}
+
+nav {
+/* border: 1px solid darkblue; */
+margin: 12px;
+}
+
+nav ul {
+  /* border: 1px solid lightblue; */
+  text-align: right;
+  padding: 0;
+}
+
+nav li {
+  /* border: 1px solid blue; */
+
+  display: inline;
+  padding: 12px;
+  margin-left: 4px;
+
+  list-style-type: none;
+  transition: background-color 0.4s ease;
+}
+
+nav li:hover {
+  background-color: var(--hoverColor);
+}
+
+nav a {
+  color: grey;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration-line: underline;
+}
+
+main {
+  grid-area: main;
+  /* border: 1px solid purple; */
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+#heroImg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: white;
+  border-radius: 8px;
+  height: 32%;
+  margin-bottom: 32px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  background-image: url('../images/JuliaEvansSelfPortrait.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80% 80%;
+
+  transition: background-image 0.2s ease;
+}
+
+#heroImg:hover {
+  background-image: url('../images/JuliaEvansSelfPortrait01.png');
+}
+
+main p {
+  font-weight: 300;
+}
+
+/* #video{
+  display: block;
+  width: 100%;
+} */
+
+iframe {
+  display: block;
+  width: 560px;
+  height:315px;
+  margin: 0 auto;
+}
+
+#cat {
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spacer {
+  margin: 48px;
+}
+
+figcaption {
+  text-align: center;
+}
+
+footer {
+  grid-area: footer;
+  /* border: 1px solid hotpink; */
+  color: dimgrey;
+  font-weight: 300;
+  line-height: 14px;
+}
+
+/* Desktop */
+@media (min-width: 1000px) {
+  .container {
+    width: 800px;
+    /* background-color: hotpink; */
+}
+
+/* Mobile */
+@media (max-width: 600px){}

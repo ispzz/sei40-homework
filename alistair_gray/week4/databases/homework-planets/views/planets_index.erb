@@ -1,0 +1,12 @@
+<h2>Planet Index</h2>
+
+<ul>
+
+  <% @planets.each do |planet| %>
+  <li>
+    <a href="/planets/<%= planet.id %>"><%= planet.name %></a>
+    <img class="thumb" src="<%= planet.img_url %>" alt="<%=planet.name%>">
+  </li>
+  <% end %>
+
+</ul>

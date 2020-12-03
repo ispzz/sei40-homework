@@ -1,0 +1,12 @@
+.block{
+  display: block;
+}
+.top-margin{
+  margin-top: 20px;
+}
+.align-right{
+  text-align: right;
+}
+td{
+  padding: 3px;
+}

@@ -1,0 +1,25 @@
+
+<h3>Edit artist details: <%= @artist['name'] %></h3>
+
+<form action="/<%= @artist['id'] %>" method="post">
+  Name:
+  <input type="text" name="name" value="<%= @artist['name'] %>">
+  <br>
+  Date of Birth:
+  <input type="text" name="birth" value="<%= @artist['birth'] %>">
+  <br>
+  Date of Death:
+  <input type="text" name="death" value="<%= @artist['death'] %>">
+  <br>
+  Alive or Dead (1 or 0):
+  <input type="BOOLEAN" name="living" value="<%= @artist['alive'] %>">
+  <br>
+  Famous work name:
+  <input type="text" name="work_name" value="<%= @artist['favourite_work_title'] %>">
+  <br>
+  Image URL for famous work:
+  <input type="text" name="image_url" value="<%= @artist['favourite_work_url'] %>">
+  <br>
+
+  <button type="submit">Submit!</button>
+</form>

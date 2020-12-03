@@ -1,0 +1,16 @@
+<h2>Unit of Measure: <%=@uom.name%></h2>
+<table>
+  <tr>
+    <td><strong>Name: </strong></td>
+    <td><%=@uom.name%></td>
+  </tr>
+  <tr>
+    <td><strong>Description: </strong></td>
+    <td><%=@uom.description%></td>
+  </tr>
+  <% if @uom.id != 1%>
+  <tr>
+    <td><a href="/uom/<%=@uom.id%>/edit">Edit</a></td>
+  </tr>
+  <% end %>
+</table>

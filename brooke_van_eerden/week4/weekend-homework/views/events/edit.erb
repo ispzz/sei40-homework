@@ -1,0 +1,38 @@
+<h2> Edit:<%= @event.name %> </h2>
+
+<form action ='/events/<%=@event.id%>' method= 'post'>
+  <label class='add'>Name:
+  <input type='text' name='name' value="<%= @event.name %>">
+  </label>
+  <label class='add'>Contact Name:
+  <input type='text' name='contact_name' value="<%= @event.contact_name %>">
+  </label>
+  <label class='add'>Contact Email:
+  <input type='text' name='contact_email' value="<%= @event.contact_email %>">
+  </label>
+  <label class='add'>Description:
+    <textarea name='description'> <%= @event.description %> </textarea>
+  </label>
+  <label class='add'>Start Date:
+  <input type='date' name='start_date' value="<%= @event.start_date %>">
+  </label>
+  <label class='add'>End Date:
+  <input type='date' name='end_date' value="<%= @event.end_date %>">
+  </label>
+  <label class='add'>Number of People:
+  <input type='text' name='cast_count' value="<%= @event.cast_count %>">
+  </label>
+  <label class='add'>Have they paid?
+  <input type='text' name='paid' value="<%= @event.paid %>">
+  </label>
+  <label class='add'>Venue:
+    <select name='venue_id'>
+      <option></option>
+      <% Venue.all.each do |venue| %>
+      <option value="<%= venue.id %> " <%= "selected" if venue.id == @event.venue.id %> ><%= venue.name %></option>
+      <% end %>
+      </select>
+      </label>
+      <br>
+        <input class='add_button' type="submit" value='Update Event Details'>
+       </form>

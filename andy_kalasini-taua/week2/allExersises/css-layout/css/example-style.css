@@ -1,0 +1,19 @@
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: darkslategray;
+  color: #AAAAAA
+  margin: 0;
+}
+
+header {
+  border: 1px solid red;
+  height: 60px;
+  background-color: lavender;
+  color: #333333
+  padding: 3px;
+}
+
+div.main {
+  border: 1px solid green;
+  height: 100%;
+}

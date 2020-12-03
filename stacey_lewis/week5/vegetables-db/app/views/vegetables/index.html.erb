@@ -1,0 +1,9 @@
+<h3>Index of vegetables</h3>
+
+<ul>
+  <% @vegetables.each do |v| %>
+  <li>
+    <%=link_to v.name, vegetable_path(v.id) %>
+  </li>
+    <%end%>
+</ul>

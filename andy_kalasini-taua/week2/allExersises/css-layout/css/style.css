@@ -1,0 +1,14 @@
+body {
+  background-color: #E0EEE0; /*color coordinates from https://htmlcolorcodes.com/  */
+  font-family: Helvetica, sans-serif;
+}
+
+div.inlineExample {
+  border: 0.25px solid red;
+  display: block;
+}
+
+div.blockExample {
+  border: 1px solid green;
+  display: block; /*this is the default*/
+}

@@ -1,0 +1,112 @@
+body{
+  text-align: center;
+  background-color: rgba(23, 24, 20, 0.82);
+  color: moccasin;
+  font-family: sans-serif;
+  font-size: 16pt;
+  /* border: 10px solid blue; */
+
+}
+nav{
+  display: block;
+  background-image:
+  url('https://media-exp1.licdn.com/dms/image/C561BAQE_7i_uAOk6SQ/company-background_10000/0/1569197390919?e=1606618800&v=beta&t=zjpzbTNCkZZrGIQOBWRqzgE_yuREmN1Htj2EO_wQ9e8')
+  height: 100%;
+  /* border: 10px solid red; */
+
+}
+form{
+text-align: left;
+align: right;
+}
+img{
+  /* border: 10px solid blue; */
+ margin: auto;
+ /* margin-right: 300px; */
+ width: 200px;
+ height:200px;
+}
+input{
+  text-align:left;
+  align: right;
+
+}
+textarea{
+  width: 350px;
+  height: 100px;
+}
+.add_button{
+  padding: 10px;
+  text-align: center;
+
+  margin-left: 140px;
+
+}
+#description{
+  /* border: 10px solid blue; */
+  width: 55%;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#capacity{
+  display: block;
+  margin: auto;
+}
+
+form{
+  background-color: grey;
+  width : 20%;
+  border-radius: 10px;
+  margin: auto;
+}
+ul{
+  display: inline;
+  margin: auto;
+  /* border: 10px solid gold; */
+  list-style: none;
+}
+strong{
+  align: left;
+}
+.add{
+  display:block;
+  padding: 10px;
+  text-align: letter-spacing: ;
+}
+li{
+  background-color: grey;
+  border-radius: 10px;
+  display:inline-block;
+  width: 15%;
+  padding: 10px;
+  margin: 10px;
+
+
+}
+#dates{
+  width:25%;
+}
+a.change_event{
+  margin: 200px;
+}
+.new{
+  align: right;
+  padding: 10px;
+  text-align: center;
+}
+
+.index{
+  text-align:center;
+}
+
+a{
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  color: coral;
+  font-weight: bolder;
+  /* border: 10px solid pink; */
+
+}

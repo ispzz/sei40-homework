@@ -1,0 +1,42 @@
+#background{
+  width: 110%;
+  height: 110%;
+  opacity:0
+}
+
+
+#dance1{
+  width: 12%;
+  height: auto;
+  left: 200px;
+  top: 100px;
+  opacity:0
+}
+#dance2{
+  width: 12%;
+  height: auto;
+  left: 80%;
+  top: 100px;
+  opacity:0
+}
+#dance3{
+  width: 12%;
+  height: auto;
+  left: 80%;
+  top: 60%;
+  opacity:0
+}
+#dance4{
+  width: 40%;
+  height: auto;
+  left: 20%;
+  top: 60%;
+  opacity:0;
+
+}
+
+#mainImage{
+  width: 15%;
+  height: auto;
+  top: 25%
+}

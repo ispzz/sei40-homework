@@ -1,0 +1,22 @@
+body, #container, div, h1, h3 {
+  margin-top: 20px;
+  margin-left: 20px;
+  max-width: 100%;
+}
+
+h1, h2, h3, p {
+  color: gray;
+},
+p {
+  text-size: 16pt;
+  text-align: left;
+}
+#date, a{
+  color: blue;
+},
+#content{
+  position: relative;
+}
+#inline{
+  border: 5px solid #d3d3d3;
+}

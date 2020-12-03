@@ -1,0 +1,60 @@
+.sky {
+  border: 1px solid red;
+  height: 200px;
+  width: 100%;
+  background-color: rgba(135, 206, 235, 1);
+}
+
+#cloudA {
+  top: 20%;
+  left: 0;
+  position: relative;
+  max-width: 10%;
+}
+#cloudB {
+  top: 20%;
+  padding-left: 250px;
+  position: relative;
+  max-width: 10%;
+}
+#cloudC {
+  top: 20%;
+  padding-left: 250px;
+  position: relative;
+  max-width: 10%;
+}
+
+.grass {
+  border: 1px solid green;
+  height: 500px;
+  width: 100%;
+  background-color: #6b9c58;
+}
+
+.stadium {
+  top: 50px;
+  position: relative;
+  background-color: #b48463;
+  border: 1px solid blue;
+  height: 400px;
+  width: 600px;
+  margin: auto;
+}
+
+.ground {
+  height: 250px;
+  background-color: #9b7653;
+}
+
+#catWalker {
+  margin-top: 2%;
+  z-index: 1;
+  max-width: 10%;
+}
+
+.test {
+  border: 1px solid red;
+  background-image: image(images/cat-sword.png);
+  width: 100px;
+  height: 100px;
+}

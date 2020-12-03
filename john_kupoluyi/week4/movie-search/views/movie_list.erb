@@ -1,0 +1,30 @@
+<div>
+  <div class="result">
+    <h3>Total Result: <%= @result['total_results'] %></h3>
+    <a class="btn" href="/">New Search</a>
+  </div>
+  <div>
+
+    <% if @page.to_i > 1 %>
+      <a href="/movie/<%= @term %>/<%= @page.to_i - 1 %>"><< Previous</a>
+    <% end %>
+
+    <span>Page <%= @page %> of <%= @result['total_pages'] %> Displayed</span>
+    
+    <% if @page.to_i < @result['total_pages'] %>
+      <a href="/movie/<%= @term %>/<%= @page.to_i + 1 %>">Next >></a>
+    <% end %>
+
+  </div>
+  <ul class="movie_list">
+    <% @result['results'].each do |movie| %>
+      <% if movie['poster_path'] %>
+      <li>
+        <a href="/movie/<%= movie['id'] %>">
+          <img src="https://image.tmdb.org/t/p/w200/<%= movie['poster_path'] %>" height="100%" alt="">
+        </a>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

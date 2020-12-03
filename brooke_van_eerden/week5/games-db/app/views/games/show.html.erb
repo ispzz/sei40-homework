@@ -1,0 +1,20 @@
+<h2><%= @game.name %></h2>
+
+
+<ul>
+<li>Platform(s): <%= @game.platform %>
+</li>
+<br>
+<li>Description: <%= @game.description %>
+</li>
+<br>
+<li>Maximum Number of Players: <%= @game.max_players %>
+</li>
+<br>
+<li>Box Art: <br> <%= image_tag @game.box_art, alt: @game.name %>
+</li>
+
+</ul>
+
+<%= link_to "Edit this Game", edit_game_path(@game.id) %> ||
+<%= link_to "Delete this Game", destroy_game_path(@game.id) %>

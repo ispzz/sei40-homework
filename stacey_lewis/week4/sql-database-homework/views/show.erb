@@ -1,0 +1,24 @@
+<h3><%= @artist['name'] %></h3>
+
+<ul>
+  <li>Date of birth: <%= @artist['birth'] %></li>
+  <li>Date of death: <%= @artist['death'] %></li>
+  <br>
+  <li id="live">
+    <% if @artist['alive'] == 0 %>
+    Deceased
+    <% else %>
+    Alive
+    <% end %>
+  </li>
+  <hr>
+<h4>Example of a famous work:</h4>
+<p><%=@artist['favourite_work_title']%></p>
+<img src="<%= @artist['favourite_work_url'] %>" alt="<%= @artist['favourite_work_title'] %>">
+
+
+</ul>
+
+<a href="/<%= @artist['id']%>/edit">Edit</a>
+|
+<a href="/<%= @artist['id']%>/delete">Delete</a>

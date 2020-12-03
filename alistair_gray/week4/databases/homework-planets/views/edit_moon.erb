@@ -1,0 +1,57 @@
+<h1>Edit moon: <%= @moon.name %></h1>
+
+<form action="/moons/<%= @moon.id %>" method="post">
+
+  <label>
+    Name:
+    <input type="text" name="name" value="<%= @moon.name %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Orbital Period:
+    <input type="integer" name="orbital_period" value="<%= @moon.orbital_period %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Day Length:
+    <input type="integer" name="day_length" value="<%= @moon.day_length %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Is there life?:
+    <input type="text" name="inhabited" value="<%= @moon.inhabited %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Does it have an atmosphere?:
+    <input type="text" name="atmosphere" value="<%= @moon.atmosphere %>">
+  </label>
+
+  <br>
+  <br>
+
+  <label>
+    Image URL:
+    <input type="text" name="img_url" value="<%= @moon.img_url %>">
+  </label>
+  <br>
+  <br>
+  <label>
+    Home Planet ID:
+    <input type="text" name="planet_id" value="<%= @moon.planet_id %>">
+  </label>
+
+<button>Update moon</button>
+</form>

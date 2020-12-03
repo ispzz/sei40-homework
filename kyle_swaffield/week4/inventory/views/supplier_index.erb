@@ -1,0 +1,23 @@
+<h2>Suppliers</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+  <%  @suppliers.each do |sup| %>
+  <tr>
+    <td><a href="/supplier/<%=sup.id%>"><%=sup.name%></a></td>
+    <td><%=sup.description%></td>
+    <td><%=sup.phone%></td>
+    <td><%=sup.email%></td>
+    <% if sup.id != 1 %>
+    <td class="noborder"><a href="supplier/<%=sup.id%>/edit">edit</a></td>
+    <% end %>
+  </tr>
+  <%end%>
+  <tr>
+    <td colspan="4" class="align-right"><a href="/supplier/new">Add a supplier</a></td>
+  </tr>
+</table>

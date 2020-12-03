@@ -1,0 +1,9 @@
+<h2>Index of Games</h2>
+
+<ul>
+<% @games.each do |g| %>
+<li>
+  <%= link_to g.name, game_path(g.id)  %>
+</li>
+<% end %>
+</ul>
