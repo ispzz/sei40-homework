@@ -1,0 +1,30 @@
+
+<h2><%= @waste.name %></h2>
+
+<%= link_to 'Edit waste', edit_waste_path %>
+|
+<%= link_to 'Delete waste', waste_path(@waste.id), method: 'delete' %>
+
+<p>
+  <strong></strong>:
+  <%= @waste.name %>
+</p>
+
+<p>
+  <strong>Amount discarded in Landfills in Australia per year</strong>:
+  <%= @waste.landfill_weight_PA %>
+</p>
+
+<p>
+  <strong>solutions</strong>:
+  <ul>
+    <% @waste.solutions.each do |solution| %>
+      <li>
+        <%= link_to solution.action, solution_path(solution.id) %>, <%= solution.image %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+
+<%= image @waste.image, alt: "Photo of #{@waste.name}", class: 'waste' %>

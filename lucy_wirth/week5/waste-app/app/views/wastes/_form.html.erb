@@ -1,0 +1,21 @@
+
+<%= form_with model: @waste, local: true do |f| %>
+
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %>
+  <br><br>
+
+  <%= f.label :landfill_weight_PA %>
+  <br>
+  <%= f.text_field :landfill_weight_PA %>
+  <br><br>
+
+  <%= f.label :image %>
+  <br>
+  <%= f.text_field :image %>
+  <br><br>
+
+  <%= f.submit %>
+
+<% end %>

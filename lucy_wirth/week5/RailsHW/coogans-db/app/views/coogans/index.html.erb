@@ -1,0 +1,23 @@
+
+<h2>Index of coogans</h2>
+
+<ul>
+  <% @coogans.each do |p|  %>
+    <li>
+    <!--
+      Instead of directly using a URL like '/coogans/9'
+      Rails encourages you to use a helper method whiche
+      will give you the URL, based on what is in your
+      routes.rb file; this is supposed to dry up your templates
+     -->
+
+     <%= link_to p.name, coogan_path(p.id) %>
+
+     <!--
+      <a href="<%= coogan_path( p.id ) %>">
+        <%= p.name %>
+      </a> -->
+
+    </li>
+  <% end %>
+</ul>

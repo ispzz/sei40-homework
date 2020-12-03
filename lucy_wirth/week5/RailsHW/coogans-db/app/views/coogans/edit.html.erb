@@ -1,0 +1,18 @@
+
+<h2>Edit coogan: <%= @coogan.name %></h2>
+
+<!-- <form> -->
+<%= form_with model: @coogan, local: true, method: 'post' do |f|  %>
+
+  <%= f.label :title %>
+  <%= f.label :image_url, 'Image URL' %>
+  <br>
+
+  <%= f.label :format %>
+  <%= f.text_field :year %>
+  <br>
+
+  <%= f.submit %>
+
+<% end %>
+<!-- </form> -->
