@@ -20,8 +20,16 @@
     <td class="index-td"><%= link_to @student.teacher.name, teacher_path(@student.teacher.id) %></td>
   </tr>
   <tr>
-    <td class="index-td"><%= link_to "Edit", edit_student_path(@student.id)%></td>
-    <td class="index-td"><%= link_to "Delete", student_path(@student.id), method: 'delete'%></td>
+    <td class="index-td">
+    <%= link_to edit_student_path(@student.id) do %>
+      <button class="new-button">Edit</button>
+    <% end %>
+    </td>
+    <td class="index-td">
+      <%= link_to student_path(@student.id), method: 'delete' do %>
+      <button class="new-button">Delete</button>
+      <%end%>
+    </td>
   </tr>
   <tr>
     <td class='show'></td>

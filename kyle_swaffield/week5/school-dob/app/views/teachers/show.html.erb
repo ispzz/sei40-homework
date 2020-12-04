@@ -25,9 +25,19 @@
         </ul>
     </td>
   </tr>
+  <% if @teacher.user_id == @current_user.id %>
   <tr>
-    <td class="index-td"><%= link_to "Edit", edit_teacher_path(@teacher.id)%></td>
-    <td class="index-td"><%= link_to "Delete", teacher_path(@teacher.id), method: 'delete'%></td>
+    <td class="index-td">
+      <%= link_to edit_teacher_path(@teacher.id) do %>
+      <button class="new-button">Edit</button>
+      <% end %>
+    </td>
+    <td class="index-td">
+      <%= link_to teacher_path(@teacher.id), method: 'delete' do %>
+      <button class="new-button">Delete</button>
+      <% end %>
+    </td>
+    <% end %>
   </tr>
   <tr>
     <td class='show'></td>

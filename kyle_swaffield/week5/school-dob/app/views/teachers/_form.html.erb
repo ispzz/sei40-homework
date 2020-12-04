@@ -10,14 +10,14 @@
   </tr>
   <tr>
     <td><%=f.label :grade_id, "Class"%></td>
-    <td><%=f.collection_select :grade_id, Grade.all, :id, :name%></td>
+    <td><%=f.collection_select :grade_id, Grade.all, :id, :name, include_blank: true%></td>
   </tr>
   <tr>
     <td><%=f.label :image%></td>
     <td><%=f.text_field :image, placeholder: "http://"%></td>
   </tr>
   <tr>
-    <td colspan="2" class="align-right"><%=f.submit%></td>
+    <td colspan="2" class="align-right"><%=f.submit class: "new-button"%></td>
   </tr>
 
 </table>

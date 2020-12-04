@@ -1,7 +1,8 @@
 body{
   background-color: rgb(100,150,200);
-  max-width: 1200px;
+  max-width: 70%;
   margin: auto;
+  color:darkblue;
 }
 img{
   width: 200px;
@@ -62,11 +63,15 @@ nav{
 }
 .index-td{
   padding: 4px;
-  border: 1px solid black;
+  border: 1px solid darkblue;
 }
 .index-th{
   padding: 4px;
-  border: 2px solid black;
+  border: 2px solid darkblue;
+  color: darkblue;
+}
+strong{
+  color: darkblue;
 }
 .index-list{
   list-style:none;
@@ -74,8 +79,24 @@ nav{
 }
 a{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 a:hover{
   color:red;
+}
+.new-button{
+  apperance:none;
+  padding: 10px;
+  border:none;
+  background-color: darkblue;
+  color:white;
+  font-weight: 600;
+  border-radius: 5px;
+  width:100%;
+}
+.nav-mar{
+  margin: 4px;
+}
+h2,h1{
+  color: darkblue;
 }

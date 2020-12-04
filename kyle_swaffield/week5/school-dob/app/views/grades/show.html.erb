@@ -28,8 +28,16 @@
     </td>
   </tr>
   <tr>
-    <td class="index-td"><%= link_to "Edit", edit_grade_path(@grade.id)%></td>
-    <td class="index-td"><%= link_to "Delete", grade_path(@grade.id), method: 'delete'%></td>
+    <td class="index-td">
+      <%= link_to edit_grade_path(@grade.id) do %>
+      <button class="new-button">Edit</button>
+      <% end%>
+    </td>
+    <td class="index-td">
+      <%= link_to grade_path(@grade.id), method: 'delete' do %>
+      <button class="new-button">Delete</button>
+    <% end %>
+    </td>
   </tr>
   <tr>
     <td class='show'></td>

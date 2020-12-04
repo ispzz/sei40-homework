@@ -14,6 +14,7 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find params[:id]
+    check_if_logged_in
   end
 
   def edit
@@ -23,7 +24,7 @@ class TeachersController < ApplicationController
   def update
     teacher = Teacher.find params[:id]
     teacher.update teacher_params
-    redirect_to teacher_path(teacher.id)
+    redirect_to login_path unless @teacher.user_id == @current_user.id
   end
 
   def destroy

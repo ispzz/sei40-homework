@@ -188,3 +188,42 @@ Student.create!(
 
 puts "Done! Created #{Student.count} students:"
 puts Student.pluck(:name).join(', ')
+
+User.destroy_all
+t1 = User.create!(
+  name: 'Dianne Thomas',
+  email: 'dianne@thomas.co',
+  password: 'chicken'
+)
+t2 = User.create!(
+  name: 'John Thomas',
+  email: 'john@thomas.co',
+  password: 'chicken'
+)
+t3 = User.create!(
+  name: 'Simmone Wells',
+  email: 'simmonen@wells.co',
+  password: 'chicken'
+)
+t4 = User.create!(
+  name: 'Tom Kitten',
+  email: 'tom@kitten.co',
+  password: 'chicken'
+)
+t5 = User.create!(
+  name: 'Megan Frost',
+  email: 'megan@frost.co',
+  password: 'chicken'
+)
+t6 = User.create!(
+  name: 'Johan van Dyk',
+  email: 'johan@johan.co',
+  password: 'chicken'
+)
+
+t1.teachers << dianne
+t2.teachers << john
+t3.teachers << simmone
+t4.teachers << tom
+t5.teachers << megan
+t6.teachers << johan

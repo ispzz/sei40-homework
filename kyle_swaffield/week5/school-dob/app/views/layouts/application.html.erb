@@ -12,11 +12,30 @@
   <body>
     <header>
       <h1>Student Tracker</h1>
+      <% if @current_user.present? %>
+        Welcome, <%=@current_user.name%> |
+        <%= link_to 'logout', login_path, method: 'delete'%>
+      <%else%>
+        <%= link_to 'login', login_path%> |
+        <%= link_to 'Sign Up', new_user_path %>
+      <% end %>
       <nav>
         <ul class="nav-st">
-          <li class='inline'><%= link_to "Class Index", grades_path%> | </li>
-          <li class='inline'><%= link_to "Teacher Index", teachers_path%> | </li>
-          <li class='inline'><%= link_to "Student Index", students_path%> </li>
+          <li class='inline nav-mar'>
+            <%= link_to grades_path do %>
+            <button class="new-button">Class Index</button>
+            <% end %>
+          </li>
+          <li class='inline nav-mar'>
+            <%= link_to teachers_path do %>
+            <button class="new-button">Teacher Index</button>
+            <% end %>
+          </li>
+          <li class='inline nav-mar'>
+            <%= link_to students_path do %>
+            <button class="new-button">Student Index</button>
+            <% end %>
+          </li>
         </ul>
       </nav>
       <hr>

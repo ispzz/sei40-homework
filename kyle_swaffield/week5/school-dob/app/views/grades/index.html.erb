@@ -21,6 +21,12 @@
     </tr>
   <% end %>
   <tr>
-    <td colspan="4" class="index-td align-right"><%=link_to "New Class", new_grade_path%></td>
+
+    <td colspan="4" class="index-td align-right">
+<%= link_to new_grade_path do %>
+      <button class="new-button">New Class</button>
+<%end%>
+    </td>
+
   </tr>
   </table>
