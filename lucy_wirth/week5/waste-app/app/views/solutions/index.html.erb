@@ -1,0 +1,9 @@
+<h2>All Solutions</h2>
+
+<ul>
+  <% @solutions.each do |work| %>
+    <li>
+      <%= link_to solution.name, solution_path(work.id) %>
+    </li>
+  <% end %>
+</ul>

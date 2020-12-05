@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: MyText
+  landfill_weight_PA: MyText
+  image: MyText
+
+two:
+  type: MyText
+  landfill_weight_PA: MyText
+  image: MyText

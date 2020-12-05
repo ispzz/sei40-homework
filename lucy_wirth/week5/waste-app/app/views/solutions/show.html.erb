@@ -1,0 +1,27 @@
+<h2>
+  <em>
+    <%= @solution.action %>,
+  </em>
+  <%= @solution.summary %>
+</h2>
+
+<%= link_to 'Edit This Solution', edit_solution_path(@solution.id) %>
+|
+<%= link_to 'Delete This Solution', solution_path(@solution.id), method: 'delete' %>
+
+<p>
+  <strong>Waste:</strong>
+  <%= link_to @solution.waste.name, waste_path(@solution.waste.id) %>
+</p>
+
+<p>
+  <strong>Summary</strong>:
+  <%= @solution.summary %>
+</p>
+
+<p>
+  <strong>Links</strong>:
+  <%= @solution.links %>
+</p>
+
+<%= image_tag @solution.image, alt: @solution.action, class: 'solution' %>

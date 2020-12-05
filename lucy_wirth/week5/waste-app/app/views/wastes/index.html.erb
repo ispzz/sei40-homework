@@ -1,0 +1,14 @@
+
+<h2>Index of Wastes</h2>
+
+<ul>
+<!-- each loop over @waste! -->
+<% @wastes.each do |waste| %>
+  <li>
+    <!--
+     <a href="/wastes/<%= waste.id %>"> <%= waste.name %>  </a>
+    -->
+    <%= link_to waste.name, waste_path(waste.id) %>
+  </li>
+<% end %>
+</ul>

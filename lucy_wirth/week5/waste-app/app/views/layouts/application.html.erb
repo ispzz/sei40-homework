@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WastesApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+    <header>
+      <nav>
+        <h1>Wastes</h1>
+
+        <%= link_to 'All Waste', wastes_path %>
+        |
+        <%= link_to 'Add New Waste', new_waste_path %>
+        <br>
+        <%= link_to 'All Solutions', solutions_path %>
+        |
+        <%= link_to 'Add New Solution', new_solution_path %>
+
+      </nav>
+      <hr>
+    </header>
+
+    <%= yield %>
+
+    <footer>
+      <hr>
+      &copy Circular Economy Productions
+    </footer>
+
+
+  </body>
+</html>
