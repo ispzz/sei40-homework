@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  address: MyText
+  city: MyText
+  postcode: 1
+  opening_hours: MyText
+  logo: MyText
+
+two:
+  name: MyText
+  address: MyText
+  city: MyText
+  postcode: 1
+  opening_hours: MyText
+  logo: MyText

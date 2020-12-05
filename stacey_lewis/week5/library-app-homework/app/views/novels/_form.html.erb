@@ -1,0 +1,33 @@
+<%= form_with model: @novel, local: true do |f| %>
+
+<%= f.label :title %>
+<br>
+<%= f.text_field :title %>
+<br><br>
+
+<%= f.label :year, "Year of original publication" %>
+<br>
+<%= f.text_field :year %>
+<br><br>
+
+<%= f.label :author %>
+<br>
+<%= f.text_field :author %>
+<br><br>
+
+<%= f.label :description %>
+<br>
+<%= f.text_field :description %>
+<br><br>
+
+<!-- TODO: should be a dropdown! The users don't know the IDs! -->
+<!-- Research 'collection_select' helper! -->
+
+<%= f.label :library_id, 'Library ID' %>
+<br>
+<%= f.text_field :library_id %>
+<br><br>
+
+<%= f.submit %>
+
+<% end %>
