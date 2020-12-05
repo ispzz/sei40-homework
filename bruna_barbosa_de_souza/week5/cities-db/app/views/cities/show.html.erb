@@ -1,0 +1,25 @@
+<h2>
+  <%= @city.name %>
+</h2>
+
+<%= link_to 'Edit City', edit_city_path(@city.id) %>
+
+<%= link_to 'Delete City', destroy_city_path(@city.id) %>
+<p>
+  <strong>Population:</strong>
+  <%= @city.population %> million
+</p>
+
+<p>
+  <strong>Best Food:</strong>
+  <%= @city.best_food %>
+</p>
+
+<%= image_tag @city.image_url, alt: @city.name %>
+
+<p>
+  <strong>Must See:</strong>
+  <%= @city.must_see %>
+</p>
+
+<%= image_tag @city.image_url_see, alt: @city.name %>
