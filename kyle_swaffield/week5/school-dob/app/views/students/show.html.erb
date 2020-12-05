@@ -1,0 +1,37 @@
+<h2>Student: <%=@student.name%></h2>
+
+<%= image_tag @student.image, class: 'large-img', alt: @student.name %>
+
+<table class="index-table">
+  <tr>
+    <th class="index-td align-left">Name:</th>
+    <td class="index-td"><%= @student.name %></td>
+  </tr>
+  <tr>
+    <th class="index-td align-left">Date of birth:</th>
+    <td class="index-td"><%= @student.dob %></td>
+  </tr>
+  <tr>
+    <th class="index-td align-left">Class:</th>
+    <td class="index-td"><%=link_to @student.grade.name, grade_path(@student.grade.id) %></td>
+  </tr>
+  <tr>
+    <th class="index-td align-left">Teacher:</th>
+    <td class="index-td"><%= link_to @student.teacher.name, teacher_path(@student.teacher.id) %></td>
+  </tr>
+  <tr>
+    <td class="index-td">
+    <%= link_to edit_student_path(@student.id) do %>
+      <button class="new-button">Edit</button>
+    <% end %>
+    </td>
+    <td class="index-td">
+      <%= link_to student_path(@student.id), method: 'delete' do %>
+      <button class="new-button">Delete</button>
+      <%end%>
+    </td>
+  </tr>
+  <tr>
+    <td class='show'></td>
+  </tr>
+</table>
