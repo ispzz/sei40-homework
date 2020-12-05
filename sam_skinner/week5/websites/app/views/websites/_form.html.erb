@@ -1,0 +1,30 @@
+<%= form_with model: @website, local: true do |w| %>
+
+<%= w.label :name %><br>
+<%= w.text_field :name %><br><br>
+
+<%= w.label :frontend_id, 'Frontend ID' %><br>
+<%= w.text_field :frontend_id %><br><br>
+
+<%= w.label :backend_id, 'Backend ID' %><br>
+<%= w.text_field :backend_id %><br><br>
+
+<%= w.label :launched, 'Year Launched' %><br>
+<%= w.text_field :launched %><br><br>
+
+<%= w.label :hacked, 'Data Breached?' %><br>
+<%= w.radio_button :hacked, true %>Yes
+<%= w.radio_button :hacked, false %>No<br><br>
+
+<%= w.label :domain %><br>
+<%= w.text_field :domain %><br><br>
+
+<%= w.label :owned_by %><br>
+<%= w.text_field :owned_by %><br><br>
+
+<%= w.label :wiki, 'Wikipedia' %><br>
+<%= w.text_field :wiki %><br><br>
+
+<%= w.submit %>
+
+<% end %>

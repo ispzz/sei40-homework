@@ -1,0 +1,13 @@
+body {
+  font-family: Garamond, serif;
+  color: rgb(228, 288, 288);
+  background-color: rgb(65, 65, 65);
+}
+
+a {
+  color: rgb(215, 175, 96);
+}
+
+.logo {
+  height: 100px;
+}

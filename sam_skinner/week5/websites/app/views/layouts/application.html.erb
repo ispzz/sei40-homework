@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Websites</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1>Websites and Their Frameworks!</h1>
+        <%= link_to 'Website Index', websites_path %>
+        |
+        <%= link_to 'Add New Website', new_website_path %>
+        |
+        <%= link_to 'Frontend Index', frontends_path %>
+        |
+        <%= link_to 'Add New Frontend', new_frontend_path %>
+        |
+        <%= link_to 'Backend Index', backends_path %>
+        |
+        <%= link_to 'Add New Backend', new_backend_path %>
+        <hr>
+      </nav>
+    </header>
+    <%= yield %>
+    <footer>
+      <hr>
+      &copy; This Is All Lies
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<h2>Index of Websites</h2>
+
+<ul>
+<% @websites.each do |w| %>
+  <li>
+    <%= link_to w.name, website_path(w.id) %> - <%= w.launched %>
+  </li>
+<% end %>
+</ul>

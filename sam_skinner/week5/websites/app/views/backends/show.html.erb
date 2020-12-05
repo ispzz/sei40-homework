@@ -1,0 +1,23 @@
+<h2><%= @backend.name %></h2>
+
+<%= link_to 'Edit Backend', edit_backend_path %>
+|
+<%= link_to 'Delete Backend', backend_path(@backend.id), method: 'delete' %>
+
+<p></p>
+
+<%= image_tag @backend.logo, alt: "#{@backend.name} logo", class: 'logo' %>
+
+<p>
+  <strong>Year Launched: </strong>
+  <%= @backend.date_released %>
+</p>
+
+<strong>Used In:</strong>
+<ul>
+  <% @backend.websites.each do |w| %>
+  <li>
+    <%= link_to w.name, website_path(w.id) %> - <%= w.launched %>
+  </li>
+  <% end %>
+</ul>

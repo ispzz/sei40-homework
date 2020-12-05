@@ -1,0 +1,23 @@
+<h2><%= @frontend.name %></h2>
+
+<%= link_to 'Edit Frontend', edit_frontend_path %>
+|
+<%= link_to 'Delete Frontend', frontend_path(@frontend.id), method: 'delete' %>
+
+<p></p>
+
+<%= image_tag @frontend.logo, alt: "#{@frontend.name} logo", class: 'logo' %>
+
+<p>
+  <strong>Year Launched: </strong>
+  <%= @frontend.date_released %>
+</p>
+
+<strong>Used In:</strong>
+<ul>
+  <% @frontend.websites.each do |w| %>
+  <li>
+    <%= link_to w.name, website_path(w.id) %> - <%= w.launched %>
+  </li>
+  <% end %>
+</ul>
