@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  nationality: MyText
+  portfolio_url: MyText
+  instagram_url: MyText
+  image_url: MyText
+
+two:
+  name: MyText
+  nationality: MyText
+  portfolio_url: MyText
+  instagram_url: MyText
+  image_url: MyText

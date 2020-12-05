@@ -1,0 +1,19 @@
+<h2><%= @coder.name %></h2> 
+<p><%= @coder.nationality %></p>
+<p><%= @coder.bio %></p>
+<%= link_to 'Portfolio', @coder.portfolio_url, target: "_blank"%>
+<%= link_to 'Instagram', @coder.instagram_url, target: "_blank"%>
+<br>
+<%= image_tag @coder.image_url, alt: @coder.name, class: "coder" %>
+
+<ul>
+    <% @coder.creations.each do |creation| %>
+    <li>
+        <%= link_to creation_path(creation.id) do %>
+            <%= image_tag creation.image_url, alt: creation.title, class: "creation" %>
+        <% end %>
+    </li>
+    <% end%>
+</ul>
+<%= link_to 'Edit', edit_coder_path %>
+<%= link_to 'Delete', coder_path(@coder.id), method: 'delete' %>

@@ -1,0 +1,8 @@
+<h2>Creative Coders</h2>
+<ul>
+<% @coders.each do |coder| %>
+    <li>
+    <%= link_to coder.name, coder_path(coder.id) %>
+    </li>
+<% end %>
+</ul>
