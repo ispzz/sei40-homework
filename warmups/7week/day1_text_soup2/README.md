@@ -21,8 +21,9 @@ cd ~/sei/homework
 git pull
 
 # copy the previous solution to where ever you keep your warmups
+# make sure these paths are correct for you
 
-cp -r warmups/week3/day01_text_soup/ ~/sei/homework/textsoup2  
+cp -r ~/sei/homework/warmups/7week/day01_text_soup/ ~/sei/homework/your_name/textsoup2  
 
 # Add dat.gui to the js folder within this warmup
 curl https://raw.githubusercontent.com/dataarts/dat.gui/master/build/dat.gui.js >js/dat.gui.js
