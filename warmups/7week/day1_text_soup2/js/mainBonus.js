@@ -1,9 +1,3 @@
-// Add GUI controller elements
-// - fade in time (i.e. a range from 1 to 5000 milliseconds)
-// - fade out time
-// - font size
-// #Bonus
-// controlword interval
 // Text colour change
 // Add your own text
 // Reset button
@@ -29,6 +23,13 @@ $(document).ready(function() {
         fadeOut: 2000,
         fontSize: 30,
         wordTimerInterval: 100,
+        // BONUS: ADD WORD, TEXT COLOUR, RESET BUTTON
+        // because this is set as a string, GUI will add a text field
+        addWord: "",
+        color: "#FFFFFF", // can also use [ 0, 128, 255 ]
+        reset: function () {
+            $(".word").remove();
+        }
     }
 
     // Add the controllers to the GUI interface
@@ -54,6 +55,11 @@ $(document).ready(function() {
         timerID = setInterval(displayWord, newValue);
     });
 
+    // BONUS: ADD WORD, TEXT COLOUR, RESET BUTTON
+    gui.add(controls, 'addWord');
+    gui.addColor(controls, 'color'); // this will add a colour picker
+    gui.add(controls, 'reset');
+
     const divContents = $('#words').text();
 
     const words = divContents.split(/[ :_;.,"'\-\n]+/);
@@ -63,6 +69,13 @@ $(document).ready(function() {
 
         
         const word = getRandomElementFromArray(words);
+
+        // BONUS: ADD WORD
+        // Use the value from the GUI text input approx half the time
+        // (but only if the string has contents)
+        if (controls.addWord.length > 0 && Math.random() > 0.5) {
+            word = controls.addWord;
+        }
 
         const $wordDiv = $('<div class="word">');
         $wordDiv.text(word);
@@ -76,8 +89,7 @@ $(document).ready(function() {
         $wordDiv.css({
             top: yRand,
             left: xRand,
-            color: randomColour,
-            // fontSize: `${30 + randomValue(30)}pt`,
+            color: controls.color, // BONUS: COLOUR PICKER
             fontSize: `${controls.fontSize}pt`,
             transform: `rotate(${randomValue(360)}deg)`,
         });

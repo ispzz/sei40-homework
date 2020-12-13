@@ -12,3 +12,7 @@ body {
     position: absolute;
     display: none;
 }
+
+.dg {
+    z-index: 1 !important;
+}
