@@ -18,7 +18,7 @@ To get started, look at the examples on the package page linked to above (but no
 ```
 cd ~/sei/homework
 
-git pull upstream master
+git pull
 
 # copy the previous solution to where ever you keep your warmups
 
