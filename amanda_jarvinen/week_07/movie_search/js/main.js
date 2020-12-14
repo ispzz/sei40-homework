@@ -18,6 +18,14 @@ $(document).ready(function(){
         xhr.onload = function() {
             // Receive response string and parse into JS object
             const data = JSON.parse(xhr.response);
+            const movie = data.results[0];
+
+            // Display movie details
+            $('#results').append(`
+                <h2>${data.results[0].title}</h2>
+                <p>${data.results[0].overview}</p>
+                <img src="https://image.tmdb.org/t/p/w154/${movie.poster_path}" alt="${movie.title}" id="poster">
+            `);
 
             console.log('response:', data)
         }; // onload
