@@ -1,9 +1,7 @@
-console.log('Hello ', $)
 
 $(document).ready(function(){
 
     $('#submitSearch').on('click', function() {
-        
         // Assign user search term
         const title = $(`#searchTitle`).val();
         console.log(`${title}`);
@@ -18,25 +16,28 @@ $(document).ready(function(){
         xhr.onload = function() {
             // Receive response string and parse into JS object
             const data = JSON.parse(xhr.response);
+            // Access movies
             const movies = data.results;
+
+            $('#results').append('<ul>');
 
             movies.forEach(movie => {
                 
                 // Prepare movie details for display
-                    const $movieDetails = $(`
-                    <h2>${movie.title}</h2>
-                    <p>${movie.overview}</p>
-                    <img src="https://image.tmdb.org/t/p/w154/${movie.poster_path}" alt="${movie.title}" id="poster">
+                const $movieDetails = $(`
+                    <li>
+                        <a href="http://">
+                            <img src="https://image.tmdb.org/t/p/w154/${movie.poster_path}" alt="${movie.title}" id="poster">
+                            <h2>${movie.title}</h2>
+                        </a>
+                    </li>
                 `);
 
                 // Display movie details
                 $('#results').append($movieDetails);
-            });
+            }); // forEach
 
-
-            console.log('response:', data)
+            $('#results').append('</ul>')
         }; // onload
-
-
     }); // submitSearch click event
 }); // document ready
