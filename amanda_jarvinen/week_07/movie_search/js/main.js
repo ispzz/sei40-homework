@@ -28,7 +28,7 @@ $(document).ready(function(){
                     <li>
                         <a href="http://">
                             <img src="https://image.tmdb.org/t/p/w154/${movie.poster_path}" alt="${movie.title}" id="poster">
-                            <h2>${movie.title}</h2>
+                            <strong>${movie.title}</strong>
                         </a>
                     </li>
                 `);
@@ -37,7 +37,13 @@ $(document).ready(function(){
                 $('#results').append($movieDetails);
             }); // forEach
 
-            $('#results').append('</ul>')
+            $('#results').append('</ul>');
+
+            // Clear movies on new search
+            $('#submitSearch').on('click', function(){
+                $('#results').empty()
+            });
+      
         }; // onload
     }); // submitSearch click event
 }); // document ready
