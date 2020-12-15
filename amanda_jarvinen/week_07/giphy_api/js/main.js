@@ -3,9 +3,14 @@ console.log('Hello', $);
 $(document).ready(function(){
 
     $('#searchBtn').on('click', function(){
-        const searchTerm = $('#searchTerm').val();
-        console.log(searchTerm);
 
+        // Retrieve search term
+        const searchTerm = $('#searchTerm').val();
+
+        // Display search term
+        $('#resultsHeading').text(searchTerm);
+
+        // Construct URL
         const apiKey = '0KxC2vDq0SdT9gaua6lotHAFwYw7M5KR';
         const baseURL = 'http://api.giphy.com/v1/gifs/search?q=';
         const limiter = '&limit=5'
