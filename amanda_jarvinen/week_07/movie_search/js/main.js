@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
 
+    let movieID;
+
     $('#submitSearch').on('click', function() {
         // Assign user search term
         const title = $(`#searchTitle`).val();
@@ -27,7 +29,7 @@ $(document).ready(function(){
                 if (movie.poster_path != null){
                     $movieDetails = $(`
                     <li>
-                        <a id="moviePage" href="">
+                        <a href="#" movieID="${movie.id}">
                             <img src="https://image.tmdb.org/t/p/w154/${movie.poster_path}" alt="${movie.title}" id="poster">
                             <strong>${movie.title}</strong>
                         </a>
@@ -36,17 +38,18 @@ $(document).ready(function(){
                 } else {
                     $movieDetails = $(`
                     <li>
-                        <a id="moviePage" href="">
+                        <a href="#" id="moviePage">
                             <strong>${movie.title}</strong>
                         </a>
                     </li>
                 `);
                 }
 
-
                 // Display movie details
                 $('#results').append($movieDetails);
             }); // forEach
+
+
 
             $('#results').append('</ul>');
 
@@ -56,27 +59,5 @@ $(document).ready(function(){
             });
         }; // onload
     }); // submitSearch click event
-
-    $('#moviePage').on('click', function(){
-        console.log("Hello")
-        // Clear the page
-        $('#results').empty()
-
-
-        // 
-
-
-//         $('.detailsLink').on('click', function(){
-//             $('#results').empty()
-//             const detailsXHR = new XMLHttpRequest(); // on click of the a tag, which is a class, it clears page and performs new request
-//   ​
-//             xhr.open('GET', `https://api.themoviedb.org/3/movie/${data.results[i].id}?api_key=24d863d54c86392e6e1df55b9a328755`);
-//             xhr.send(); // Opens a request for the details page from the movie in the loop
-//   ​
-//             detailsXHR.onload = function(){
-//               const detailsData = JSON.parse(detailsXHR.response);
-//               console.log(`Data: ${detailsData}`);
-//               $('#results').append(detailsData); // interprets the data and appends the result to the div
-  
-    });
 }); // document ready
+
