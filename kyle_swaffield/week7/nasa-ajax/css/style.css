@@ -1,0 +1,19 @@
+h1{
+  margin: 0;
+  /* border: 1px solid red; */
+}
+#search-stuff, #backBut{
+  text-decoration: none;
+  color: black;
+}
+#search-stuff:hover, #backBut:hover{
+  text-decoration: none;
+  color: black;
+}
+#details{
+  text-align: center;
+}
+.load{
+  text-align: center;
+  /* border:1px solid red; */
+}
