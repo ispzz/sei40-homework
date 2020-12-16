@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AJAX intro</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* justify-items: center; */
+      }
+
+      li {
+        cursor: pointer;
+        list-style: none;
+      }
+      li:hover {
+        background: lightgrey;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Giphy Search</h1>
+
+      <input type="text" id="giphySearch" placeholder="Type key word ... ">
+      <button id="keywordSearchButton">Search</button>
+    <!-- </form> -->
+
+    <div id="keywordSearchResults"></div>
+
+    <div id="detailsPage"></div>
+
+
+
+  </body>
+</html>
