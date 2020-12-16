@@ -1,3 +1,5 @@
+<div align="center">
+
 # Warmups 🏃‍♀️🏃‍♂️💨
 Index of warmups for SEir 40
 
@@ -33,3 +35,4 @@ Day 5: [Roman Numerals 🔢](https://github.com/ispzz/sei40-homework/tree/main/w
 Day 1: [Text Soup 2 🍲](https://github.com/ispzz/sei40-homework/tree/main/warmups/7week/day1_text_soup2)
 
 Day 4: [💻]()
+</div>
