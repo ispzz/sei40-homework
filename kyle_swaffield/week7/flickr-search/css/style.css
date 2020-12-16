@@ -1,0 +1,61 @@
+body{
+
+}
+h1{
+  display: inline;
+  margin-top: 40px;
+  margin-left:20px;
+}
+.back-img{
+  position: absolute;
+  margin-left: -15px;
+  z-index: 0;
+
+}
+.img-back{
+    width: 100vw;
+    z-index: 0;
+    opacity: 0.8;
+}
+.top-banner{
+  /* border: 1px solid red; */
+  background-color: rgba(0,0,0,0.5);
+  height: 60px;
+  z-index: 2;
+}
+.search-icon{
+  margin-top: -35px;
+  margin-right: 30px;
+  width: 25px;
+}
+.search-button{
+  border: none;
+  background-color: rgba(0,0,0,0);
+  z-index: 2;
+}
+.search-button-img{
+    width: 25px;
+    margin-top: -4px !important;
+}
+.search-marg{
+  margin-top: 15px;
+}
+.thumb-img{
+  padding: 0;
+  margin: 30px;
+  background-color: white;
+}
+.move-icon{
+  display: inline;
+  width:60px;
+  margin-top: -15px;
+}
+.loading{
+  text-align: center;
+}
+#done{
+  width: 40px;
+}
+#myCarousel{
+  margin-top: 100px;
+}
