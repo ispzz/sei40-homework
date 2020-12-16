@@ -9,10 +9,10 @@
 def nucleotides_count( dna )
     
     bases_count = {
-        'A' => 0,
-        'C' => 0,
-        'G' => 0,
-        'T' => 0
+        'A' = 0,
+        'C' = 0,
+        'G' = 0,
+        'T' = 0
     }
 
     #  iterate through each character in the DNA string
