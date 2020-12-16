@@ -1,0 +1,32 @@
+<h2>Classes</h2>
+
+  <table class="index-table">
+    <tr>
+      <th class="index-th">Name</th>
+      <th class="index-th">Teachers</th>
+    </tr>
+  <% @grades.each do |grade| %>
+    <tr>
+      <td class="index-td"><%= link_to grade.name, grade_path(grade.id) %></td>
+      <td class="index-td">
+        <table>
+          <% grade.teachers.each do |teacher| %>
+          <tr>
+            <td><%= link_to teacher.name, teacher_path(teacher.id) %></td>
+          </tr>
+          <% end %>
+        </table>
+
+      </td>
+    </tr>
+  <% end %>
+  <tr>
+
+    <td colspan="4" class="index-td align-right">
+<%= link_to new_grade_path do %>
+      <button class="new-button">New Class</button>
+<%end%>
+    </td>
+
+  </tr>
+  </table>

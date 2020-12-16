@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LibraryAppHomework</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <header>
+      <h1>Library Directory</h1>
+      <nav>
+       <%=  link_to "Library Directory", libraries_path %>
+       | <%=link_to "Add a Library", new_library_path %>
+       | <%=link_to "Novel Database", novels_path %>
+       | <%=link_to "Add a Novel", new_novel_path %>
+       <br>
+      </nav>
+      <br>
+        <hr>
+    </header>
+    <%= yield %>
+    <footer>
+      <hr>
+      <br>
+      &copy Random Libraries Inc.
+    </footer>
+  </body>
+</html>

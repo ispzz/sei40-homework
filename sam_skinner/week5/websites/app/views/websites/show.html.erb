@@ -1,0 +1,40 @@
+<h2><%= @website.name %></h2>
+
+<%= link_to 'Edit Website', edit_website_path %>
+|
+<%= link_to 'Delete Website', website_path(@website.id), method: 'delete' %>
+
+<p>
+  <strong>Frontend: </strong>
+  <%= link_to @website.frontend.name, frontend_path(@website.frontend.id) %>
+</p>
+
+<p>
+  <strong>Backend: </strong>
+  <%= link_to @website.backend.name, backend_path(@website.backend.id) %>
+</p>
+
+<p>
+  <strong>Year Launched: </strong>
+  <%= @website.launched %>
+</p>
+
+<p>
+  <strong>Data Breached?: </strong>
+  <%= @hacked %>
+</p>
+
+<p>
+  <strong>Domain: </strong>
+  <%= link_to @website.domain, "http://www.#{@website.domain}" %>
+</p>
+
+<p>
+  <strong>Owned By: </strong>
+  <%= @website.owned_by %>
+</p>
+
+<p>
+  <strong>Wikipedia: </strong>
+  <%= link_to @website.name, @website.wiki %>
+</p>

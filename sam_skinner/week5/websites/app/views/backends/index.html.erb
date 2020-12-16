@@ -1,0 +1,9 @@
+<h2>Index of Backends</h2>
+
+<ul>
+<% @backends.each do |b| %>
+  <li>
+    <%= link_to b.name, backend_path(b.id) %> - <%= b.date_released %>
+  </li>
+<% end %>
+</ul>

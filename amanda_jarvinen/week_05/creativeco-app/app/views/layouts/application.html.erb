@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CreativecoApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1>Creative Coders</h1>
+        <%= link_to 'Gallery', creations_path %>
+        |
+        <%= link_to 'Add new creation', new_creation_path %>
+        |
+        <%= link_to 'Coders', coders_path %>
+        |
+        <%= link_to 'Add new coder', new_coder_path %>
+      </nav>
+      <hr>
+    </header>
+    <main>
+     <%= yield %>
+    </main>
+    <footer>
+    <hr>
+      &copy; Creative Coders Create Cool Code, 2020
+    </footer>
+  </body>
+</html>

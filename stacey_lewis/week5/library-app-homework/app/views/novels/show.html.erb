@@ -1,0 +1,27 @@
+<br>
+<%= link_to "Edit this novel", edit_novel_path %>
+<%= link_to "Delete this novel", novel_path(@novel.id), method: 'delete' %>
+
+
+
+<h2><strong>
+  <%= @novel.title %></strong>
+</h2>
+
+<p>Year of original publication:
+  <%= @novel.year %>
+</p>
+
+<p>Author:
+  <%= @novel.author %>
+</p>
+
+<p>Description:
+<%= @novel.description %>
+</p>
+
+<p>Location:
+<em>  <%= link_to @novel.library.name, library_path(@novel.library.id) %></em>
+</p>
+
+<br>

@@ -1,0 +1,31 @@
+<h2>Edit City Here: <%= @city.name %></h2>
+
+<%= form_with model: @city, local: true, method: 'post' do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+
+<%= f.label :population %>
+<%= f.text_field :population %>
+<br>
+
+<%= f.label :best_food %>
+<%= f.text_field :best_food %>
+<br>
+
+<%= f.label :image_url, 'Image URL' %>
+<%= f.text_field :image_url %>
+<br>
+
+<%= f.label :must_see %>
+<%= f.text_field :must_see %>
+<br>
+
+<%= f.label  :image_url_see, 'Image URL See' %>
+<%= f.text_field :image_url_see %>
+<br>
+
+<%= f.submit %>
+
+<% end  %>

@@ -1,0 +1,17 @@
+<%= form_with model: @creation, local: true do |f| %>
+<%= f.label :title %><br>
+<%= f.text_field :title %><br><br>
+
+<%= f.label :medium %><br>
+<%= f.text_field :medium %><br><br>
+
+<%= f.label :image_url, 'Image link:' %>
+<%= f.text_field :image_url %><br><br>
+
+<%= f.label :coder_id %><br>
+<%# f.text_field :coder_id %>
+<%= f.collection_select :coder_id, Coder.all, :id, :name  %>
+<br>
+<br>
+<%= f.submit %>
+<% end %>

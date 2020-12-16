@@ -1,0 +1,10 @@
+
+
+<h2>Library Directory</h2>
+<ul>
+  <% @libraries.each do |l| %>
+  <li>
+    <%= link_to l.name, library_path(l.id) %>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,36 @@
+<%= form_with model: @library, local: true do |f| %>
+
+<%= f.label :name %>
+<br>
+<%= f.text_field :name %>
+<br><br>
+
+<%= f.label :address%>
+<br>
+<%= f.text_field :address %>
+<br><br>
+
+<%= f.label :city %>
+<br>
+<%= f.text_field :city %>
+<br><br>
+
+<%= f.label :postcode %>
+<br>
+<%= f.text_field :postcode%>
+<br><br>
+
+<%= f.label :opening_hours %>
+<br>
+<%= f.text_field :opening_hours%>
+<br><br>
+
+
+<%= f.label :logo, "Logo URL" %>
+<br>
+<%= f.text_field :logo%>
+<br><br>
+
+<%= f.submit %>
+
+<% end %>
