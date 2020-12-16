@@ -1,3 +1,4 @@
+
 const FLICKR_BASE_URL = 'https://www.flickr.com/services/rest/';
 const FLICKR_API_KEY = '2f5ac274ecfac5a455f38745704ad084';
 
@@ -22,16 +23,28 @@ const getSearchResults = (queryText) => {
 
   console.log('getSearchResults():', queryText);
 
-  $.getJSON(URL, {
-    api_key: '',
-    method: '',
-    text: '',
+  $.getJSON(FLICKR_BASE_URL, {
+    api_key: FLICKR_API_KEY,
+    method: 'flickr.photos.search',
+    text: queryText,
     format: 'json',
     nojsoncallback: 1
   })
-  .done( data => {
-    console.log('response', data);
-  })
+  .done( displaySearchResults )
   .fail( console.warn );
 
 }; // getSearchResults()
+
+
+const displaySearchResults = (results) => {
+  console.log('displaySearchResults():', results);
+
+  // Loop through the image results:
+  results.photos.photo.forEach( photo => {
+    const url = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_q.jpg`;
+    const $img = $(`<img src="${ url }">`)
+    $('#results').append( $img );
+  }); // photo forEach
+
+
+}; // displaySearchResults()

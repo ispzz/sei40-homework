@@ -3,25 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Flickr Search</title>
-​
+
   <script src="js/jquery.js"></script>
   <script src="js/main.js"></script>
-​
+
   <link rel="stylesheet" href="css/style.css">
-​
+
 </head>
 <body>
-​
+
   <h1>Flickr Search</h1>
-​
-  <input type="text" id="searchText" value="ocean coral" >
-  <button id="doSearch">Search</button>
-​
+
+  <form id="searchForm">
+    <input type="text" id="searchText" value="ocean coral" >
+    <button>Search</button>
+  </form>
+
   <hr>
-​
+<div class="grid-container centered">
+  <div class="pagination">
+    <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a href="#" class="active">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
   <div id="results"></div>
-​
+
+
+</div>
+
+
+
+    </div>
+
+  </div>
+</div>
   <div id="details"></div>
-​
+
 </body>
 </html>
