@@ -1,4 +1,4 @@
-
+// I didn't comment out any solutions so it'd be easier to read
 // create our arrays we want to use so the code is cleaner
 const arrayOne = ["one", "two", "three", "four"];
 const arrayTwo = ["Hello", ["World", 42]];
@@ -11,11 +11,11 @@ const reverseArray = function(array) {
     const reversed = [];
 
     // SOLUTION 1 - LOOPING BACKWARDS
-    // for (let i = array.length - 1; i >= 0; i--) {
-    //     console.log(array[ i ]);
-    //     reversed.push( array[ i ] );
-    // };
-    // return reversed;
+    for (let i = array.length - 1; i >= 0; i--) {
+        console.log(array[ i ]);
+        reversed.push( array[ i ] );
+    };
+    return reversed;
 
     // SOLUTION 2 - UNSHIFT()
     for (let i = 0; i < array.length; i++) {
@@ -79,6 +79,7 @@ console.log(flattenArray(arrayTwo));
 
 // FLATTEN MULTI LEVEL ARRAYS - [["Hello", ["World", 42] ], [45]]
 const flattenBonus = function(array) {
+
     // SOLUTION 1 - .FLAT HAHA
     // using Infinity to get the max level depth of the array
     return array.flat( Infinity );
@@ -112,5 +113,7 @@ const flattenBonus = function(array) {
     // ✨✨✨ 
     // SOLUTION 2.3 - The above is still sort of long so I can refactor it further
     return array.reduce((total, elem) => total.concat(Array.isArray(elem) ? flattenBonus(elem) : elem), []);
-} // end of flatten bonus
+
+}; // end of flatten bonus
+
 console.log(flattenBonus(arrayThree));
