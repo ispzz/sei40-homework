@@ -34,5 +34,7 @@ Day 5: [Roman Numerals 🔢](https://github.com/ispzz/sei40-homework/tree/main/w
 ## Week 7
 Day 1: [Text Soup 2 🍲](https://github.com/ispzz/sei40-homework/tree/main/warmups/7week/day1_text_soup2)
 
-Day 4: [💻]()
+Day 4: [Arrays - Reverse & Flatten [[🐱]]](https://github.com/ispzz/sei40-homework/tree/main/warmups/7week/day4_flatten_reverse_arrays)
+
+Day 5: [??]()
 </div>
