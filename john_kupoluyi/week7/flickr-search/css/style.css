@@ -1,0 +1,120 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  padding: 20px;
+  background-color: pink;
+  border-bottom: 1px solid purple;
+}
+
+.container {
+  width:1200px;
+  margin: 0 auto;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+}
+
+#searchForm {
+  flex-grow:1;
+}
+
+nav {
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav {
+  padding: 5px 10px;
+  background-color: purple;
+  cursor: pointer;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+input {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size:14px;
+  font-weight: 600
+}
+
+input:focus {
+  outline-color: purple;
+}
+
+button {
+  background-color: purple;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: purple;
+}
+
+button:focus {
+ outline: none
+}
+
+.image {
+  cursor: pointer;
+  float: left;
+}
+
+.image:hover {
+  filter: brightness(1.2);
+}
+
+#details {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.9);
+  align-items: center;
+  justify-content: center;
+}
+
+.close,.nextNav, .prevNav {
+  display: inline-block;
+  margin-right:5px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: purple;
+  padding: 10px 15px;
+  cursor:pointer;
+  text-align: center;
+}
+
+#imgContainer {
+  position: fixed;
+  min-width: 500px;
+}
+#imgContainer > div{
+  position: absolute;
+  top: 0;
+}
+
+h1 {
+  display: inline-block;
+}
+
+.loading {
+  float:right;
+  margin-top: 45px;
+  display:none;
+}
