@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Intro</title>
+  </head>
+  <body>
+  <h1>Vue Intro</h1>
+
+  <div id="app">
+
+    <p v-bind:title="secretGreeting" v-on:mouseover="reverseMessage">
+     {{ message }}
+    </p>
+
+  <button v-on:click="changeMessage">Click me!</button>
+
+<br><br>
+
+<input type="text" v-model="message">
+
+  <div v-if="showDiv">
+  <strong>This message will appear and disappear.</strong>]
+  </div>
+
+</div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+https://gateway.marvel.com/v1/public/characters?ts=thesoer&apikey=ba037cc766c077e1fc9fe9c969963e54&hash=cd1b7b0023d12cbfe3823a231aaa3090
+
+http://www.md5.cz/
+
+Follow the steps:
+
+Pick an API Endpoint. eg: https://gateway.marvel.com:443/v1/public/characters
+
+Use a query value for ts. ts could be timestamp or any long string. eg: ts=thesoer
+
+Generate a MD5 hash of ts+privatekey+publickey through code or preferrably online. eg: md5(ts + privKey + pubKey) For md5 hash: http://www.md5.cz/
+
+Join the dots. URL?ts=val&apikey=key&hash=md5Hash. eg. https://gateway.marvel.com:443/v1/public/characters?ts=thesoer&apikey=001ac6c73378bbfff488a36141458af2&hash=72e5ed53d1398abb831c3ceec263f18b
