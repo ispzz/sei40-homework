@@ -9,6 +9,41 @@ const getRandomElementFromArray = function(array) {
 
 $(document).ready(function() {
 
+    let words = [];
+
+    // get the query string using URLSearchParams
+     // a query string is the url with '?' at the end and followed by some parameters, in this case whatever we want to search in the wikiAPI
+    // window.location.search returns whatever is after the '?' in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // urlParams will have 'page=Cat' stored so now we can get the value of page which is Cat in this example
+    const query = urlParams.get('query');
+    console.log('urlParams.get: ', query);
+
+    // Use .getJSON to start getting data based on the value of page
+    $.getJSON('http://en.wikipedia.org/w/api.php?callback=?', {
+        // instead of http://en.wikipedia.org/w/api.php?action=parse&format=json&callback=?
+        // I can clean it up a little and add the other parameters in the object below
+        action: 'parse',
+        format: 'json',
+        page: query,
+        prop: 'text',
+    }).done(data => {
+        console.log(data);
+
+        // get the text from the api
+        let wikiHTML = data.parse.text['*'];
+        // console.log(wikiHTML);
+
+        let text = $('#words').html(wikiHTML).text();
+        console.log(text);
+
+        // split the block of text
+        words = text.split(/[ :_;.,"'\-\n]+/);
+
+        timerID = setInterval(displayWord, 100);
+    })
+
     // Add the GUI pane
     const gui = new dat.GUI();
 
@@ -34,14 +69,13 @@ $(document).ready(function() {
         timerID = setInterval(displayWord, newValue);
     });
 
-    const divContents = $('#words').text();
+    // const divContents = $('#words').text();
 
-    const words = divContents.split(/[ :_;.,"'\-\n]+/);
+    // const words = divContents.split(/[ :_;.,"'\-\n]+/);
 
     // Main function
     const displayWord = function() {
 
-        
         const word = getRandomElementFromArray(words);
 
         const $wordDiv = $('<div class="word">');
