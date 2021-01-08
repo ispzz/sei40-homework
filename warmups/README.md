@@ -36,6 +36,8 @@ Day 1: [Text Soup 2 🍲](https://github.com/ispzz/sei40-homework/tree/main/warm
 
 Day 4: [Arrays - Reverse & Flatten [[🐱]]](https://github.com/ispzz/sei40-homework/tree/main/warmups/7week/day4_flatten_reverse_arrays)
 
-Day 5: [??]()
+Day 5: [Allergies 🤧](https://github.com/ispzz/sei40-homework/tree/main/warmups/7week/day5_allergies)
+
+## Week 8
+Day 1: [Text Soup 3 🍲](https://github.com/ispzz/sei40-homework/tree/main/warmups/8week/day1_text_soup3)
 </div>
-test
