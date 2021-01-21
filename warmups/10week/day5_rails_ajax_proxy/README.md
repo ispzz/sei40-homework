@@ -9,3 +9,4 @@ A proxy is a server that sits between your computer and some other computer on t
 Your warmup task is to write a simple AJAX proxy by using a Rails server and HTTParty, to respond to an AJAX request made in the browser (in the Chrome Developer console will be fine, to test it, but you'll probably want jQuery to be loaded) by retrieving the contents of any specified URL for you, and passing it back to your AJAX Javascript handler, thereby getting around the CORS security restrictions.
 
 Your Rails server will need only one route, one controller, and one action. This action should take the URL specified on the query string, retrieve its data, and pass it back to your AJAX request in the browser. To avoid the same CORS security problems from being thrown by your proxy, you will need to look up how to tell Rails to set the correct headers to allow any CORS request.
+
