@@ -1,0 +1,51 @@
+<h2>
+
+ <%= @brand.name %>
+
+</h2>
+
+<%= link_to 'Edit Brand', edit_brand_path %>
+
+<%= link_to 'Delete', brands_path(@brand.id), method: 'delete' %>
+
+<p>
+ <strong>Name</strong>:
+ <%= @brand.name %>
+</p>
+
+<p>
+<strong>Shoe_type</strong>:
+<%= @brand.shoe_type %>
+</p>
+
+<p>
+ <strong>Origination</strong>:
+<%= @brand.origination %>
+</p>
+
+<p>
+ <strong>Influencer</strong>:
+ <%= @brand.influencer %>
+</p>
+
+<p>
+ <strong>Bio</strong>:
+ <%= @brand.bio %>
+</p>
+
+<p>
+ <strong>Price</strong>:
+ <%= @brand.price %>
+</p>
+
+ <ul>
+  <% @brand.name do |brand| %>
+ <li>
+<%= link_to @brand.title, brand_path(brands.id) %>
+ </li>
+
+<% end %>
+</ul>
+
+
+<%= image_tag @brand.image, alt: "Photo of #{@brand.name}", class: 'brand' %>

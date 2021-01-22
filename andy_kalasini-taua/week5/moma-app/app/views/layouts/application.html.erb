@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MomaApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+    <header>
+      <nav>
+        <h1>MoMa</h1>
+
+        <%= link_to 'All Artists', artists_path %>
+
+        <%= link_to 'Add New Artists', new_artist_path %>
+
+        <%= link_to 'All Works', works_path %>
+
+        <%= link_to 'Add New Works', new_work_path %>
+
+
+
+
+
+      </nav>
+      <hr>
+    </header>
+
+    <%= yield %>
+<hr>
+    <footer>
+       &copy Art School Dropout Productions 2020
+    </footer>
+  </body>
+</html>
